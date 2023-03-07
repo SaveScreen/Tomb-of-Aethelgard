@@ -528,6 +528,7 @@ GameObject:
   - component: {fileID: 1641859794}
   - component: {fileID: 1641859793}
   - component: {fileID: 1641859795}
+  - component: {fileID: 1641859796}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -770,3 +771,26 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1641859796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1641859788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43c5b80f0182d3a428f2214d7f45cdbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsThisWall:
+    serializedVersion: 2
+    m_Bits: 0
+  IsThisGround:
+    serializedVersion: 2
+    m_Bits: 0
+  WallRunForce: 0
+  MaxWallRunTime: 0
+  WallRunTimer: 0
+  WallCheckDistance: 0
+  MinJumpHeight: 0

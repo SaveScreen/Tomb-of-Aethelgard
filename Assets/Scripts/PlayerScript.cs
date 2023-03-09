@@ -14,13 +14,20 @@ public class PlayerScript : MonoBehaviour
     public GameObject cam;
     private CameraScript camerascript;
 
+    //Jumping variables
+    public InputAction playerjump;
+    public float jumpspeed;
+    private bool jumped;
+    private bool jumping;
+    private bool isfalling;
+
     //Character movement
     public float speed;
     public float rotationspeed;
     private Vector3 move;
     private Vector3 movement;
     private Vector3 velocity;
-    private float gravity;
+    public float gravity;
 
     //Looking variables
     public InputAction playerrotate;
@@ -47,8 +54,10 @@ public class PlayerScript : MonoBehaviour
     {
         camerascript = cam.GetComponent<CameraScript>();
         charactercontroller = gameObject.GetComponent<CharacterController>();
-        gravity = -9.81f;
         moving = false;
+        isfalling = false;
+        jumped = false;
+        jumping = false;
         
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -58,18 +67,22 @@ public class PlayerScript : MonoBehaviour
     {
         playermove.Enable();
         playerrotate.Enable();
+        playerjump.Enable();
     }
 
     private void OnDisable()
     {
         playermove.Disable();
         playerrotate.Disable();
+        playerjump.Disable();
     }
     // Update is called once per frame
     void Update()
     {
         move = playermove.ReadValue<Vector3>();
+        jumping = playerjump.IsPressed();
 
+        //Determines if player is moving
         if (movement.x > 0 || movement.z > 0 || movement.x < 0 || movement.z < 0) {
             moving = true;
 
@@ -77,6 +90,7 @@ public class PlayerScript : MonoBehaviour
         if (movement.x == 0 || movement.z == 0) {
             moving = false;
         }
+
         //Only look around if camera is not currently turning
         if (camerascript.cameralocked == false) {    
             Look();    
@@ -90,8 +104,25 @@ public class PlayerScript : MonoBehaviour
             }
                 
         }
-        
 
+        if (jumping == true && charactercontroller.isGrounded) {
+            jumped = true;
+        }
+
+        if (jumped == true) {
+            if (!isfalling) {
+                velocity.y = jumpspeed;
+                isfalling = true;
+                
+            }
+            else {
+                if (charactercontroller.isGrounded == true) {
+                    isfalling = false;
+                    jumped = false;
+                }
+            }
+        }   
+           
 
         //Debug feature for quitting the game
         if (Input.GetKeyDown(KeyCode.Escape)) {
@@ -104,11 +135,14 @@ public class PlayerScript : MonoBehaviour
     {
         movement = (move.z * transform.forward) + (move.x * transform.right);
         movement.y = 0.0f;
+
         charactercontroller.Move(movement * speed * Time.deltaTime);
+        
         velocity.y += gravity * Time.deltaTime;
-        charactercontroller.Move(velocity * Time.deltaTime);
+        charactercontroller.Move(velocity * Time.deltaTime); 
         
     }
+
 
     //Controls player looking around
     private void Look() {
@@ -125,9 +159,12 @@ public class PlayerScript : MonoBehaviour
         orientation.transform.Rotate(Vector3.up * lookx);
     }
 
+    //When variable "tiedtocamera" is checked, this locks the player's orientation with the camera orientation
     void LookDirectionOfCamera() {
         
         transform.rotation = Quaternion.Euler(0,-camerascript.rotationy,0);
         orientation.transform.Rotate(Vector3.up * camerascript.lookx);
     }
+
+
 }

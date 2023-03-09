@@ -665,7 +665,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1357402475}
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0.24, z: 0.955}
+  m_LocalPosition: {x: 0, y: 0.24, z: 0.544}
   m_LocalScale: {x: 1, y: 0.1, z: 0.10000001}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -749,7 +749,7 @@ GameObject:
   - component: {fileID: 1403043332}
   m_Layer: 7
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1015,8 +1015,27 @@ MonoBehaviour:
       m_Flags: 8
     m_Flags: 0
   cam: {fileID: 1096192106}
+  playerjump:
+    m_Name: Playerjump
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: 3f99094c-552b-496f-a8e8-767caa91b001
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 353572a7-102c-4e64-bd12-6311dd356782
+      m_Path: <Keyboard>/space
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Playerjump
+      m_Flags: 0
+    m_Flags: 0
+  jumpspeed: 10
   speed: 20
   rotationspeed: 10
+  gravity: -20
   playerrotate:
     m_Name: Playerrotate
     m_Type: 0

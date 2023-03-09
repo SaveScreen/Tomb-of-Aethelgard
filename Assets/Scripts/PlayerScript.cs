@@ -26,7 +26,7 @@ public class PlayerScript : MonoBehaviour
     public float rotationspeed;
     private Vector3 move;
     private Vector3 movement;
-    private Vector3 velocity;
+    public Vector3 velocity;
     public float gravity;
     public float wallrunspeed;
 
@@ -40,7 +40,7 @@ public class PlayerScript : MonoBehaviour
     private float rotationy;
     public Transform orientation;
     private bool moving;
-    Rigidbody rb;
+    
 
     //movement states if we want the player to be able to run, crouch, slide etc.
     public MovementState state;
@@ -71,7 +71,7 @@ public class PlayerScript : MonoBehaviour
         
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        rb = GetComponent<Rigidbody>();
+       
     }
 
     private void OnEnable()

@@ -27,11 +27,11 @@ public class WallRunning : MonoBehaviour
     [Header("refrences")]
     public Transform orientation;
     private PlayerScript PS;
-    private Rigidbody rb;
+    private CharacterController CC;
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        //CC = GetComponent<CharacterController>();
         PS = GetComponent<PlayerScript>();
     }
 
@@ -89,25 +89,27 @@ public class WallRunning : MonoBehaviour
 
     private void BeginWallRun()
     {
-        PS.wallrunning = true;  
+        PS.wallrunning = true;
+        //WallRunTimer = MaxWallRunTime;
     }
 
     private void WallRunMove()
     {
-        rb.useGravity = false;
-        rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+
+        PS.velocity = new Vector3(PS.velocity.x, 0f, PS.velocity.z);
 
         Vector3 wallNormal = WallIsRight ? RightWall.normal : LeftWall.normal;
         Vector3 wallForward = Vector3.Cross(wallNormal, transform.up);
 
         //adds force when wall running
-        rb.AddForce(wallForward * WallRunForce, ForceMode.Force);
+        //CC.AddForce(wallForward * WallRunForce, ForceMode.Force);
         
+       // Debug.Log("wall running");
     }
     private void EndWallRun() 
     {
         PS.wallrunning = false;
-        rb.useGravity = true;
+    
     }
 
 }

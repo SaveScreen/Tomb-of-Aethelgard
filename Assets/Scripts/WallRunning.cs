@@ -10,7 +10,7 @@ public class WallRunning : MonoBehaviour
     public LayerMask IsThisGround;
     public float WallRunForce;
     public float MaxWallRunTime;
-    public float WallRunTimer;
+    private float WallRunTimer;
 
     [Header("inputs")]
     private float horizontalInput;
@@ -21,8 +21,8 @@ public class WallRunning : MonoBehaviour
     public float MinJumpHeight;
     private RaycastHit LeftWall;
     private RaycastHit RightWall;
-    private bool WallIsRight;
-    private bool WallIsLeft;
+    public bool WallIsRight;
+    public bool WallIsLeft;
 
     [Header("refrences")]
     public Transform orientation;
@@ -39,8 +39,14 @@ public class WallRunning : MonoBehaviour
     void Update()
     {
         CheckForWall();
+        StateMachine();
     }
 
+    private void FixedUpdate()
+    {
+          if (PS.wallrunning)
+            WallRunMove();
+    }
 
     private void CheckForWall() 
     {
@@ -52,6 +58,7 @@ public class WallRunning : MonoBehaviour
     private bool AboveGround()
     {
         return !Physics.Raycast(transform.position, Vector3.down, MinJumpHeight, IsThisGround);
+
     }
 
     private void StateMachine()
@@ -64,7 +71,43 @@ public class WallRunning : MonoBehaviour
         //state 1 - wall running
         if ((WallIsRight || WallIsLeft) && verticalInput > 0 && AboveGround())
         {
-            //wallrunning script here
+            if (!PS.wallrunning)
+            {
+                BeginWallRun();
+            }
+        }
+        //state 3 - none
+        else
+        {
+            if (PS.wallrunning)
+            {
+                EndWallRun();
+            }
         }
     }
+
+
+    private void BeginWallRun()
+    {
+        PS.wallrunning = true;  
+    }
+
+    private void WallRunMove()
+    {
+        rb.useGravity = false;
+        rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+
+        Vector3 wallNormal = WallIsRight ? RightWall.normal : LeftWall.normal;
+        Vector3 wallForward = Vector3.Cross(wallNormal, transform.up);
+
+        //adds force when wall running
+        rb.AddForce(wallForward * WallRunForce, ForceMode.Force);
+        
+    }
+    private void EndWallRun() 
+    {
+        PS.wallrunning = false;
+        rb.useGravity = true;
+    }
+
 }

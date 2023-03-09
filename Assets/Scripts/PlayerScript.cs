@@ -28,6 +28,7 @@ public class PlayerScript : MonoBehaviour
     private Vector3 movement;
     private Vector3 velocity;
     public float gravity;
+    public float wallrunspeed;
 
     //Looking variables
     public InputAction playerrotate;
@@ -39,7 +40,16 @@ public class PlayerScript : MonoBehaviour
     private float rotationy;
     public Transform orientation;
     private bool moving;
+    Rigidbody rb;
 
+    //movement states if we want the player to be able to run, crouch, slide etc.
+    public MovementState state;
+    public enum MovementState
+    {
+        wallrunning,
+        walking
+    }
+    public bool wallrunning;
     //*******************************************************************************************************
     //!!!CHECK THIS IN INSPECTOR TO TURN LOCK PLAYER ORIENTATION TO CAMERA ORIENTATION WHEN MOVING FORWARD!!!
 
@@ -61,6 +71,7 @@ public class PlayerScript : MonoBehaviour
         
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        rb = GetComponent<Rigidbody>();
     }
 
     private void OnEnable()
@@ -79,6 +90,7 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        StateHandler();
         move = playermove.ReadValue<Vector3>();
         jumping = playerjump.IsPressed();
 
@@ -128,7 +140,9 @@ public class PlayerScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape)) {
             Application.Quit();
         }
-       
+
+
+
     }
 
     private void FixedUpdate()
@@ -166,5 +180,20 @@ public class PlayerScript : MonoBehaviour
         orientation.transform.Rotate(Vector3.up * camerascript.lookx);
     }
 
+    private void StateHandler()
+    {
+        //mode-wallrunning
+        if (wallrunning)
+        {
+            state = MovementState.wallrunning;
+            //speed = wallrunspeed;
+        }
 
+        //mode-walking
+        if (charactercontroller.isGrounded)
+        {
+            state = MovementState.walking;
+            
+        }
+    }
 }

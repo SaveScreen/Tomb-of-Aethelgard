@@ -924,7 +924,7 @@ Transform:
   m_GameObject: {fileID: 1403043331}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 1, z: 10}
+  m_LocalScale: {x: 10.441999, y: 1.0442, z: 58.069004}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1134,7 +1134,7 @@ MonoBehaviour:
   rotationspeed: 10
   velocity: {x: 0, y: 0, z: 0}
   gravity: -20
-  wallrunspeed: 30
+  wallrunspeed: 20
   playerrotate:
     m_Name: Playerrotate
     m_Type: 0
@@ -1163,7 +1163,7 @@ MonoBehaviour:
   sensitivity: -100
   orientation: {fileID: 440256705}
   state: 1
-  wallrunning: 0
+  wallrunning: 1
   tiedtocamera: 0
 --- !u!114 &1641859794
 MonoBehaviour:
@@ -1232,9 +1232,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   WallRunForce: 200
-  MaxWallRunTime: 2
+  MaxWallRunTime: 0.7
   WallCheckDistance: 0.7
   MinJumpHeight: 2
   WallIsRight: 0
   WallIsLeft: 0
   orientation: {fileID: 440256705}
+  ExitingWall: 0
+  ExitWallTime: 0.2

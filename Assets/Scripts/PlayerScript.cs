@@ -25,21 +25,23 @@ public class PlayerScript : MonoBehaviour
     public float speed;
     public float rotationspeed;
     private Vector3 move;
-    private Vector3 movement;
     public Vector3 velocity;
     public float gravity;
     public float wallrunspeed;
 
     //Looking variables
-    public InputAction playerrotate;
-    public float sensitivity;
-    private Vector2 look;
-    private float lookx;
-    //private float looky;
-    //private float rotationx;
-    private float rotationy;
     public Transform orientation;
-    private bool moving;
+
+    //**********************************************
+    //ONLY CHECK THIS BOX IF USING A CONTROLLER
+    public bool usingcontroller;
+
+    //**********************************************
+
+    private float smoothrotationtime;
+    private float smoothrotationvelocity;
+    private Vector3 direction;
+    private Vector3 movedir;
     
 
     //movement states if we want the player to be able to run, crouch, slide etc.
@@ -50,24 +52,16 @@ public class PlayerScript : MonoBehaviour
         walking
     }
     public bool wallrunning;
-    //*******************************************************************************************************
-    //!!!CHECK THIS IN INSPECTOR TO TURN LOCK PLAYER ORIENTATION TO CAMERA ORIENTATION WHEN MOVING FORWARD!!!
-
-    //NOTE: THE PLAYER WILL REVERT TO IT'S ORIGINAL ORIENTATION UPON RELEASE OF THE CAMERALOCK
-    
-    public bool tiedtocamera;
-
-    //*******************************************************************************************************
 
     // Start is called before the first frame update
     void Start()
     {
         camerascript = cam.GetComponent<CameraScript>();
         charactercontroller = gameObject.GetComponent<CharacterController>();
-        moving = false;
         isfalling = false;
         jumped = false;
         jumping = false;
+        smoothrotationtime = 0.1f;
         
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -77,14 +71,12 @@ public class PlayerScript : MonoBehaviour
     private void OnEnable()
     {
         playermove.Enable();
-        playerrotate.Enable();
         playerjump.Enable();
     }
 
     private void OnDisable()
     {
         playermove.Disable();
-        playerrotate.Disable();
         playerjump.Disable();
     }
     // Update is called once per frame
@@ -93,29 +85,7 @@ public class PlayerScript : MonoBehaviour
         StateHandler();
         move = playermove.ReadValue<Vector3>();
         jumping = playerjump.IsPressed();
-
-        //Determines if player is moving
-        if (movement.x > 0 || movement.z > 0 || movement.x < 0 || movement.z < 0) {
-            moving = true;
-
-        }
-        if (movement.x == 0 || movement.z == 0) {
-            moving = false;
-        }
-
-        //Only look around if camera is not currently turning
-        if (camerascript.cameralocked == false) {    
-            Look();    
-            
-        }
-        if (camerascript.cameralocked == true) {
-            if (tiedtocamera == true) {
-                if (moving) {
-                    LookDirectionOfCamera();
-                }
-            }
-                
-        }
+        Look();
 
         if (jumping == true && charactercontroller.isGrounded) {
             jumped = true;
@@ -141,16 +111,14 @@ public class PlayerScript : MonoBehaviour
             Application.Quit();
         }
 
-
-
     }
 
     private void FixedUpdate()
     {
-        movement = (move.z * transform.forward) + (move.x * transform.right);
-        movement.y = 0.0f;
-
-        charactercontroller.Move(movement * speed * Time.deltaTime);
+        if (direction.magnitude >= 0.1f) {
+            charactercontroller.Move(movedir.normalized * speed * Time.deltaTime); 
+        }
+               
         
         velocity.y += gravity * Time.deltaTime;
         charactercontroller.Move(velocity * Time.deltaTime); 
@@ -160,24 +128,35 @@ public class PlayerScript : MonoBehaviour
 
     //Controls player looking around
     private void Look() {
+        /****************************************
+        OLD LOOK/ROTATION SYSTEM
+        *****************************************
+
         look = playerrotate.ReadValue<Vector2>();
 
         lookx = look.x * sensitivity * Time.deltaTime;
-        //looky = look.y * sensitivity * Time.deltaTime;
+        looky = look.y * sensitivity * Time.deltaTime;
 
-        //rotationx -= looky;
+        rotationx -= looky;
         rotationy += lookx;
 
-        //rotationx = Mathf.Clamp(rotationx,-90.0f,90.0f);
+        rotationx = Mathf.Clamp(rotationx,-90.0f,90.0f);
         transform.rotation = Quaternion.Euler(0,-rotationy,0);
         orientation.transform.Rotate(Vector3.up * lookx);
-    }
+        */
 
-    //When variable "tiedtocamera" is checked, this locks the player's orientation with the camera orientation
-    void LookDirectionOfCamera() {
-        
-        transform.rotation = Quaternion.Euler(0,-camerascript.rotationy,0);
-        orientation.transform.Rotate(Vector3.up * camerascript.lookx);
+        direction = new Vector3(move.x,0,move.z).normalized;
+
+        if (direction.magnitude >= 0.1f) {
+            float targetangle = Mathf.Atan2(direction.x,direction.z) * Mathf.Rad2Deg + cam.transform.eulerAngles.y;
+            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y,targetangle, ref smoothrotationvelocity, smoothrotationtime);
+
+            
+            transform.rotation = Quaternion.Euler(0,angle,0);
+            orientation.transform.Rotate(Vector3.up * angle);
+            movedir = Quaternion.Euler(0,targetangle,0) * Vector3.forward;
+        }
+
     }
 
     private void StateHandler()

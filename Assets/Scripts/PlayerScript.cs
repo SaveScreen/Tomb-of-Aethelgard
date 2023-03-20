@@ -28,6 +28,7 @@ public class PlayerScript : MonoBehaviour
     public Vector3 velocity;
     public float gravity;
     public float wallrunspeed;
+    public Vector3 ForceForWallJump;
 
     //Looking variables
     public Transform orientation;
@@ -174,5 +175,14 @@ public class PlayerScript : MonoBehaviour
             state = MovementState.walking;
             
         }
+    }
+    //this function is for adding force when wall jumping
+    public void AddVelocity(Vector3 velocity)
+    {
+        this.velocity += velocity;
+    }
+    public void AddForce()
+    {
+        AddVelocity(ForceForWallJump);
     }
 }

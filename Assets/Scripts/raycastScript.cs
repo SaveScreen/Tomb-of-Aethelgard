@@ -63,7 +63,7 @@ public class raycastScript : MonoBehaviour {
                 }
             }else if(hit.collider.tag == "signalCatcher"){
                 for(int i = pointsRendered; i < rayBounces+2; i++){
-                    lineRenderer.SetPosition(i, ray.GetPoint(rayLength));
+                    lineRenderer.SetPosition(i, hit.point);
                 }
 
                 //FindObjectOfType<reflectionManager>().SetAllCatchersIsActivatedExcept(false, );
@@ -83,9 +83,11 @@ public class raycastScript : MonoBehaviour {
 
                 FindObjectOfType<reflectionManager>().SetAllCatchersIsActivated(false);
 
-                lineRenderer.SetPosition(pointsRendered, ray.GetPoint(rayLength));
+                //lineRenderer.SetPosition(pointsRendered, ray.GetPoint(rayLength));
+                
+                lineRenderer.SetPosition(pointsRendered, hit.point);
                 for(int i = pointsRendered; i < rayBounces+2; i++){
-                    lineRenderer.SetPosition(i, ray.GetPoint(rayLength));
+                    lineRenderer.SetPosition(i, hit.point);
                 }
             }
         }

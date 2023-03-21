@@ -9,8 +9,8 @@ public class reflectionManager : MonoBehaviour
 
     private void Update()
     {
-        DoorControlType("isActivated", 1, 1);
-        /*This means that when the IsActivated value of catcher 1 is true, door 1 opens. 
+        DoorControlType("isActivated", 2, 1);
+        /*This means that when the IsActivated value of catcher 2 is true, door 1 opens. 
         Otherwise, it closes.*/
 
         DoorControl(1, 2, 2);

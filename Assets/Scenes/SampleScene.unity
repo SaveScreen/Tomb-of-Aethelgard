@@ -248,9 +248,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 2540bf071a40e5947907419a61713405, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 50aeddaa80ba0804b9b75111519a2869, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.531
+  m_Volume: 0.235
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -344,9 +344,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: ee1ab8338281da84183970e49bd2934c, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 30f815cb5ca34e94fa5d5330cc9967ce, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.621
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1078,6 +1078,7 @@ MonoBehaviour:
   Interact: 0
   rotationSpeed: 5
   RotateClockWise: 113
+  RotateCtrClockWise: 101
 --- !u!1 &827112986
 GameObject:
   m_ObjectHideFlags: 0
@@ -2044,7 +2045,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 342f35b2b4ace7f4f92a6b23f4db1e8d, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 0526275496caeee44ba256f9aded3727, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.46
   m_Pitch: 1
@@ -2140,9 +2141,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 6fd2ccabc7037fb468618f762a34ad97, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 7ba25355120b99a46872815f8935b0ea, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.497
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2839,7 +2840,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 173d07ccd4a4b6d4db60f534f8fef86b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a9cd678a424a87241b68dbb3dd00229a, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.473
   m_Pitch: 1
@@ -3339,7 +3340,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 173d07ccd4a4b6d4db60f534f8fef86b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a9cd678a424a87241b68dbb3dd00229a, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.492
   m_Pitch: 1

@@ -764,6 +764,7 @@ MonoBehaviour:
   rotationy: 0
   playerposition: {fileID: 1641859792}
   orientation: {fileID: 553000611}
+  player: {fileID: 1641859788}
 --- !u!114 &1096192112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -983,7 +984,7 @@ Transform:
   m_GameObject: {fileID: 1403043331}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 1, z: 10}
+  m_LocalScale: {x: 10.441999, y: 1.0442, z: 58.069004}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1113,7 +1114,7 @@ MonoBehaviour:
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
-    - m_Name: 3D Vector
+    - m_Name: WASD
       m_Id: 7826c161-8bb0-43af-b15f-c9daacd9c2e6
       m_Path: 3DVector
       m_Interactions: 
@@ -1169,6 +1170,62 @@ MonoBehaviour:
       m_Groups: 
       m_Action: Playermove
       m_Flags: 8
+    - m_Name: Control Stick
+      m_Id: 0095ec3d-a759-465a-8403-d17abf5bcbf8
+      m_Path: 3DVector
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Playermove
+      m_Flags: 4
+    - m_Name: up
+      m_Id: d4c698c3-e252-409d-929a-5fedb19d1b9a
+      m_Path: 
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Playermove
+      m_Flags: 8
+    - m_Name: down
+      m_Id: 09e97ee4-5c71-4160-bc09-2bcefe29da82
+      m_Path: 
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Playermove
+      m_Flags: 8
+    - m_Name: left
+      m_Id: e69a09b8-8946-4235-8ee0-749ae8ba3be9
+      m_Path: <Gamepad>/leftStick/left
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Playermove
+      m_Flags: 8
+    - m_Name: right
+      m_Id: 220e7304-aa8f-42f9-8d44-d7083fbb1a1c
+      m_Path: <Gamepad>/leftStick/right
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Playermove
+      m_Flags: 8
+    - m_Name: forward
+      m_Id: 75203677-feb8-4388-89b9-9a3d1e859d2d
+      m_Path: <Gamepad>/leftStick/up
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Playermove
+      m_Flags: 8
+    - m_Name: backward
+      m_Id: e29035ed-a237-4cba-848f-f3ce597afbbb
+      m_Path: <Gamepad>/leftStick/down
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Playermove
+      m_Flags: 8
     m_Flags: 0
   cam: {fileID: 1096192106}
   playerjump:
@@ -1187,13 +1244,21 @@ MonoBehaviour:
       m_Groups: 
       m_Action: Playerjump
       m_Flags: 0
+    - m_Name: 
+      m_Id: 50d165b4-51d2-45b8-8d9d-266caad5d9f5
+      m_Path: <Gamepad>/buttonSouth
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Playerjump
+      m_Flags: 0
     m_Flags: 0
   jumpspeed: 10
   speed: 20
   rotationspeed: 10
   velocity: {x: 0, y: 0, z: 0}
   gravity: -20
-  wallrunspeed: 30
+  wallrunspeed: 20
   playerrotate:
     m_Name: Playerrotate
     m_Type: 0
@@ -1219,11 +1284,10 @@ MonoBehaviour:
       m_Action: Playerrotate
       m_Flags: 0
     m_Flags: 0
-  sensitivity: -100
   orientation: {fileID: 440256705}
+  usingcontroller: 0
   state: 1
-  wallrunning: 0
-  tiedtocamera: 0
+  wallrunning: 1
 --- !u!114 &1641859794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1291,9 +1355,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   WallRunForce: 200
-  MaxWallRunTime: 2
+  MaxWallRunTime: 0.7
   WallCheckDistance: 0.7
   MinJumpHeight: 2
   WallIsRight: 0
   WallIsLeft: 0
   orientation: {fileID: 440256705}
+  ExitingWall: 0
+  ExitWallTime: 0.2

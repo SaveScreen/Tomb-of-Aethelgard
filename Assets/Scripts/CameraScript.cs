@@ -22,15 +22,18 @@ public class CameraScript : MonoBehaviour
     public float rotationy;
     //**************************
 
-
     public Transform playerposition;
     public Transform orientation;
+    public GameObject player;
+    private PlayerScript playerscript;
+    private bool usingcontroller;
     
     // Start is called before the first frame update
     void Start()
     {
-
+        playerscript = player.GetComponent<PlayerScript>();
         cameralocked = false;
+        usingcontroller = playerscript.usingcontroller;
     }
 
     void OnEnable() {
@@ -46,11 +49,19 @@ public class CameraScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        cameralocked = cameralock.IsPressed();
+        usingcontroller = playerscript.usingcontroller;
         transform.position = playerposition.transform.position;
-        if (cameralocked == true) {
+
+        //If not using a controller, use cameralock feature
+        if (usingcontroller == false) {
+            cameralocked = cameralock.IsPressed();
+            if (cameralocked == true) {
+                Look();
+            }
+        } else {
             Look();
         }
+        
     }
 
     private void Look() {

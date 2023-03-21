@@ -28,6 +28,11 @@ public class WallRunning : MonoBehaviour
     public Transform orientation;
     private PlayerScript PS;
     private CharacterController CC;
+
+    [Header("Exiting Wallrun")]
+    public bool ExitingWall;
+    public float ExitWallTime;
+    private float ExitWallTimer;
     // Start is called before the first frame update
     void Start()
     {
@@ -69,13 +74,43 @@ public class WallRunning : MonoBehaviour
 
 
         //state 1 - wall running
-        if ((WallIsRight || WallIsLeft) && verticalInput > 0 && AboveGround())
+        if ((WallIsRight || WallIsLeft) && verticalInput > 0 && AboveGround() && !ExitingWall)
         {
             if (!PS.wallrunning)
             {
                 BeginWallRun();
             }
+            //wall run timer
+            if (WallRunTimer > 0)
+            {
+                WallRunTimer -= Time.deltaTime;
+            }
+            if (WallRunTimer <= 0 && PS.wallrunning)
+            {
+                ExitingWall= true;
+                ExitWallTimer = ExitWallTime;
+            }
         }
+
+        //state 2 - exiting wall run
+        else if (ExitingWall)
+        {
+            if (PS.wallrunning)
+            {
+                EndWallRun();
+            }
+
+            if (ExitWallTimer > 0)
+            {
+                ExitWallTimer -= Time.deltaTime;
+            }
+
+            if (ExitWallTimer <= 0)
+            {
+                ExitingWall = false;
+            }
+        }
+
         //state 3 - none
         else
         {
@@ -83,6 +118,7 @@ public class WallRunning : MonoBehaviour
             {
                 EndWallRun();
             }
+
         }
     }
 
@@ -90,11 +126,12 @@ public class WallRunning : MonoBehaviour
     private void BeginWallRun()
     {
         PS.wallrunning = true;
-        //WallRunTimer = MaxWallRunTime;
+        WallRunTimer = MaxWallRunTime;
     }
 
     private void WallRunMove()
     {
+
 
         PS.velocity = new Vector3(PS.velocity.x, 0f, PS.velocity.z);
 
@@ -102,7 +139,7 @@ public class WallRunning : MonoBehaviour
         Vector3 wallForward = Vector3.Cross(wallNormal, transform.up);
 
         //adds force when wall running
-        //CC.AddForce(wallForward * WallRunForce, ForceMode.Force);
+        //PS.AddForce(wallForward * WallRunForce, ForceMode.Force);
         
        // Debug.Log("wall running");
     }

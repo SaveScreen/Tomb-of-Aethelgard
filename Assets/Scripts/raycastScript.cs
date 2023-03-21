@@ -31,9 +31,7 @@ public class raycastScript : MonoBehaviour {
     void Update()
     {   
         //Q was just used for bugtesting. 
-        if(Input.GetKeyUp(KeyCode.Q)){
-            transform.Rotate(0, 5, 0);
-        }
+       
         pointsRendered = 0;        
         bouncesRemaining = rayBounces;
         launchRay(transform.position, transform.forward);

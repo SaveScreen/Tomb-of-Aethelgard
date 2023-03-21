@@ -28,7 +28,7 @@ public class PlayerScript : MonoBehaviour
     public Vector3 velocity;
     public float gravity;
     public float wallrunspeed;
-    public Vector3 ForceForWallJump;
+   
 
     //Looking variables
     public Transform orientation;
@@ -100,8 +100,10 @@ public class PlayerScript : MonoBehaviour
             }
             else {
                 if (charactercontroller.isGrounded == true) {
+                   
                     isfalling = false;
                     jumped = false;
+
                 }
             }
         }   
@@ -166,14 +168,14 @@ public class PlayerScript : MonoBehaviour
         if (wallrunning)
         {
             state = MovementState.wallrunning;
-            //speed = wallrunspeed;
+           
         }
 
         //mode-walking
         if (charactercontroller.isGrounded)
         {
             state = MovementState.walking;
-            
+            velocity.x = 0f;
         }
     }
     //this function is for adding force when wall jumping
@@ -181,8 +183,5 @@ public class PlayerScript : MonoBehaviour
     {
         this.velocity += velocity;
     }
-    public void AddForce()
-    {
-        AddVelocity(ForceForWallJump);
-    }
+    
 }

@@ -1194,37 +1194,12 @@ MonoBehaviour:
       m_Action: Playerjump
       m_Flags: 0
     m_Flags: 0
-  jumpspeed: 10
+  jumpspeed: 15
   speed: 20
   rotationspeed: 10
   velocity: {x: 0, y: 0, z: 0}
   gravity: -20
   wallrunspeed: 20
-  playerrotate:
-    m_Name: Playerrotate
-    m_Type: 0
-    m_ExpectedControlType: Vector2
-    m_Id: d20c470a-cb9d-48ee-9e41-2c4c2dec95bb
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 160f265a-0c91-4f7f-97ca-329b16ebc554
-      m_Path: <Mouse>/delta
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Playerrotate
-      m_Flags: 0
-    - m_Name: 
-      m_Id: e1f140b7-2c95-45bc-91a7-39f52de7ffbd
-      m_Path: <Gamepad>/rightStick
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Playerrotate
-      m_Flags: 0
-    m_Flags: 0
   orientation: {fileID: 440256705}
   usingcontroller: 0
   state: 1
@@ -1297,6 +1272,9 @@ MonoBehaviour:
     m_Bits: 128
   WallRunForce: 200
   MaxWallRunTime: 0.7
+  WallJumpUpForce: 20
+  WallJumpSideForce: 10
+  WallJumpKey: 32
   WallCheckDistance: 0.7
   MinJumpHeight: 2
   WallIsRight: 0

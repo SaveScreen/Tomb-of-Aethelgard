@@ -878,7 +878,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lineRenderer: {fileID: 699011429}
   rayBounces: 3
-  rayLength: 10
+  rayLength: 20
 --- !u!114 &699011431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1916,7 +1916,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 881794945}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 11.74}
+  m_LocalPosition: {x: -0.76, y: 0, z: 11.74}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -3400,7 +3400,7 @@ MonoBehaviour:
   WallJumpUpForce: 20
   WallJumpSideForce: 10
   WallJumpKey: 32
-  WallCheckDistance: 0.7
+  WallCheckDistance: 0.8
   MinJumpHeight: 1
   WallIsRight: 0
   WallIsLeft: 0

@@ -12,7 +12,13 @@ public class WallRunning : MonoBehaviour
     public float MaxWallRunTime;
     private float WallRunTimer;
 
+    [Header("Exiting Wallrun")]
+
+    public float WallJumpUpForce;
+    public float WallJumpSideForce;
+
     [Header("inputs")]
+    public KeyCode WallJumpKey = KeyCode.Space;
     private float horizontalInput;
     private float verticalInput;
 
@@ -90,6 +96,9 @@ public class WallRunning : MonoBehaviour
                 ExitingWall= true;
                 ExitWallTimer = ExitWallTime;
             }
+
+            //wall jumping 
+            if (Input.GetKeyDown(WallJumpKey)) WallJump();
         }
 
         //state 2 - exiting wall run
@@ -146,7 +155,15 @@ public class WallRunning : MonoBehaviour
     private void EndWallRun() 
     {
         PS.wallrunning = false;
-    
+        //PS.velocity = new Vector3(0f, 0f, 0f);
     }
+    private void WallJump()
+    {
+        Vector3 wallNormal = WallIsRight ? RightWall.normal : LeftWall.normal;
 
+        Vector3 ForceToApply = transform.up * WallJumpUpForce + wallNormal * WallJumpSideForce;
+        //resets the y velocity adds the force
+        //PS.velocity = new Vector3(PS.velocity.x, 0f, PS.velocity.z);
+        PS.AddVelocity(ForceToApply);
+    }
 }

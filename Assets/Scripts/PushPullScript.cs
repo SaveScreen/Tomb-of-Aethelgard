@@ -42,8 +42,7 @@ public class PushPullScript : MonoBehaviour
                     if (raycastHit.transform.TryGetComponent(out PushablePullable))
                     {
                         PushablePullable.PushPullInteract(PushPullPoint);
-
-                        PS.transform.rotation = Quaternion.Euler(0, 0, 0);
+                    
                         PS.speed = PS.speed - pullspeed;
                     }
                 }

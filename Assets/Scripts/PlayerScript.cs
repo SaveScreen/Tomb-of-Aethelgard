@@ -6,31 +6,30 @@ using UnityEngine.InputSystem;
 
 public class PlayerScript : MonoBehaviour
 {
-    //Movement variables
+    [Header("Movement Variables")]
     public InputAction playermove;
     private CharacterController charactercontroller;
 
-    //Camera reference
+    [Header("Camera Refrence")]
     public GameObject cam;
     private CameraScript camerascript;
 
-    //Jumping variables
+    [Header("Jumping Variables")]
     public InputAction playerjump;
     public float jumpspeed;
     private bool jumped;
     private bool jumping;
     private bool isfalling;
 
-    //Character movement
+    [Header("Character Movement")]
     public float speed;
     public float rotationspeed;
     private Vector3 move;
     public Vector3 velocity;
     public float gravity;
     public float wallrunspeed;
-   
 
-    //Looking variables
+    [Header("Looking Variable")]
     public Transform orientation;
 
     //**********************************************

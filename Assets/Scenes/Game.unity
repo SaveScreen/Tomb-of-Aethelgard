@@ -3452,12 +3452,10 @@ MonoBehaviour:
       m_Action: Playerjump
       m_Flags: 0
     m_Flags: 0
-  jumpspeed: 10
+  jumpspeed: 20
   speed: 10
-  rotationspeed: 10
   velocity: {x: 0, y: 0, z: 0}
   gravity: -30
-  wallrunspeed: 20
   orientation: {fileID: 440256705}
   usingcontroller: 0
   state: 1

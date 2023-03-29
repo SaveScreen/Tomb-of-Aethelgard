@@ -23,11 +23,10 @@ public class PlayerScript : MonoBehaviour
 
     [Header("Character Movement")]
     public float speed;
-    public float rotationspeed;
     private Vector3 move;
     public Vector3 velocity;
     public float gravity;
-    public float wallrunspeed;
+    
 
     [Header("Looking Variable")]
     public Transform orientation;

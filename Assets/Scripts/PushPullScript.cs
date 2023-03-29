@@ -41,9 +41,9 @@ public class PushPullScript : MonoBehaviour
                 {
                     if (raycastHit.transform.TryGetComponent(out PushablePullable))
                     {
-                        PushablePullable.PushPullInteract(PushPullPoint);
-                    
+                        PushablePullable.PushPullInteract(PushPullPoint);                   
                         PS.speed = PS.speed - pullspeed;
+                        PS.playerjump.Disable();
                     }
                 }
             }
@@ -52,6 +52,7 @@ public class PushPullScript : MonoBehaviour
                 PushablePullable.StopPushingPulling();
                 PushablePullable = null;
                 PS.speed = PS.speed + pullspeed;
+                PS.playerjump.Enable();
             }
           }
        }

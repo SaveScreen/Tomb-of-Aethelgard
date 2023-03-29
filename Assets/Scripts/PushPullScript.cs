@@ -44,6 +44,7 @@ public class PushPullScript : MonoBehaviour
                         PushablePullable.PushPullInteract(PushPullPoint);                   
                         PS.speed = PS.speed - pullspeed;
                         PS.playerjump.Disable();
+                        PS.IsPushingPulling = true;
                     }
                 }
             }
@@ -53,6 +54,7 @@ public class PushPullScript : MonoBehaviour
                 PushablePullable = null;
                 PS.speed = PS.speed + pullspeed;
                 PS.playerjump.Enable();
+                PS.IsPushingPulling = false;
             }
           }
        }

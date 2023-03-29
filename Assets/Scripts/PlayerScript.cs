@@ -13,6 +13,7 @@ public class PlayerScript : MonoBehaviour
     [Header("Camera Refrence")]
     public GameObject cam;
     private CameraScript camerascript;
+    public bool IsPushingPulling;
 
     [Header("Jumping Variables")]
     public InputAction playerjump;
@@ -64,6 +65,7 @@ public class PlayerScript : MonoBehaviour
         
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        IsPushingPulling = false;
        
     }
 
@@ -152,8 +154,10 @@ public class PlayerScript : MonoBehaviour
             float targetangle = Mathf.Atan2(direction.x,direction.z) * Mathf.Rad2Deg + cam.transform.eulerAngles.y;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y,targetangle, ref smoothrotationvelocity, smoothrotationtime);
 
-            
-            transform.rotation = Quaternion.Euler(0,angle,0);
+            if (IsPushingPulling !=true) 
+            { 
+                transform.rotation = Quaternion.Euler(0, angle, 0); 
+            } 
             orientation.transform.Rotate(Vector3.up * angle);
             movedir = Quaternion.Euler(0,targetangle,0) * Vector3.forward;
         }

@@ -38,6 +38,9 @@ public class PlayerScript : MonoBehaviour
 
     //**********************************************
 
+    public GameObject cutscene;
+    private CutsceneScript cutscenescript;
+
     private float smoothrotationtime;
     private float smoothrotationvelocity;
     private Vector3 direction;
@@ -58,6 +61,7 @@ public class PlayerScript : MonoBehaviour
     {
         camerascript = cam.GetComponent<CameraScript>();
         charactercontroller = gameObject.GetComponent<CharacterController>();
+        cutscenescript = cutscene.GetComponent<CutsceneScript>();
         isfalling = false;
         jumped = false;
         jumping = false;

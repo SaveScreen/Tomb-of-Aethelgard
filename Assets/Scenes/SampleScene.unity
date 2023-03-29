@@ -953,6 +953,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!120 &813615844
 LineRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -971,7 +972,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8a66c9deb59cb7c4ba93f11e899b3577, type: 2}
+  - {fileID: 2100000, guid: 67f0f93b9a8727a45a123c9a356295dd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1046,10 +1047,13 @@ LineRenderer:
     numCapVertices: 0
     alignment: 0
     textureMode: 0
+    textureScale: {x: 1, y: 1}
     shadowBias: 0.5
     generateLightingData: 0
+  m_MaskInteraction: 0
   m_UseWorldSpace: 1
   m_Loop: 0
+  m_ApplyActiveColorSpace: 0
 --- !u!65 &813615845
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3131,6 +3135,7 @@ MonoBehaviour:
       m_Flags: 8
     m_Flags: 0
   cam: {fileID: 862459584}
+  IsPushingPulling: 0
   playerjump:
     m_Name: Playerjump
     m_Type: 1
@@ -3158,12 +3163,11 @@ MonoBehaviour:
     m_Flags: 0
   jumpspeed: 15
   speed: 5
-  rotationspeed: 10
   velocity: {x: 0, y: 0, z: 0}
   gravity: -20
-  wallrunspeed: 20
   orientation: {fileID: 1088106824}
   usingcontroller: 0
+  cutscene: {fileID: 0}
   state: 1
   wallrunning: 1
 --- !u!114 &1917017471

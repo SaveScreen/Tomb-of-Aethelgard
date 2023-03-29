@@ -118,12 +118,6 @@ public class PlayerScript : MonoBehaviour
             Application.Quit();
         }
 
-        //Debug for starting a cutscene
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            cutscenescript.startcutscene = true;
-        }
-
     }
 
     private void FixedUpdate()

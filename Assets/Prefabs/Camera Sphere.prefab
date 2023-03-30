@@ -247,7 +247,7 @@ Transform:
   - {fileID: 1129113328909385998}
   - {fileID: 1129113329320768217}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1129113329851317271
 MeshFilter:
@@ -390,4 +390,4 @@ MonoBehaviour:
   m_DefaultControlScheme: 
   m_DefaultActionMap: New action map
   m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 1129113328909385993}

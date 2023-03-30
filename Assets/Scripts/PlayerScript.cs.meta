@@ -3,7 +3,10 @@ guid: 0d917ddd013be3948ba7659a60ba098b
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - cam: {instanceID: 0}
+  - orientation: {instanceID: 0}
+  - cutscene: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

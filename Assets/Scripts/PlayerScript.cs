@@ -11,8 +11,8 @@ public class PlayerScript : MonoBehaviour
     private CharacterController charactercontroller;
 
     [Header("Camera Refrence")]
-    public GameObject cam;
-    private CameraScript camerascript;
+    //public GameObject cam;
+    //private CameraScript camerascript;
     public bool IsPushingPulling;
 
     [Header("Jumping Variables")]
@@ -30,7 +30,7 @@ public class PlayerScript : MonoBehaviour
     
 
     [Header("Looking Variable")]
-    public Transform orientation;
+    //public Transform orientation;
 
     //**********************************************
     //ONLY CHECK THIS BOX IF USING A CONTROLLER
@@ -41,8 +41,8 @@ public class PlayerScript : MonoBehaviour
     public GameObject cutscene;
     private CutsceneScript cutscenescript;
 
-    private float smoothrotationtime;
-    private float smoothrotationvelocity;
+    //private float smoothrotationtime;
+    //private float smoothrotationvelocity;
     private Vector3 direction;
     private Vector3 movedir;
     
@@ -59,13 +59,13 @@ public class PlayerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        camerascript = cam.GetComponent<CameraScript>();
+        //camerascript = cam.GetComponent<CameraScript>();
         charactercontroller = gameObject.GetComponent<CharacterController>();
         cutscenescript = cutscene.GetComponent<CutsceneScript>();
         isfalling = false;
         jumped = false;
         jumping = false;
-        smoothrotationtime = 0.1f;
+        //smoothrotationtime = 0.1f;
         
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -90,7 +90,7 @@ public class PlayerScript : MonoBehaviour
         StateHandler();
         move = playermove.ReadValue<Vector3>();
         jumping = playerjump.IsPressed();
-        Look();
+        //Look();
 
         if (jumping == true && charactercontroller.isGrounded) {
             jumped = true;
@@ -133,9 +133,11 @@ public class PlayerScript : MonoBehaviour
     }
 
 
+
+    /*************************************************************************************
     //Controls player looking around
     private void Look() {
-        /****************************************
+        ****************************************
         OLD LOOK/ROTATION SYSTEM
         *****************************************
 
@@ -150,7 +152,7 @@ public class PlayerScript : MonoBehaviour
         rotationx = Mathf.Clamp(rotationx,-90.0f,90.0f);
         transform.rotation = Quaternion.Euler(0,-rotationy,0);
         orientation.transform.Rotate(Vector3.up * lookx);
-        */
+        
 
         direction = new Vector3(move.x,0,move.z).normalized;
 
@@ -167,6 +169,8 @@ public class PlayerScript : MonoBehaviour
         }
 
     }
+
+    *****************************************************************************************/
 
     private void StateHandler()
     {

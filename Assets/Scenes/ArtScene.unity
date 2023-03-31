@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -16548,6 +16548,7 @@ MonoBehaviour:
       m_Flags: 8
     m_Flags: 0
   cam: {fileID: 1096192106}
+  IsPushingPulling: 0
   playerjump:
     m_Name: Playerjump
     m_Type: 1
@@ -16575,12 +16576,11 @@ MonoBehaviour:
     m_Flags: 0
   jumpspeed: 10
   speed: 20
-  rotationspeed: 10
   velocity: {x: 0, y: 0, z: 0}
   gravity: -20
-  wallrunspeed: 20
   orientation: {fileID: 440256705}
   usingcontroller: 0
+  cutscene: {fileID: 0}
   state: 1
   wallrunning: 1
 --- !u!114 &1641859794

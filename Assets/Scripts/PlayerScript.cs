@@ -11,7 +11,7 @@ public class PlayerScript : MonoBehaviour
     private CharacterController charactercontroller;
 
     [Header("Camera Refrence")]
-    //public GameObject cam;
+    public GameObject cam;
     //private CameraScript camerascript;
     public bool IsPushingPulling;
 
@@ -30,7 +30,7 @@ public class PlayerScript : MonoBehaviour
     
 
     [Header("Looking Variable")]
-    //public Transform orientation;
+    public Transform orientation;
 
     //**********************************************
     //ONLY CHECK THIS BOX IF USING A CONTROLLER
@@ -41,8 +41,8 @@ public class PlayerScript : MonoBehaviour
     public GameObject cutscene;
     private CutsceneScript cutscenescript;
 
-    //private float smoothrotationtime;
-    //private float smoothrotationvelocity;
+    private float smoothrotationtime;
+    private float smoothrotationvelocity;
     private Vector3 direction;
     private Vector3 movedir;
     
@@ -65,7 +65,7 @@ public class PlayerScript : MonoBehaviour
         isfalling = false;
         jumped = false;
         jumping = false;
-        //smoothrotationtime = 0.1f;
+        smoothrotationtime = 0.1f;
         
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -90,7 +90,7 @@ public class PlayerScript : MonoBehaviour
         StateHandler();
         move = playermove.ReadValue<Vector3>();
         jumping = playerjump.IsPressed();
-        //Look();
+        LookAndMove();
 
         if (jumping == true && charactercontroller.isGrounded) {
             jumped = true;
@@ -132,10 +132,25 @@ public class PlayerScript : MonoBehaviour
         
     }
 
+    //Controls player looking around
+    private void LookAndMove() {
+        direction = new Vector3(move.x,0,move.z).normalized;
 
+        if (direction.magnitude >= 0.1f) {
+            float targetangle = Mathf.Atan2(direction.x,direction.z) * Mathf.Rad2Deg + cam.transform.eulerAngles.y;
+            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y,targetangle, ref smoothrotationvelocity, smoothrotationtime);
+
+            if (IsPushingPulling !=true) 
+            { 
+                transform.rotation = Quaternion.Euler(0, angle, 0); 
+            } 
+            orientation.transform.Rotate(Vector3.up * angle);
+            movedir = Quaternion.Euler(0,targetangle,0) * Vector3.forward;
+        }
+
+    }
 
     /*************************************************************************************
-    //Controls player looking around
     private void Look() {
         ****************************************
         OLD LOOK/ROTATION SYSTEM
@@ -153,21 +168,6 @@ public class PlayerScript : MonoBehaviour
         transform.rotation = Quaternion.Euler(0,-rotationy,0);
         orientation.transform.Rotate(Vector3.up * lookx);
         
-
-        direction = new Vector3(move.x,0,move.z).normalized;
-
-        if (direction.magnitude >= 0.1f) {
-            float targetangle = Mathf.Atan2(direction.x,direction.z) * Mathf.Rad2Deg + cam.transform.eulerAngles.y;
-            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y,targetangle, ref smoothrotationvelocity, smoothrotationtime);
-
-            if (IsPushingPulling !=true) 
-            { 
-                transform.rotation = Quaternion.Euler(0, angle, 0); 
-            } 
-            orientation.transform.Rotate(Vector3.up * angle);
-            movedir = Quaternion.Euler(0,targetangle,0) * Vector3.forward;
-        }
-
     }
 
     *****************************************************************************************/

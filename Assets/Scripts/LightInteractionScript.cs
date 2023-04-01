@@ -12,13 +12,17 @@ public class LightInteractionScript : MonoBehaviour
     [Header("Interactions")]
     
 
-    public float rotationSpeed = 10.0f;
+    public float rotationJump = 10.0f;
+    public float rotationSpeed = 5f;
 
-    
+    //public float tweenValue = 0.9f;
 
     [Header("Inputs")]
     public KeyCode RotateClockWise = KeyCode.Q;
     public KeyCode RotateCtrClockWise = KeyCode.E;
+
+    private float rotationTarget;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,7 +48,13 @@ public class LightInteractionScript : MonoBehaviour
                 RotateLightCtrClockWise();
             }
         }
-       
+
+        if(!Mathf.Approximately(transform.rotation.y,  rotationTarget)){
+            RotateTowards(rotationTarget);
+        }
+
+       Debug.Log("current y: " + transform.rotation.y);
+       Debug.Log("target: " + rotationTarget);
     }
         void OnTriggerEnter(Collider other)
         {
@@ -64,11 +74,15 @@ public class LightInteractionScript : MonoBehaviour
 
     private void RotateLightClockWise()
     {
-        transform.Rotate(0,rotationSpeed, 0);
+        rotationTarget = transform.rotation.y + rotationJump;
     }
 
     private void RotateLightCtrClockWise()
     {
-        transform.Rotate(0, -rotationSpeed, 0);
+        rotationTarget = transform.rotation.y - rotationJump;
+    }
+
+    private void RotateTowards(float endRotation){
+        transform.Rotate(0,rotationSpeed*Time.deltaTime, 0);
     }
 }

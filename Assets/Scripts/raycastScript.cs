@@ -7,6 +7,17 @@ public class raycastScript : MonoBehaviour {
     [Header("Line Renderer")]
     public LineRenderer lineRenderer; //drag the lineRendered component in here
 
+/* -- This seems impossible. Not deleting for now in case I go back to this idea.
+    [Header("Particle System")]
+    //private ParticleSystem _particles;
+    //public int swag;
+    public ParticleSystem particles;
+    {
+        get{return _particles;}
+        set{_particles = value;}
+    }*/
+
+
     [Header("Ray Data")]
     public int rayBounces = 2; //the amount of times the ray can bounce
     public float rayLength = 5f; //maximum length of a ray
@@ -104,4 +115,15 @@ public class raycastScript : MonoBehaviour {
             }
         }
     }
+
+/*    void MakeParticles(LineRenderer lineRenderer){
+        Mesh m = new Mesh();
+        lineRenderer.BakeMesh(m);
+        var shape = particles.shape;
+        shape.shapeType = ParticleSystemShapeType.Mesh;
+        shape.meshShapeType = ParticleSystemMeshShapeType.Triangle;
+        shape.mesh = m;
+        //particles.shape = shape;
+
+    }*/
 }

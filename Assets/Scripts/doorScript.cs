@@ -12,6 +12,12 @@ public class doorScript : MonoBehaviour
     public float openSpeed = 2;
     public float closeSpeed = 1;
 
+
+   // [Header("Tween value | 0.0-1.0")]
+    //public float tweenValue = 1; 
+    //1 means no tweening. 0 is instantaneous movement. 
+    //Caden recommends 0.3
+
     public AudioSource doorMoveAudio;
     private bool audioIsPlaying = false;
 
@@ -64,10 +70,16 @@ public class doorScript : MonoBehaviour
         }
     }
     
-
+    //private Vector3 vel = Vector3.zero;
     void Translate(Vector3 toPoint, float speed)
     {
-        transform.position = Vector3.MoveTowards(transform.position, toPoint, Time.deltaTime * speed);
+        float dist = Vector3.Distance(transform.position, toPoint);
+        float currentSpeed = speed *dist;
+        currentSpeed = Mathf.Clamp(currentSpeed, 0.3f, speed);
+        //Debug.Log(currentSpeed);
+
+        transform.position = Vector3.MoveTowards(transform.position, toPoint, Time.deltaTime * currentSpeed);
+        //transform.position = Vector3.SmoothDamp(transform.position, toPoint, ref vel, tweenValue);
         if(!audioIsPlaying){
             audioIsPlaying = true;
             doorMoveAudio.Play();

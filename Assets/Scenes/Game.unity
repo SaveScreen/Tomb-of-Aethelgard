@@ -1303,6 +1303,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Interact: 0
+  rotationJump: 45
   rotationSpeed: 45
   RotateClockWise: 113
   RotateCtrClockWise: 101
@@ -2885,6 +2886,7 @@ GameObject:
   - component: {fileID: 997636542}
   - component: {fileID: 997636541}
   - component: {fileID: 997636540}
+  - component: {fileID: 997636543}
   m_Layer: 0
   m_Name: CM FreeLook1
   m_TagString: Untagged
@@ -3030,6 +3032,29 @@ Transform:
   m_Father: {fileID: 1937883655}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &997636543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 997636539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00b2d199b96b516448144ab30fb26aed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ApplyAfter: 2
+  m_ChannelMask: 1
+  m_Gain: 1
+  m_Use2DDistance: 0
+  m_UseCameraSpace: 1
+  m_ReactionSettings:
+    m_SecondaryNoise: {fileID: 0}
+    m_AmplitudeGain: 1
+    m_FrequencyGain: 1
+    m_Duration: 1
+    m_NoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &1005960635
 GameObject:
   m_ObjectHideFlags: 0

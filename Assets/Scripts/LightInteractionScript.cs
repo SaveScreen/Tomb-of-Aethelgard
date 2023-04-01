@@ -53,8 +53,8 @@ public class LightInteractionScript : MonoBehaviour
             RotateTowards(rotationTarget);
         }
 
-       Debug.Log("current y: " + transform.rotation.y);
-       Debug.Log("target: " + rotationTarget);
+       /*Debug.Log("current y: " + transform.rotation.y);
+       Debug.Log("target: " + rotationTarget);*/
     }
         void OnTriggerEnter(Collider other)
         {

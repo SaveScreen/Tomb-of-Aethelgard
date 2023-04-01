@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class doorScript : MonoBehaviour
 {
@@ -13,10 +14,13 @@ public class doorScript : MonoBehaviour
     public float closeSpeed = 1;
 
 
-   // [Header("Tween value | 0.0-1.0")]
+    // [Header("Tween value | 0.0-1.0")]
     //public float tweenValue = 1; 
     //1 means no tweening. 0 is instantaneous movement. 
     //Caden recommends 0.3
+
+    /********refrence for screen shake***********/
+    private CinemachineImpulseSource impulseSource;
 
     public AudioSource doorMoveAudio;
     private bool audioIsPlaying = false;
@@ -26,6 +30,7 @@ public class doorScript : MonoBehaviour
     void Start()
     {
         shouldBeOpen = startsOpen;
+        impulseSource = GetComponent<CinemachineImpulseSource>();
     }
 
     void Update()
@@ -45,9 +50,11 @@ public class doorScript : MonoBehaviour
 
         if (shouldBeOpen == true)
         {
+        
             if (transform.position != openPosition.transform.position)
             {
                 Translate(openPosition.transform.position, openSpeed);
+                ScreenShakeManager.instance.CameraShake(impulseSource);
             }
             else
             {

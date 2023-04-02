@@ -15,6 +15,11 @@ public class LightInteractionScript : MonoBehaviour
     public float rotationJump = 10.0f;
     public float rotationSpeed = 5f;
 
+    private bool rotCW; //is Rotating Clockwise
+    private float targetTotalRot; //in degrees, counts past 360
+    private float currentTotalRot = 0f; //in degrees, counts past 360
+    private bool currentlyRotating = false;
+
     //public float tweenValue = 0.9f;
 
     [Header("Inputs")]
@@ -37,7 +42,7 @@ public class LightInteractionScript : MonoBehaviour
 
     void Update()
     {
-        if (Interact == true)
+        if (Interact == true && !currentlyRotating)
         {
             if (Input.GetKeyDown(RotateClockWise))
             {
@@ -49,12 +54,15 @@ public class LightInteractionScript : MonoBehaviour
             }
         }
 
-        if(!Mathf.Approximately(transform.rotation.y,  rotationTarget)){
+        if(!Mathf.Approximately(transform.eulerAngles.y,  rotationTarget)){
+            currentlyRotating = true;
             RotateTowards(rotationTarget);
+        } else{
+            currentlyRotating = false;
         }
 
-       /*Debug.Log("current y: " + transform.rotation.y);
-       Debug.Log("target: " + rotationTarget);*/
+       Debug.Log("current y: " + transform.eulerAngles.y);
+       Debug.Log("target: " + rotationTarget);
     }
         void OnTriggerEnter(Collider other)
         {
@@ -74,15 +82,56 @@ public class LightInteractionScript : MonoBehaviour
 
     private void RotateLightClockWise()
     {
-        rotationTarget = transform.rotation.y + rotationJump;
+        rotationTarget = transform.eulerAngles.y + (rotationJump);
+        
+        //constrain euler angles to x >= 0 and x < 360
+        if(rotationTarget >= 360){
+            rotationTarget -= 360;
+        }
+        rotCW = true;
+        targetTotalRot += rotationJump;
     }
 
     private void RotateLightCtrClockWise()
     {
-        rotationTarget = transform.rotation.y - rotationJump;
+        rotationTarget = transform.eulerAngles.y - (rotationJump); 
+
+        //constrain euler angles to x >= 0 and x < 360
+        if(rotationTarget < 0){
+            rotationTarget += 360;
+        }
+        rotCW = false;
+        targetTotalRot -= rotationJump;
     }
 
     private void RotateTowards(float endRotation){
-        transform.Rotate(0,rotationSpeed*Time.deltaTime, 0);
+        if(rotCW){
+            Vector3 eulerA = new Vector3();
+            eulerA = transform.eulerAngles;
+            eulerA += new Vector3(0f, rotationSpeed * Time.deltaTime, 0f);
+            transform.eulerAngles = eulerA;
+
+            //keep track of total rotation
+            currentTotalRot += rotationSpeed *Time.deltaTime;
+
+            //adjust for overshooting
+            if(currentTotalRot > targetTotalRot){
+                transform.eulerAngles = new Vector3(transform.eulerAngles.x, endRotation, transform.eulerAngles.z);
+            }
+        }
+        else{
+            Vector3 eulerA = new Vector3();
+            eulerA = transform.eulerAngles;
+            eulerA -= new Vector3(0f, rotationSpeed * Time.deltaTime, 0f);
+            transform.eulerAngles = eulerA;
+
+            //keep track of total rotation
+            currentTotalRot -= rotationSpeed *Time.deltaTime;
+
+            //adjust for overshooting
+            if(currentTotalRot < targetTotalRot){
+                transform.eulerAngles = new Vector3(transform.eulerAngles.x, endRotation, transform.eulerAngles.z);
+            }
+        }
     }
 }

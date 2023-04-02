@@ -35,18 +35,6 @@ public class doorScript : MonoBehaviour
 
     void Update()
     {
-        /*
-        if (shouldBeOpen && transform.position != openPosition.transform.position)
-        {
-            //transform.position = openPosition.transform.position;
-            Translate(openPosition.transform.position, openSpeed);
-            Debug.Log("1");
-        } else if (!shouldBeOpen && transform.position != closedPosition.transform.position)
-        {
-            //transform.position = closedPosition.transform.position;
-            Translate(closedPosition.transform.position, closeSpeed);
-            Debug.Log("2");
-        }*/
 
         if (shouldBeOpen == true)
         {
@@ -67,6 +55,7 @@ public class doorScript : MonoBehaviour
             if (transform.position != closedPosition.transform.position)
             {
                 Translate(closedPosition.transform.position, closeSpeed);
+                ScreenShakeManager.instance.CameraShake(impulseSource);
             }
             else
             {
@@ -86,6 +75,8 @@ public class doorScript : MonoBehaviour
         //Debug.Log(currentSpeed);
 
         transform.position = Vector3.MoveTowards(transform.position, toPoint, Time.deltaTime * currentSpeed);
+        
+        //--------almost used this but didnt quite work--------------
         //transform.position = Vector3.SmoothDamp(transform.position, toPoint, ref vel, tweenValue);
         if(!audioIsPlaying){
             audioIsPlaying = true;

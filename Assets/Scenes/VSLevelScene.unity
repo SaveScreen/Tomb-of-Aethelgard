@@ -9401,6 +9401,12 @@ MonoBehaviour:
   PushPull:
     serializedVersion: 2
     m_Bits: 256
+  pushSound: {fileID: 494848738}
+--- !u!82 &494848738 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4229629036613203465, guid: f85bca4d385b65e4a8efbb908641116b, type: 3}
+  m_PrefabInstance: {fileID: 1712419374}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &497950091 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6138453889076753451, guid: 5d0d630922707da47a98e1ffa630b80b, type: 3}

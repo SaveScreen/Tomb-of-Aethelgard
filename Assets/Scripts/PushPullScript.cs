@@ -20,6 +20,8 @@ public class PushPullScript : MonoBehaviour
     [Header("LayerMask")]
     [SerializeField] private LayerMask PushPull;
 
+    [Header("Push Audio")]
+    public AudioSource pushSound;
 
     void Start()
     {
@@ -45,6 +47,10 @@ public class PushPullScript : MonoBehaviour
                         PS.speed = PS.speed - pullspeed;
                         PS.playerjump.Disable();
                         PS.IsPushingPulling = true;
+
+                        if(!pushSound.isPlaying){
+                            pushSound.Play();
+                        }
                     }
                 }
             }
@@ -55,6 +61,8 @@ public class PushPullScript : MonoBehaviour
                 PS.speed = PS.speed + pullspeed;
                 PS.playerjump.Enable();
                 PS.IsPushingPulling = false;
+
+                pushSound.Stop();
             }
           }
        }

@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: Scene
+  m_Title: Game
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -189,8 +189,8 @@ MonoBehaviour:
     y: 0
     width: 378
     height: 558
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -269,8 +269,8 @@ MonoBehaviour:
     y: 0
     width: 455
     height: 947
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -534,9 +534,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -46.4298, y: 31.125488, z: -1.6958818}
+    m_Target: {x: 5.949867, y: 11.454974, z: -9.788479}
     speed: 2
-    m_Value: {x: -46.4298, y: 31.125488, z: -1.6958818}
+    m_Value: {x: 5.949867, y: 11.454974, z: -9.788479}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -569,7 +569,7 @@ MonoBehaviour:
         m_Value: 1
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
-      m_Size: {x: 0.250001, y: 0.250001}
+      m_Size: {x: 1, y: 1}
     zGrid:
       m_Fade:
         m_Target: 0
@@ -582,13 +582,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.0030959796, y: -0.97298646, z: -0.011597543, w: 0.23005244}
+    m_Target: {x: -0.23770073, y: -0.12437673, z: 0.029707612, w: -0.9632714}
     speed: 2
-    m_Value: {x: -0.0030789329, y: -0.973442, z: -0.011603504, w: 0.22861892}
+    m_Value: {x: -0.23761219, y: -0.124330394, z: 0.029696546, w: -0.96291256}
   m_Size:
-    m_Target: 9.718497
+    m_Target: 0.8660254
     speed: 2
-    m_Value: 9.718497
+    m_Value: 0.8660254
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -643,24 +643,24 @@ MonoBehaviour:
     m_SaveData: []
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 3008}
-      m_SelectedIDs: 70c7feff
-      m_LastClickedID: -80016
-      m_ExpandedIDs: 20faffff16fbffffec5d0000e05e00001c5f00008660000064610000ec6400002c650000
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: e4efffff
+      m_LastClickedID: -4124
+      m_ExpandedIDs: 18faffff68600000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Player
-        m_OriginalName: Player
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 24348
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 8}
       m_SearchString: 
@@ -810,22 +810,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Materials
+    - Assets
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Materials
+  - Assets
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\Dean\Documents\GitHub\Game-Production-Project-3
+  m_LastProjectPath: D:\UnityProjectsGameProduction\Tomb-Explorer-Game\Game-Production-Project-3
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 1e670000
-    m_LastClickedID: 26398
-    m_ExpandedIDs: 00000000fa66000000ca9a3b
+    m_SelectedIDs: 72690000
+    m_LastClickedID: 26994
+    m_ExpandedIDs: 000000007269000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -853,7 +853,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000fa660000
+    m_ExpandedIDs: 0000000072690000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

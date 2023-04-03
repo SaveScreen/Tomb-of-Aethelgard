@@ -9,11 +9,11 @@ public class reflectionManager : MonoBehaviour
 
     private void Update()
     {
-        DoorControlType("isActivated", 2, 1);
+       // DoorControlType("isActivated", 2, 1);
         /*This means that when the IsActivated value of catcher 2 is true, door 1 opens. 
         Otherwise, it closes.*/
 
-        DoorControlType("hasBeenActivated", 1, 2, 2);
+       // DoorControlType("hasBeenActivated", 1, 2, 2);
         /*This means that when catchers 1 and 2 have been activated at some point, door 2 opens.
         It does not matter which order. It does not matter if they are currently being activated.*/
     }

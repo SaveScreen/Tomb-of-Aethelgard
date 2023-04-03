@@ -18,6 +18,7 @@ public class PlayerScript : MonoBehaviour
     [Header("Jumping Variables")]
     public InputAction playerjump;
     public float jumpspeed;
+    public float jumpgravity;
     private bool jumped;
     private bool jumping;
     private bool isfalling;
@@ -26,7 +27,7 @@ public class PlayerScript : MonoBehaviour
     public float speed;
     private Vector3 move;
     public Vector3 velocity;
-    public float gravity;
+    private float gravity;
     
 
     [Header("Looking Variable")]
@@ -70,6 +71,7 @@ public class PlayerScript : MonoBehaviour
         jumped = false;
         jumping = false;
         smoothrotationtime = 0.1f;
+        gravity = -8f;
         
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -98,10 +100,15 @@ public class PlayerScript : MonoBehaviour
         if(!paused){
             StateHandler();
             move = playermove.ReadValue<Vector3>();
-            jumping = playerjump.IsPressed();
+
+            if (charactercontroller.isGrounded)
+            {
+                jumping = playerjump.IsPressed();
+            }
+            
             LookAndMove();
 
-            if (jumping == true && charactercontroller.isGrounded) {
+            if (jumping == true) {
                 jumped = true;
             }
 
@@ -138,9 +145,17 @@ public class PlayerScript : MonoBehaviour
         if (direction.magnitude >= 0.1f) {
             charactercontroller.Move(movedir.normalized * speed * Time.deltaTime); 
         }
-               
-        
-        velocity.y += gravity * Time.deltaTime;
+
+        //General gravity is used if player is not jumping.
+        if (!jumped && !charactercontroller.isGrounded)
+        {
+            velocity.y += gravity * Time.deltaTime;
+        }
+        if (jumped)
+        {
+            velocity.y += jumpgravity * Time.deltaTime;
+        }
+
         charactercontroller.Move(velocity * Time.deltaTime); 
         
     }

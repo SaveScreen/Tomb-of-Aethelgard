@@ -120,13 +120,17 @@ public class PlayerScript : MonoBehaviour
                     }
                 }
             }   
-            
-
-            //Pause
-            if (Input.GetKeyDown(KeyCode.Escape)) {
-                PauseGame();
-            }
         }
+        //Pause and unpause
+            if(Input.GetKeyDown(KeyCode.Escape)){
+                if(paused){
+                    //unpause
+                    ResumeGame();
+                } else{
+                    //pause
+                    PauseGame();
+                }
+            }
     }
 
     private void FixedUpdate()
@@ -211,6 +215,12 @@ public class PlayerScript : MonoBehaviour
         Time.timeScale = 0;
         paused = true;
         pauseMenu.SetActive(true);
+    }
+
+    private void ResumeGame(){
+        Time.timeScale = 1.0f;
+        paused = false;
+        pauseMenu.SetActive(false);
     }
 
 }

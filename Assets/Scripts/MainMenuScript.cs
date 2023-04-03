@@ -7,12 +7,12 @@ public class MainMenuScript : MonoBehaviour
 {
     private GameObject mainmenu;
     public GameObject controlsmenu;
+    public GameObject settingsmenu;
 
     void Awake()
     {
-        mainmenu = Instantiate(controlsmenu);
-        mainmenu.transform.SetParent(transform);
         controlsmenu.SetActive(false);
+        settingsmenu.SetActive(false);
     }
     public void ShowControls()
     {
@@ -22,6 +22,15 @@ public class MainMenuScript : MonoBehaviour
     public void HideControls()
     {
         controlsmenu.SetActive(false);
+    }
+    public void ShowSettings()
+    {
+        settingsmenu.SetActive(true);
+    }
+
+    public void HideSettings()
+    {
+        settingsmenu.SetActive(false);
     }
     public void PlayGame()
     {

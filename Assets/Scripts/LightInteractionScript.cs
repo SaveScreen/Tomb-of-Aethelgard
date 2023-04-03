@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LightInteractionScript : MonoBehaviour
 {
@@ -28,10 +29,19 @@ public class LightInteractionScript : MonoBehaviour
 
     private float rotationTarget;
 
+    //HUD to tell players to press E/Q to rotate the pillar
+    private GameObject eqImage;
+
     // Start is called before the first frame update
     void Start()
     {
         GameObject PlayerObject = GameObject.FindWithTag("Player");
+        
+        //HUD to tell players to press E/Q to rotate the pillar
+        eqImage = GameObject.Find("Rotate UI");
+        eqImage.SetActive(false);
+
+
         if (PlayerObject != null)
         {
             PS = PlayerObject.GetComponent<PlayerScript>();
@@ -42,6 +52,7 @@ public class LightInteractionScript : MonoBehaviour
 
     void Update()
     {
+        //need to add a line here to make this input impossible while paused
         if (Interact == true && !currentlyRotating)
         {
             if (Input.GetKeyDown(RotateClockWise))
@@ -64,18 +75,20 @@ public class LightInteractionScript : MonoBehaviour
        Debug.Log("current y: " + transform.eulerAngles.y);
        Debug.Log("target: " + rotationTarget);
     }
-        void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
+    {
+        if (PS != null)
         {
-          if (PS != null)
-          {
-           Interact= true;  
-          }   
-        }
+            Interact= true;  
+            eqImage.SetActive(true);
+        }   
+    }
     void OnTriggerExit(Collider other)
     {
         if (PS != null)
         {
             Interact= false;
+            eqImage.SetActive(false);
         }
 
     }

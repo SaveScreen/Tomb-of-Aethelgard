@@ -46,6 +46,10 @@ public class PlayerScript : MonoBehaviour
     private Vector3 direction;
     private Vector3 movedir;
     
+    [Header("Footsteps Audio")]
+    public AudioSource footsteps;
+    private GameObject pauseMenu;
+    public static bool paused = false;
 
     //movement states if we want the player to be able to run, crouch, slide etc.
     public MovementState state;
@@ -70,7 +74,11 @@ public class PlayerScript : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         IsPushingPulling = false;
-       
+
+        //pause menu panel
+        pauseMenu = GameObject.Find("Pause Panel");
+        pauseMenu.SetActive(false);
+
     }
 
     private void OnEnable()
@@ -87,37 +95,38 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        StateHandler();
-        move = playermove.ReadValue<Vector3>();
-        jumping = playerjump.IsPressed();
-        LookAndMove();
+        if(!paused){
+            StateHandler();
+            move = playermove.ReadValue<Vector3>();
+            jumping = playerjump.IsPressed();
+            LookAndMove();
 
-        if (jumping == true && charactercontroller.isGrounded) {
-            jumped = true;
-        }
-
-        if (jumped == true) {
-            if (!isfalling) {
-                velocity.y = jumpspeed;
-                isfalling = true;
-                
+            if (jumping == true && charactercontroller.isGrounded) {
+                jumped = true;
             }
-            else {
-                if (charactercontroller.isGrounded == true) {
-                   
-                    isfalling = false;
-                    jumped = false;
 
+            if (jumped == true) {
+                if (!isfalling) {
+                    velocity.y = jumpspeed;
+                    isfalling = true;
+                    
                 }
+                else {
+                    if (charactercontroller.isGrounded == true) {
+                    
+                        isfalling = false;
+                        jumped = false;
+
+                    }
+                }
+            }   
+            
+
+            //Pause
+            if (Input.GetKeyDown(KeyCode.Escape)) {
+                PauseGame();
             }
-        }   
-           
-
-        //Debug feature for quitting the game
-        if (Input.GetKeyDown(KeyCode.Escape)) {
-            Application.Quit();
         }
-
     }
 
     private void FixedUpdate()
@@ -178,7 +187,7 @@ public class PlayerScript : MonoBehaviour
         if (wallrunning)
         {
             state = MovementState.wallrunning;
-           
+            footsteps.Stop();
         }
 
         //mode-walking
@@ -186,6 +195,10 @@ public class PlayerScript : MonoBehaviour
         {
             state = MovementState.walking;
             velocity.x = 0f;
+
+            if(!footsteps.isPlaying){
+                footsteps.Play();
+            }
         }
     }
     //this function is for adding force when wall jumping
@@ -194,4 +207,10 @@ public class PlayerScript : MonoBehaviour
         this.velocity += velocity;
     }
     
+    private void PauseGame(){
+        Time.timeScale = 0;
+        paused = true;
+        pauseMenu.SetActive(true);
+    }
+
 }

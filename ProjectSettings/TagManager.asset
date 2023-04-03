@@ -8,6 +8,7 @@ TagManager:
   - reflector
   - Ground
   - PushPullObject
+  - door
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - IsThisWall
   - IsThisGround
   - PushPull
-  - 
+  - GeneralWall
   - 
   - 
   - 

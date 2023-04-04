@@ -38,8 +38,8 @@ public class LightInteractionScript : MonoBehaviour
         GameObject PlayerObject = GameObject.FindWithTag("Player");
         
         //HUD to tell players to press E/Q to rotate the pillar
-        eqImage = GameObject.Find("Rotate UI");
-        eqImage.SetActive(false);
+     //   eqImage = GameObject.Find("Rotate UI");
+//        eqImage.SetActive(false);
 
 
         if (PlayerObject != null)
@@ -72,15 +72,15 @@ public class LightInteractionScript : MonoBehaviour
             currentlyRotating = false;
         }
 
-       Debug.Log("current y: " + transform.eulerAngles.y);
-       Debug.Log("target: " + rotationTarget);
+    //   Debug.Log("current y: " + transform.eulerAngles.y);
+    //   Debug.Log("target: " + rotationTarget);
     }
     void OnTriggerEnter(Collider other)
     {
         if (PS != null)
         {
             Interact= true;  
-            eqImage.SetActive(true);
+          //  eqImage.SetActive(true);
         }   
     }
     void OnTriggerExit(Collider other)
@@ -88,7 +88,7 @@ public class LightInteractionScript : MonoBehaviour
         if (PS != null)
         {
             Interact= false;
-            eqImage.SetActive(false);
+          //  eqImage.SetActive(false);
         }
 
     }

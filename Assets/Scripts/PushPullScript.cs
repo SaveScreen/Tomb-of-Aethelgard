@@ -65,5 +65,15 @@ public class PushPullScript : MonoBehaviour
                 pushSound.Stop();
             }
           }
+          /*else
+          {
+                PushablePullable.StopPushingPulling();
+                PushablePullable = null;
+                PS.speed = PS.speed + pullspeed;
+                PS.playerjump.Enable();
+                PS.IsPushingPulling = false;
+
+                pushSound.Stop();
+         }*/
        }
 }

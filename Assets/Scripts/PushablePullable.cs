@@ -16,20 +16,20 @@ public class PushablePullable : MonoBehaviour
     public void PushPullInteract(Transform PushPullPoint)
     {
         this.PushPullPoint= PushPullPoint;
-        PushablePullableRigdBody.useGravity = false;
+        
     }
 
     public void StopPushingPulling()
     {
         this.PushPullPoint = null;
-        PushablePullableRigdBody.useGravity = true;
+     
     }
 
     private void FixedUpdate()
     {
         if(PushPullPoint != null) 
         {
-            PushablePullableRigdBody.MovePosition(PushPullPoint.position);
+            transform.position = PushPullPoint.position;
         }
     }
 }

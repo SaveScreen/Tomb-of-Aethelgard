@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PushPullScript : MonoBehaviour
 {
@@ -9,7 +10,9 @@ public class PushPullScript : MonoBehaviour
     public float pullspeed = 10;
 
     [Header("Inputs")]
-    public KeyCode PushingPulling = KeyCode.R;
+    public InputAction playerpushpull;
+    private bool pushpulling;
+    //public KeyCode PushingPulling = KeyCode.R;
 
     [Header("Refrences")]
     [SerializeField] private Transform PlayerCameraTransform;
@@ -31,10 +34,21 @@ public class PushPullScript : MonoBehaviour
             PS = PlayerObject.GetComponent<PlayerScript>();
         }
     }
-        // Start is called before the first frame update
+
+    void OnEnable() {
+        playerpushpull.Enable();
+    }
+
+    void OnDisable() {
+        playerpushpull.Disable();
+    }
+
+    
         private void Update()
        {
-          if (Input.GetKeyDown(PushingPulling))
+            pushpulling = playerpushpull.WasPressedThisFrame();
+            
+          if (pushpulling == true)
           {
             if (PushablePullable == null)
             {

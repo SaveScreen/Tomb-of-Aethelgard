@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 public class LightInteractionScript : MonoBehaviour
 {
@@ -24,8 +25,10 @@ public class LightInteractionScript : MonoBehaviour
     //public float tweenValue = 0.9f;
 
     [Header("Inputs")]
-    public KeyCode RotateClockWise = KeyCode.Q;
-    public KeyCode RotateCtrClockWise = KeyCode.E;
+    public InputAction playerrotating;
+    private float playerrotatingval;
+    //public KeyCode RotateClockWise = KeyCode.Q;
+    //public KeyCode RotateCtrClockWise = KeyCode.E;
 
     private float rotationTarget;
 
@@ -50,17 +53,35 @@ public class LightInteractionScript : MonoBehaviour
       
     }
 
+    void OnEnable() {
+        playerrotating.Enable();
+    }
+
+    void OnDisable() {
+        playerrotating.Disable();
+    }
+
     void Update()
     {
+        playerrotatingval = playerrotating.ReadValue<float>();
+
         //need to add a line here to make this input impossible while paused
         if (Interact == true && !currentlyRotating)
         {
+            /*
             if (Input.GetKeyDown(RotateClockWise))
             {
                 RotateLightClockWise();
             }
             if (Input.GetKeyDown(RotateCtrClockWise))
             {
+                RotateLightCtrClockWise();
+            }
+            */
+            if (playerrotatingval > 0) {
+                RotateLightClockWise();
+            }
+            if (playerrotatingval < 0) {
                 RotateLightCtrClockWise();
             }
         }

@@ -57,7 +57,8 @@ public class PlayerScript : MonoBehaviour
     public enum MovementState
     {
         wallrunning,
-        walking
+        walking,
+        idle
     }
     public bool wallrunning;
 
@@ -212,12 +213,20 @@ public class PlayerScript : MonoBehaviour
         //mode-walking
         if (charactercontroller.isGrounded)
         {
-            state = MovementState.walking;
-            velocity.x = 0f;
+            //If player is not moving, footsteps sound stops playing
+            if (direction.magnitude >= 0.1f) {
+                state = MovementState.walking;
+                velocity.x = 0f;
 
-            if(!footsteps.isPlaying){
-                footsteps.Play();
+                if(!footsteps.isPlaying){
+                    footsteps.Play();
+                }
             }
+            else {
+
+                footsteps.Stop();
+            }
+            
         }
     }
     //this function is for adding force when wall jumping

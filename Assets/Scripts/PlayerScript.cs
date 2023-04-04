@@ -8,7 +8,7 @@ public class PlayerScript : MonoBehaviour
 {
     [Header("Movement Variables")]
     public InputAction playermove;
-    private CharacterController charactercontroller;
+    public CharacterController charactercontroller;
 
     [Header("Camera Refrence")]
     public GameObject cam;

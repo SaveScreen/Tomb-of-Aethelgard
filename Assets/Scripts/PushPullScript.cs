@@ -79,6 +79,14 @@ public class PushPullScript : MonoBehaviour
                 pushSound.Stop();
             }
           }
+          if (!PS.charactercontroller.isGrounded)
+           {
+            playerpushpull.Disable();
+           }
+          else 
+          {
+            playerpushpull.Enable();
+          }
           /*else
           {
                 PushablePullable.StopPushingPulling();

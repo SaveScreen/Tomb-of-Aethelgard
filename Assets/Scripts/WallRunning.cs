@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class WallRunning : MonoBehaviour
 {
@@ -18,7 +19,10 @@ public class WallRunning : MonoBehaviour
     public float WallJumpSideForce;
 
     [Header("inputs")]
-    public KeyCode WallJumpKey = KeyCode.Space;
+    public InputAction WallJumpKey;
+    private bool jumping;
+
+    //public KeyCode WallJumpKey = KeyCode.Space;
     private float horizontalInput;
     private float verticalInput;
 
@@ -44,6 +48,14 @@ public class WallRunning : MonoBehaviour
     {
         //CC = GetComponent<CharacterController>();
         PS = GetComponent<PlayerScript>();
+    }
+
+    void OnEnable() {
+        WallJumpKey.Enable();
+    }
+
+    void OnDisable() {
+        WallJumpKey.Disable();
     }
 
     // Update is called once per frame
@@ -97,8 +109,11 @@ public class WallRunning : MonoBehaviour
                 ExitWallTimer = ExitWallTime;
             }
 
+            //jumping = WallJumpKey.IsPressed();
+              
+            
             //wall jumping 
-            if (Input.GetKeyDown(WallJumpKey)) WallJump();
+            //if (jumping) WallJump();
         }
 
         //state 2 - exiting wall run

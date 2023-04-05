@@ -39,8 +39,9 @@ public class PlayerScript : MonoBehaviour
 
     //**********************************************
 
-    public GameObject cutscene;
-    private CutsceneScript cutscenescript;
+    //ACTIVATES CUTSCENES
+    //public GameObject cutscene;
+    //private CutsceneScript cutscenescript;
 
     private float smoothrotationtime;
     private float smoothrotationvelocity;
@@ -49,6 +50,9 @@ public class PlayerScript : MonoBehaviour
     
     [Header("Footsteps Audio")]
     public AudioSource footsteps;
+
+    [Header("Pause Input")]
+    public InputAction pausing;
     private GameObject pauseMenu;
     public static bool paused = false;
 
@@ -57,8 +61,7 @@ public class PlayerScript : MonoBehaviour
     public enum MovementState
     {
         wallrunning,
-        walking,
-        idle
+        walking
     }
     public bool wallrunning;
 
@@ -67,7 +70,7 @@ public class PlayerScript : MonoBehaviour
     {
         //camerascript = cam.GetComponent<CameraScript>();
         charactercontroller = gameObject.GetComponent<CharacterController>();
-        cutscenescript = cutscene.GetComponent<CutsceneScript>();
+        //cutscenescript = cutscene.GetComponent<CutsceneScript>();
         isfalling = false;
         jumped = false;
         jumping = false;
@@ -88,16 +91,19 @@ public class PlayerScript : MonoBehaviour
     {
         playermove.Enable();
         playerjump.Enable();
+        pausing.Enable();
     }
 
     private void OnDisable()
     {
         playermove.Disable();
         playerjump.Disable();
+        pausing.Disable();
     }
     // Update is called once per frame
     void Update()
     {
+
         if(!paused){
             StateHandler();
             move = playermove.ReadValue<Vector3>();
@@ -130,15 +136,20 @@ public class PlayerScript : MonoBehaviour
             }   
         }
         //Pause and unpause
-            if(Input.GetKeyDown(KeyCode.Escape)){
-                if(paused){
-                    //unpause
-                    ResumeGame();
-                } else{
-                    //pause
-                    PauseGame();
-                }
+        if(pausing.WasPressedThisFrame()){
+            if(paused){
+                //unpause
+                ResumeGame();
+            } else{
+                //pause
+                PauseGame();
             }
+        }
+
+        //FOR DEBUG PURPOSES | DO NO REMOVE
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            Application.Quit();
+        }
     }
 
     private void FixedUpdate()
@@ -227,6 +238,9 @@ public class PlayerScript : MonoBehaviour
                 footsteps.Stop();
             }
             
+        }
+        if (!charactercontroller.isGrounded) {
+            footsteps.Stop();
         }
     }
     //this function is for adding force when wall jumping

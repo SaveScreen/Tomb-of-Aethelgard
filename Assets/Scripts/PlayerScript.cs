@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -140,6 +141,7 @@ public class PlayerScript : MonoBehaviour
             if(paused){
                 //unpause
                 ResumeGame();
+                Debug.Log("Resume");
             } else{
                 //pause
                 PauseGame();
@@ -249,16 +251,40 @@ public class PlayerScript : MonoBehaviour
         this.velocity += velocity;
     }
     
-    private void PauseGame(){
+    public void PauseGame(){
         Time.timeScale = 0;
         paused = true;
         pauseMenu.SetActive(true);
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
-    private void ResumeGame(){
+    public void ResumeGame(){
         Time.timeScale = 1.0f;
         paused = false;
         pauseMenu.SetActive(false);
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+
+    public void QuitGame(){
+        Application.Quit();
+    }
+
+    public void GoToMainMenu(){
+        
+        ResumeGame();
+        //this prevents the game from being frozen when you go back into the level
+
+        //enable mouse
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+        //go to main menu
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1); 
+        //takes current scene and moves to previous scene in scene order
     }
 
 }

@@ -57,6 +57,11 @@ public class PlayerScript : MonoBehaviour
     private GameObject pauseMenu;
     public static bool paused = false;
 
+    [Header("Win Screen")]
+    public GameObject winscreen;
+    public GameObject winplatform;
+    public static bool won = false;
+
     //movement states if we want the player to be able to run, crouch, slide etc.
     public MovementState state;
     public enum MovementState
@@ -86,6 +91,8 @@ public class PlayerScript : MonoBehaviour
         pauseMenu = GameObject.Find("Pause Panel");
         pauseMenu.SetActive(false);
 
+        winscreen.SetActive(false);
+
     }
 
     private void OnEnable()
@@ -105,7 +112,7 @@ public class PlayerScript : MonoBehaviour
     void Update()
     {
 
-        if(!paused){
+        if(!paused && !won){
             StateHandler();
             move = playermove.ReadValue<Vector3>();
 
@@ -136,12 +143,20 @@ public class PlayerScript : MonoBehaviour
                 }
             }   
         }
+
+        if (won) {
+            if (Input.GetKeyDown(KeyCode.R)) {
+                SceneManager.LoadScene("VSLevelScene");
+                
+                Time.timeScale = 1.0f;
+                won = false;
+            }
+        }
         //Pause and unpause
         if(pausing.WasPressedThisFrame()){
             if(paused){
                 //unpause
                 ResumeGame();
-                Debug.Log("Resume");
             } else{
                 //pause
                 PauseGame();
@@ -251,40 +266,30 @@ public class PlayerScript : MonoBehaviour
         this.velocity += velocity;
     }
     
-    public void PauseGame(){
+    private void PauseGame(){
         Time.timeScale = 0;
         paused = true;
         pauseMenu.SetActive(true);
-
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
+        footsteps.Stop();
     }
 
-    public void ResumeGame(){
+    private void ResumeGame(){
         Time.timeScale = 1.0f;
         paused = false;
         pauseMenu.SetActive(false);
-
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
     }
 
-    public void QuitGame(){
-        Application.Quit();
+    private void WinGame() {
+        Time.timeScale = 0;
+        won = true;
+        winscreen.SetActive(true);
+        footsteps.Stop();
     }
 
-    public void GoToMainMenu(){
-        
-        ResumeGame();
-        //this prevents the game from being frozen when you go back into the level
-
-        //enable mouse
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-
-        //go to main menu
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1); 
-        //takes current scene and moves to previous scene in scene order
+    void OnTriggerEnter(Collider other) {
+        if (other.gameObject.tag == "WinScreen") {
+            WinGame();
+        }
     }
-
+    
 }

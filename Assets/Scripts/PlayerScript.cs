@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -56,6 +57,11 @@ public class PlayerScript : MonoBehaviour
     private GameObject pauseMenu;
     public static bool paused = false;
 
+    [Header("Win Screen")]
+    public GameObject winscreen;
+    public GameObject winplatform;
+    public static bool won = false;
+
     //movement states if we want the player to be able to run, crouch, slide etc.
     public MovementState state;
     public enum MovementState
@@ -85,6 +91,8 @@ public class PlayerScript : MonoBehaviour
         pauseMenu = GameObject.Find("Pause Panel");
         pauseMenu.SetActive(false);
 
+        winscreen.SetActive(false);
+
     }
 
     private void OnEnable()
@@ -104,7 +112,7 @@ public class PlayerScript : MonoBehaviour
     void Update()
     {
 
-        if(!paused){
+        if(!paused && !won){
             StateHandler();
             move = playermove.ReadValue<Vector3>();
 
@@ -134,6 +142,15 @@ public class PlayerScript : MonoBehaviour
                     }
                 }
             }   
+        }
+
+        if (won) {
+            if (Input.GetKeyDown(KeyCode.R)) {
+                SceneManager.LoadScene("VSLevelScene");
+                
+                Time.timeScale = 1.0f;
+                won = false;
+            }
         }
         //Pause and unpause
         if(pausing.WasPressedThisFrame()){
@@ -253,6 +270,7 @@ public class PlayerScript : MonoBehaviour
         Time.timeScale = 0;
         paused = true;
         pauseMenu.SetActive(true);
+        footsteps.Stop();
     }
 
     private void ResumeGame(){
@@ -261,4 +279,17 @@ public class PlayerScript : MonoBehaviour
         pauseMenu.SetActive(false);
     }
 
+    private void WinGame() {
+        Time.timeScale = 0;
+        won = true;
+        winscreen.SetActive(true);
+        footsteps.Stop();
+    }
+
+    void OnTriggerEnter(Collider other) {
+        if (other.gameObject.tag == "WinScreen") {
+            WinGame();
+        }
+    }
+    
 }

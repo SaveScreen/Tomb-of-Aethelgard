@@ -243,12 +243,15 @@ public class PlayerScript : MonoBehaviour
             state = MovementState.wallrunning;
             footsteps.Stop();
             anim.SetBool("isRunning", true);
+            anim.SetBool("isJumping", false);
         }
 
         //mode-walking
         if (charactercontroller.isGrounded)
         {
+            
             //If player is not moving, footsteps sound stops playing
+            anim.SetBool("isJumping", false);
             if (direction.magnitude >= 0.1f) {
                 state = MovementState.walking;
                 velocity.x = 0f;

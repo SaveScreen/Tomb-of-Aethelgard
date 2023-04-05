@@ -71,6 +71,8 @@ public class PlayerScript : MonoBehaviour
     }
     public bool wallrunning;
 
+    public Animator anim;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -92,6 +94,8 @@ public class PlayerScript : MonoBehaviour
         pauseMenu.SetActive(false);
 
         winscreen.SetActive(false);
+
+        anim = GameObject.Find("Breathing_Idle_1").GetComponent<Animator>();
 
     }
 
@@ -125,6 +129,7 @@ public class PlayerScript : MonoBehaviour
 
             if (jumping == true) {
                 jumped = true;
+                //anim.SetBool("isJumping", true);
             }
 
             if (jumped == true) {
@@ -138,6 +143,7 @@ public class PlayerScript : MonoBehaviour
                     
                         isfalling = false;
                         jumped = false;
+                        
 
                     }
                 }
@@ -236,6 +242,7 @@ public class PlayerScript : MonoBehaviour
         {
             state = MovementState.wallrunning;
             footsteps.Stop();
+            anim.SetBool("isRunning", true);
         }
 
         //mode-walking
@@ -246,17 +253,20 @@ public class PlayerScript : MonoBehaviour
                 state = MovementState.walking;
                 velocity.x = 0f;
 
+                anim.SetBool("isRunning", true);
+
                 if(!footsteps.isPlaying){
                     footsteps.Play();
                 }
             }
             else {
-
+                anim.SetBool("isRunning", false);
                 footsteps.Stop();
             }
             
         }
         if (!charactercontroller.isGrounded) {
+            anim.SetBool("isJumping", true);
             footsteps.Stop();
         }
     }

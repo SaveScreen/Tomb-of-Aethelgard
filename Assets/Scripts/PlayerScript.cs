@@ -282,14 +282,29 @@ public class PlayerScript : MonoBehaviour
     private void PauseGame(){
         Time.timeScale = 0;
         paused = true;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         pauseMenu.SetActive(true);
         footsteps.Stop();
     }
 
-    private void ResumeGame(){
+    public void ResumeGame(){
         Time.timeScale = 1.0f;
         paused = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         pauseMenu.SetActive(false);
+    }
+
+    public void GoToMainMenu() {
+        Time.timeScale = 1.0f;
+        paused = false;
+        SceneManager.LoadScene("MainMenuScene");
+        pauseMenu.SetActive(false);
+    }
+
+    public void QuitGame() {
+        Application.Quit();
     }
 
     private void WinGame() {

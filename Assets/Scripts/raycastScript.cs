@@ -21,6 +21,17 @@ public class raycastScript : MonoBehaviour {
     [Header("Ray Data")]
     public int rayBounces = 2; //the amount of times the ray can bounce
     public float rayLength = 5f; //maximum length of a ray
+    public enum LightColor{
+        any,
+        red,
+        blue,
+        green
+    }
+    public LightColor rayColor = 0;
+
+    [Header("Projector or Filter")]
+    public bool isProjector = true;
+
 
     //private variables
     private int bouncesRemaining;
@@ -41,12 +52,11 @@ public class raycastScript : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {   
-        //Q was just used for bugtesting. 
-       
-        pointsRendered = 0;        
-        bouncesRemaining = rayBounces;
-        launchRay(transform.position, transform.forward);
-
+        if(isProjector){
+            pointsRendered = 0;        
+            bouncesRemaining = rayBounces;
+            launchRay(transform.position, transform.forward);
+        }
     }
 
     void launchRay(Vector3 pos, Vector3 dir)
@@ -73,14 +83,21 @@ public class raycastScript : MonoBehaviour {
                     launchRay(hit.point, hit.normal);
                 }
             }else if(hit.collider.tag == "signalCatcher"){
-                for(int i = pointsRendered; i < rayBounces+2; i++){
-                    lineRenderer.SetPosition(i, hit.point);
-                }
+                FinishRenderPoints(hit.point);
 
                 //FindObjectOfType<reflectionManager>().SetAllCatchersIsActivatedExcept(false, );
+                signalCatcherScript catcherScript = hit.collider.gameObject.GetComponent<signalCatcherScript>();
 
-                hit.collider.gameObject.GetComponent<signalCatcherScript>().SetHasBeenActivated(true);
-                hit.collider.gameObject.GetComponent<signalCatcherScript>().SetIsActivated(true);
+                if(catcherScript.GetColor() == (int)rayColor || catcherScript.GetColor()==0){
+                    hit.collider.gameObject.GetComponent<signalCatcherScript>().SetHasBeenActivated(true);
+                    hit.collider.gameObject.GetComponent<signalCatcherScript>().SetIsActivated(true);
+                }
+            }else if(hit.collider.tag == "filter"){
+                FinishRenderPoints(hit.point);
+                raycastScript filterScript = hit.collider.gameObject.GetComponent<raycastScript>();
+                filterScript.SetIsProjector(true);
+
+                //filterScript.launchRay(hit.point, dir);
             }
             else {
                 /*if the line collides with an object not tagged "reflector" or "signalCatcher" then the line dies.
@@ -97,9 +114,7 @@ public class raycastScript : MonoBehaviour {
                 //lineRenderer.SetPosition(pointsRendered, ray.GetPoint(rayLength));
                 
                 lineRenderer.SetPosition(pointsRendered, hit.point);
-                for(int i = pointsRendered; i < rayBounces+2; i++){
-                    lineRenderer.SetPosition(i, hit.point);
-                }
+                FinishRenderPoints(ray.GetPoint(rayLength));
             }
         }
         else{
@@ -110,10 +125,25 @@ public class raycastScript : MonoBehaviour {
 
             Debug.DrawRay(pos, dir *rayLength, Color.blue);
             lineRenderer.SetPosition(pointsRendered, ray.GetPoint(rayLength));
-            for(int i = pointsRendered; i < rayBounces+2; i++){
-                lineRenderer.SetPosition(i, ray.GetPoint(rayLength));
-            }
+            FinishRenderPoints(ray.GetPoint(rayLength));
         }
+    }
+
+    void FinishRenderPoints(Vector3 endPoint){
+        /* This helper function sets all remaining points of the line renderer
+            to the last meaningful point to prevent visual errors.
+            
+            ex: if the ray hits a non-reflective object, kill the line
+            by setting all remaining points after to this same position.
+            */
+        
+        for(int i = pointsRendered; i < rayBounces+2; i++){
+            lineRenderer.SetPosition(i, endPoint);
+        }
+    }
+
+    public void SetIsProjector(bool b){
+        isProjector = b;
     }
 
 /*    void MakeParticles(LineRenderer lineRenderer){

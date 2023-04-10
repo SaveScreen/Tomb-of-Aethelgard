@@ -9,6 +9,15 @@ public class signalCatcherScript : MonoBehaviour
     private bool hasBeenActivated = false; //think of this as a toggle/switch
     private bool isActivated = false; //think of this as a held/presed button
 
+    public enum LightColor{
+        any,
+        red,
+        blue,
+        green
+    }
+
+    public LightColor catcherColor = 0;
+
     [Header("Audio")]
     public AudioSource isActivatedSoundPlayer;
     public AudioSource hasBeenActivatedSoundPlayer;
@@ -40,6 +49,10 @@ public class signalCatcherScript : MonoBehaviour
             }
         }
         isActivated = b;
+    }
+
+    public int GetColor(){
+        return (int)catcherColor;
     }
 
 

@@ -54,7 +54,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4401372290699454685, guid: 92ce7cc5f654ec642a8498dbf460db4f, type: 3}
       propertyPath: m_Name
-      value: Hanging Brazier Textured
+      value: LightBrazier
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -159,7 +159,7 @@ LineRenderer:
     numCornerVertices: 0
     numCapVertices: 0
     alignment: 0
-    textureMode: 3
+    textureMode: 2
     textureScale: {x: 1, y: 1}
     shadowBias: 0.5
     generateLightingData: 0
@@ -182,3 +182,5 @@ MonoBehaviour:
   lineRenderer: {fileID: 1548034538}
   rayBounces: 2
   rayLength: 30
+  rayColor: 0
+  isProjector: 1

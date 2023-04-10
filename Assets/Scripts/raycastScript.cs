@@ -37,6 +37,10 @@ public class raycastScript : MonoBehaviour {
     private int bouncesRemaining;
     private int pointsRendered = 0; //used for the lineRendered component
 
+    private Vector3 startPosition;
+    private Vector3 startDirection;
+
+    private Color filterColor;
 
     void Start()
     {
@@ -47,6 +51,28 @@ public class raycastScript : MonoBehaviour {
         for(int i = 0; i < rayBounces + 1; i++){
             lineRenderer.SetPosition(i, transform.position);
         }
+
+        if((int)rayColor == 1)
+        {
+            filterColor = Color.red;
+            lineRenderer.startColor = filterColor;
+            lineRenderer.endColor = filterColor;
+        } else if((int)rayColor == 2)
+        {
+            filterColor = Color.blue;
+            lineRenderer.startColor = filterColor;
+            lineRenderer.endColor = filterColor;
+        } else if((int)rayColor == 3)
+        {
+            filterColor = Color.green;
+            lineRenderer.startColor = filterColor;
+            lineRenderer.endColor = filterColor;
+        }
+
+        
+
+        startPosition = transform.position;
+        startDirection = transform.forward;
     }
 
     // Update is called once per frame
@@ -55,7 +81,9 @@ public class raycastScript : MonoBehaviour {
         if(isProjector){
             pointsRendered = 0;        
             bouncesRemaining = rayBounces;
-            launchRay(transform.position, transform.forward);
+            launchRay(startPosition, startDirection);
+        } else{
+            FinishRenderPoints(transform.position);
         }
     }
 
@@ -94,8 +122,14 @@ public class raycastScript : MonoBehaviour {
                 }
             }else if(hit.collider.tag == "filter"){
                 FinishRenderPoints(hit.point);
+
+                //temp variable for bypassing the width of the filter so it doesn't immediately collide with itself and die
+                Vector3 throughPoint = new Vector3();
+                throughPoint = ray.GetPoint(Vector3.Distance(pos, hit.point) + 0.1f);
+
                 raycastScript filterScript = hit.collider.gameObject.GetComponent<raycastScript>();
                 filterScript.SetIsProjector(true);
+                filterScript.CopyRayValues(bouncesRemaining, rayLength, throughPoint, dir);
 
                 //filterScript.launchRay(hit.point, dir);
             }
@@ -144,6 +178,14 @@ public class raycastScript : MonoBehaviour {
 
     public void SetIsProjector(bool b){
         isProjector = b;
+    }
+
+    public void CopyRayValues(int bounces, float length, Vector3 point, Vector3 startDir)
+    {
+        rayBounces = bounces;
+        rayLength = length;
+        startPosition = point;
+        startDirection = startDir;
     }
 
 /*    void MakeParticles(LineRenderer lineRenderer){

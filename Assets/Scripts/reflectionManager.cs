@@ -6,6 +6,7 @@ public class reflectionManager : MonoBehaviour
 {
     public GameObject[] signalCatchers;
     public GameObject[] doors;
+    public GameObject[] filters;
 
     private void Update()
     {
@@ -99,6 +100,12 @@ public class reflectionManager : MonoBehaviour
             if(i != hitID-1){
                 signalCatchers[i].GetComponent<signalCatcherScript>().SetIsActivated(on);
             }
+        }
+    }
+
+    public void TurnOffFilters(){
+        for(int i = 0; i < filters.Length; i++){
+            filters[i].GetComponent<raycastScript>().SetIsProjector(false);
         }
     }
     

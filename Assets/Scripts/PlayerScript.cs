@@ -62,6 +62,10 @@ public class PlayerScript : MonoBehaviour
     public GameObject winplatform;
     public static bool won = false;
 
+    [Header("Lose Screen")]
+
+    public GameObject losescreen;
+    public static bool lose = false;
     //movement states if we want the player to be able to run, crouch, slide etc.
     public MovementState state;
     public enum MovementState
@@ -95,6 +99,8 @@ public class PlayerScript : MonoBehaviour
 
         winscreen.SetActive(false);
 
+        losescreen.SetActive(false);
+
         anim = GameObject.Find("Breathing_Idle_1").GetComponent<Animator>();
 
     }
@@ -116,7 +122,7 @@ public class PlayerScript : MonoBehaviour
     void Update()
     {
 
-        if(!paused && !won){
+        if(!paused && !won && !lose){
             StateHandler();
             move = playermove.ReadValue<Vector3>();
 
@@ -152,12 +158,23 @@ public class PlayerScript : MonoBehaviour
 
         if (won) {
             if (Input.GetKeyDown(KeyCode.R)) {
-                SceneManager.LoadScene("VSLevelScene");
+                SceneManager.LoadScene("VSLevelScene"); //this just needs to change a bit to either the current active scene or to something else
                 
                 Time.timeScale = 1.0f;
                 won = false;
             }
         }
+        
+        
+        if (lose) {
+            if (Input.GetKeyDown(KeyCode.R)) {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); //gets the current active scene
+                
+                Time.timeScale = 1.0f;
+                lose = false;
+            }
+        }
+
         //Pause and unpause
         if(pausing.WasPressedThisFrame()){
             if(paused){
@@ -313,10 +330,20 @@ public class PlayerScript : MonoBehaviour
         winscreen.SetActive(true);
         footsteps.Stop();
     }
+    private void LoseGame()
+    {
+      Time.timeScale = 0;
+        lose = true;
+        losescreen.SetActive(true);
+        footsteps.Stop();       
+    }
 
     void OnTriggerEnter(Collider other) {
         if (other.gameObject.tag == "WinScreen") {
             WinGame();
+        }
+       if (other.gameObject.tag == "LoseScreen") {
+            LoseGame();
         }
     }
     

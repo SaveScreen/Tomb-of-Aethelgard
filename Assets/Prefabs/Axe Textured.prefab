@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5394418922062058273}
   - component: {fileID: 7870080086558861291}
   - component: {fileID: 956293707538367106}
+  - component: {fileID: 4263464680315237339}
   m_Layer: 0
   m_Name: Axe Textured
   m_TagString: LoseScreen
@@ -97,3 +98,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 120.202805, y: 507.2605, z: 529.0552}
   m_Center: {x: 0, y: -1111.4639, z: -19.35017}
+--- !u!114 &4263464680315237339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8518796550990251582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1480a99595bf2f646bd5859908d481b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1.05
+  limit: 75
+  randomStart: 0

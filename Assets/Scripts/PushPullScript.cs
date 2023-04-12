@@ -26,13 +26,17 @@ public class PushPullScript : MonoBehaviour
     [Header("Push Audio")]
     public AudioSource pushSound;
 
+    public Animator anim;
+
     void Start()
     {
         GameObject PlayerObject = GameObject.FindWithTag("Player");
         if (PlayerObject != null)
         {
             PS = PlayerObject.GetComponent<PlayerScript>();
+            anim = PlayerObject.GetComponent<PlayerScript>().GetAnimator();
         }
+        
     }
 
     void OnEnable() {
@@ -62,6 +66,9 @@ public class PushPullScript : MonoBehaviour
                         PS.playerjump.Disable();
                         PS.IsPushingPulling = true;
 
+                        
+                        anim.SetBool("isPushing", true);
+
                         if(!pushSound.isPlaying){
                             pushSound.Play();
                         }
@@ -75,6 +82,8 @@ public class PushPullScript : MonoBehaviour
                 PS.speed = PS.speed + pullspeed;
                 PS.playerjump.Enable();
                 PS.IsPushingPulling = false;
+
+                anim.SetBool("isPushing", false);
 
                 pushSound.Stop();
             }

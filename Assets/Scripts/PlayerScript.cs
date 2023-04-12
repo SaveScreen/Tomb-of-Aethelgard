@@ -259,8 +259,9 @@ public class PlayerScript : MonoBehaviour
         {
             state = MovementState.wallrunning;
             footsteps.Stop();
-            anim.SetBool("isRunning", true);
+            anim.SetBool("isRunning", false);
             anim.SetBool("isJumping", false);
+            anim.SetBool("isWallRunning", true);
         }
 
         //mode-walking
@@ -269,6 +270,7 @@ public class PlayerScript : MonoBehaviour
             
             //If player is not moving, footsteps sound stops playing
             anim.SetBool("isJumping", false);
+            anim.SetBool("isWallRunning", false);
             if (direction.magnitude >= 0.1f) {
                 state = MovementState.walking;
                 velocity.x = 0f;
@@ -332,10 +334,11 @@ public class PlayerScript : MonoBehaviour
     }
     private void LoseGame()
     {
-      Time.timeScale = 0;
+        Time.timeScale = 0;
         lose = true;
-        losescreen.SetActive(true);
+        //losescreen.SetActive(true);
         footsteps.Stop();       
+        anim.SetBool("isDying", true);
     }
 
     void OnTriggerEnter(Collider other) {
@@ -345,6 +348,10 @@ public class PlayerScript : MonoBehaviour
        if (other.gameObject.tag == "LoseScreen") {
             LoseGame();
         }
+    }
+
+    public Animator GetAnimator(){
+        return anim;
     }
     
 }

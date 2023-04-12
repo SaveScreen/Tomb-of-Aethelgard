@@ -70,8 +70,6 @@ public class raycastScript : MonoBehaviour {
             lineRenderer.endColor = filterColor;
         }
 
-        
-
         startPosition = transform.position;
         startDirection = transform.forward;
     }
@@ -83,28 +81,9 @@ public class raycastScript : MonoBehaviour {
             pointsRendered = 0;        
             bouncesRemaining = rayBounces;
             launchRay(startPosition, startDirection);
-            
-            //for prisms
-            /*
-            if((int)rayColor == 4){
 
-                Vector3 rightDirection = new Vector3();
-                Vector3 leftDirection = new Vector3();
-
-                rightDirection = Vector3.right;
-                leftDirection = Vector3.left;
-
-                //forward ray
-                launchRay(startPosition, startDirection);
-
-                //side ray 1
-                launchRay(startPosition, rightDirection);
-
-                //side ray 2
-                launchRay(startPosition, leftDirection);
-
-            }*/
         } else{
+            //draw no line
             FinishRenderPoints(transform.position);
         }
     }
@@ -154,13 +133,14 @@ public class raycastScript : MonoBehaviour {
                 filterScript.SetIsProjector(true);
                 filterScript.CopyRayValues(bouncesRemaining, rayLength, throughPoint, dir);
 
-                //filterScript.launchRay(hit.point, dir);
             }else if(hit.collider.tag == "prism"){
                 FinishRenderPoints(hit.point);
 
                 //temp variable for bypassing the width of the filter so it doesn't immediately collide with itself and die
                 Vector3 throughPoint = new Vector3();
                 throughPoint = ray.GetPoint(Vector3.Distance(pos, hit.point) + 0.1f);
+
+                //Vector3 offAngle = new Vector3(0.2f, 0, 0);
                 
                 /*
                 when the prism is hit, it activates 
@@ -168,7 +148,7 @@ public class raycastScript : MonoBehaviour {
                 to shoot each of the 3 rays individually. 
 
                 - child 1 script is grabbed. 
-                - child 1 script is turned on.
+                - child 1 script is activated.
                 - calculate the new angle for launch (dir + some value)
                 - child 1 gets new ray values.
 
@@ -177,22 +157,32 @@ public class raycastScript : MonoBehaviour {
 
                 //child 1
                 raycastScript child1 = hit.collider.gameObject.transform.GetChild(0).GetComponent<raycastScript>();
-                child1.SetIsProjector(true);
                 Vector3 dir1 = new Vector3();
                 dir1 = (dir - Vector3.left)/2;
-                child1.CopyRayValues(bouncesRemaining, rayLength, throughPoint, dir1);
+                //dir1 = dir1 + offAngle;
 
                 //child 2
                 raycastScript child2 = hit.collider.gameObject.transform.GetChild(1).GetComponent<raycastScript>();
-                child2.SetIsProjector(true);
-                child2.CopyRayValues(bouncesRemaining, rayLength, throughPoint, dir);
+                
 
                 //child 3
                 raycastScript child3 = hit.collider.gameObject.transform.GetChild(2).GetComponent<raycastScript>();
-                child3.SetIsProjector(true);
                 Vector3 dir3 = new Vector3();
                 dir3 = (dir + Vector3.left)/2;
+                //dir3 = dir3 - offAngle;
+
+                child1.SetIsProjector(true);
+                child1.CopyRayValues(bouncesRemaining, rayLength, throughPoint, dir1);
+
+                child2.SetIsProjector(true);
+                child2.CopyRayValues(bouncesRemaining, rayLength, throughPoint, dir);
+
+                child3.SetIsProjector(true);
                 child3.CopyRayValues(bouncesRemaining, rayLength, throughPoint, dir3);
+
+                //Debug.Log("1: " + dir1);
+                //Debug.Log("2: " + dir);
+                //Debug.Log("3: " + dir3);
 
             }
             else {

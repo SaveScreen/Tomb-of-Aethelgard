@@ -140,7 +140,7 @@ public class raycastScript : MonoBehaviour {
                 Vector3 throughPoint = new Vector3();
                 throughPoint = ray.GetPoint(Vector3.Distance(pos, hit.point) + 0.1f);
 
-                //Vector3 offAngle = new Vector3(0.2f, 0, 0);
+                Vector3 offAngle = new Vector3(0.3f, 0, 0.3f);
                 
                 /*
                 when the prism is hit, it activates 
@@ -158,30 +158,31 @@ public class raycastScript : MonoBehaviour {
                 //child 1
                 raycastScript child1 = hit.collider.gameObject.transform.GetChild(0).GetComponent<raycastScript>();
                 Vector3 dir1 = new Vector3();
-                dir1 = (dir - Vector3.left)/2;
-                //dir1 = dir1 + offAngle;
+                //dir1 = (dir - Vector3.left)/2;
+                dir1 = dir + offAngle;
 
                 //child 2
                 raycastScript child2 = hit.collider.gameObject.transform.GetChild(1).GetComponent<raycastScript>();
-                
+                Vector3 dir2 = new Vector3();
+                dir2 = dir;
 
                 //child 3
                 raycastScript child3 = hit.collider.gameObject.transform.GetChild(2).GetComponent<raycastScript>();
                 Vector3 dir3 = new Vector3();
-                dir3 = (dir + Vector3.left)/2;
-                //dir3 = dir3 - offAngle;
+                //dir3 = (dir + Vector3.left)/2;
+                dir3 = dir - offAngle;
 
                 child1.SetIsProjector(true);
                 child1.CopyRayValues(bouncesRemaining, rayLength, throughPoint, dir1);
 
                 child2.SetIsProjector(true);
-                child2.CopyRayValues(bouncesRemaining, rayLength, throughPoint, dir);
+                child2.CopyRayValues(bouncesRemaining, rayLength, throughPoint, dir2);
 
                 child3.SetIsProjector(true);
                 child3.CopyRayValues(bouncesRemaining, rayLength, throughPoint, dir3);
 
                 //Debug.Log("1: " + dir1);
-                //Debug.Log("2: " + dir);
+                //Debug.Log("2: " + dir2);
                 //Debug.Log("3: " + dir3);
 
             }

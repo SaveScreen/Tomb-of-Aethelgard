@@ -315,6 +315,13 @@ public class PlayerScript : MonoBehaviour
         pauseMenu.SetActive(false);
     }
 
+    public void GoToHub() {
+        Time.timeScale = 1.0f;
+        paused = false;
+        SceneManager.LoadScene("HubLevel");
+        pauseMenu.SetActive(false);
+    }
+
     public void GoToMainMenu() {
         Time.timeScale = 1.0f;
         paused = false;

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3742230751219867542}
   - component: {fileID: 306465363175919667}
   - component: {fileID: 2568247876637369593}
-  - component: {fileID: -6006573841863297188}
+  - component: {fileID: 1414450722580345785}
   m_Layer: 7
   m_Name: Floor Textured
   m_TagString: Untagged
@@ -84,8 +84,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &-6006573841863297188
-MeshCollider:
+--- !u!65 &1414450722580345785
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -94,7 +94,6 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -629719859055844128, guid: 5ec3c5331688ef74a8724d7335c82420, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 1000, y: 79.6152, z: 1000}
+  m_Center: {x: 0, y: 0, z: 0}

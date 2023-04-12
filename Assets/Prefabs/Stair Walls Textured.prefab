@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 4380286061696175264}
   - component: {fileID: 821411474901680901}
   - component: {fileID: 3207348173053966287}
+  - component: {fileID: 5027823266411670509}
+  - component: {fileID: 3831473558903921356}
   m_Layer: 0
   m_Name: Stair Walls Textured
   m_TagString: Untagged
@@ -31,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &821411474901680901
 MeshFilter:
@@ -83,3 +85,29 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &5027823266411670509
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3999819186670835226}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 101.6325, y: 1138.9304, z: 998.11804}
+  m_Center: {x: -549.1826, y: 69.46521, z: 74.05901}
+--- !u!65 &3831473558903921356
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3999819186670835226}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 103.86147, y: 1138.9304, z: 998.11804}
+  m_Center: {x: 548.0672, y: 69.46521, z: 74.05901}

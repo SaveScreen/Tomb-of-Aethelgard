@@ -44,11 +44,6 @@ public class LightInteractionScript : MonoBehaviour
      //   eqImage = GameObject.Find("Rotate UI");
 //        eqImage.SetActive(false);
 
-
-        if (PlayerObject != null)
-        {
-            PS = PlayerObject.GetComponent<PlayerScript>();
-        }
         Interact = false;
       
     }
@@ -98,20 +93,20 @@ public class LightInteractionScript : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        if (PS != null)
+        if (other.gameObject.tag == "Player")
         {
-            Interact= true;  
-          //  eqImage.SetActive(true);
-        }   
+            Interact = true;
+            //  eqImage.SetActive(true);
+        }
     }
     void OnTriggerExit(Collider other)
     {
-        if (PS != null)
+        if (other.gameObject.tag == "Player")
         {
-            Interact= false;
-          //  eqImage.SetActive(false);
+            Interact = false;
+            //  eqImage.SetActive(false);
         }
-
+       
     }
 
     private void RotateLightClockWise()

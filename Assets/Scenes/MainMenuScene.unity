@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.047807537, g: 0.0389661, b: 0.02289728, a: 1}
+  m_IndirectSpecularColor: {r: 0.000017033932, g: 0.000000025772884, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -230,6 +230,7 @@ MonoBehaviour:
   menucanvas: {fileID: 1734291941}
   creditscanvas: {fileID: 1778215787}
   menudirector: {fileID: 896391095}
+  camera1: {fileID: 379290038}
   textbox: {fileID: 681883970}
   lines:
   - Swinging Axe Production presents
@@ -253,6 +254,14 @@ MonoBehaviour:
     - m_Name: 
       m_Id: 62172db7-8798-4e8d-b6a2-5c75a24f2f76
       m_Path: <Gamepad>/buttonSouth
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Menuinput
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 86479d26-7f60-43f3-93b5-6959f8abf860
+      m_Path: <Mouse>/leftButton
       m_Interactions: 
       m_Processors: 
       m_Groups: 
@@ -939,7 +948,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 142397672}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -25.4, y: 25.83, z: 34.97}
+  m_LocalPosition: {x: -25.4, y: 20.2, z: 35.16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4966,21 +4975,15 @@ PlayableDirector:
   m_Enabled: 1
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: 1d01a06e9e1927d47a5fea054f447dcd, type: 2}
-  m_InitialState: 1
+  m_InitialState: 0
   m_WrapMode: 1
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
   m_SceneBindings:
-  - key: {fileID: -8881486638528050608, guid: 1d01a06e9e1927d47a5fea054f447dcd, type: 2}
-    value: {fileID: 379290042}
   - key: {fileID: -5051210142910700211, guid: 1d01a06e9e1927d47a5fea054f447dcd, type: 2}
     value: {fileID: 379290038}
   - key: {fileID: -5383288043281144682, guid: 1d01a06e9e1927d47a5fea054f447dcd, type: 2}
     value: {fileID: 73554242}
-  - key: {fileID: 3806537419095188116, guid: 1d01a06e9e1927d47a5fea054f447dcd, type: 2}
-    value: {fileID: 73554243}
-  - key: {fileID: -5248075281249117156, guid: 1d01a06e9e1927d47a5fea054f447dcd, type: 2}
-    value: {fileID: 901898811}
   - key: {fileID: 4186576311472827219, guid: 1d01a06e9e1927d47a5fea054f447dcd, type: 2}
     value: {fileID: 901898810}
   m_ExposedReferences:
@@ -7417,14 +7420,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1400369874}
-  m_LocalRotation: {x: -0.058968425, y: -0.25833628, z: -0.01580054, w: 0.9641242}
+  m_LocalRotation: {x: -0.6830127, y: -0.18301266, z: -0.18301266, w: 0.6830127}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: -7, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: -30, z: 0}
 --- !u!1001 &1411126587
 PrefabInstance:
   m_ObjectHideFlags: 0

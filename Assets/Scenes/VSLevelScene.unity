@@ -8640,6 +8640,18 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4263464680315237339, guid: 38275d824d7792544bc9f12f242cdc93, type: 3}
+      propertyPath: limitx
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4263464680315237339, guid: 38275d824d7792544bc9f12f242cdc93, type: 3}
+      propertyPath: limity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4263464680315237339, guid: 38275d824d7792544bc9f12f242cdc93, type: 3}
+      propertyPath: limitz
+      value: 75
+      objectReference: {fileID: 0}
     - target: {fileID: 8518796550990251582, guid: 38275d824d7792544bc9f12f242cdc93, type: 3}
       propertyPath: m_Name
       value: Axe Textured
@@ -30859,7 +30871,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8173987046539874385, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.03807768
+      value: 0.038077686
       objectReference: {fileID: 0}
     - target: {fileID: 8173987046539874385, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
       propertyPath: m_LocalRotation.y
@@ -30867,7 +30879,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8173987046539874385, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0013825396
+      value: -0.001382525
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []

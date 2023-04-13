@@ -6,7 +6,8 @@ public class SwingingAxe : MonoBehaviour
 {
     [Header("numbers")]
     public float speed = 1.05f;
-    public float limit = 75f;
+    public float limitx = 75f;    
+    public float limitz = 75f;
     public bool randomStart = false;
     private float random = 0;
 
@@ -20,7 +21,8 @@ public class SwingingAxe : MonoBehaviour
 
     void Update()
     {
-        float angle = limit * Mathf.Sin(Time.time + random * speed); //Time.time is used so then it begins to swing at the beginning of the game
-        transform.localRotation = Quaternion.Euler(angle,0,0);
+        float anglex = limitx * Mathf.Sin(Time.time + random * speed); //Time.time is used so then it begins to swing at the beginning of the game        
+        float anglez = limitz * Mathf.Sin(Time.time + random * speed); //Time.time is used so then it begins to swing at the beginning of the game
+        transform.localRotation = Quaternion.Euler(anglex,0,anglez);
     }
 }

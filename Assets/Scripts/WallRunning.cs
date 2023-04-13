@@ -13,7 +13,7 @@ public class WallRunning : MonoBehaviour
     public float MaxWallRunTime;
     private float WallRunTimer;
 
-    [Header("Exiting Wallrun")]
+    [Header("WallJump")]
 
     public float WallJumpUpForce;
     public float WallJumpSideForce;
@@ -109,11 +109,11 @@ public class WallRunning : MonoBehaviour
                 ExitWallTimer = ExitWallTime;
             }
 
-            //jumping = WallJumpKey.IsPressed();
+            jumping = WallJumpKey.IsPressed();
               
             
             //wall jumping 
-            //if (jumping) WallJump();
+            if (jumping) WallJump();
         }
 
         //state 2 - exiting wall run
@@ -162,15 +162,12 @@ public class WallRunning : MonoBehaviour
         Vector3 wallNormal = WallIsRight ? RightWall.normal : LeftWall.normal;
         Vector3 wallForward = Vector3.Cross(wallNormal, transform.up);
 
-        //adds force when wall running
-        //PS.AddForce(wallForward * WallRunForce, ForceMode.Force);
         
-       // Debug.Log("wall running");
     }
     private void EndWallRun() 
     {
         PS.wallrunning = false;
-        //PS.velocity = new Vector3(0f, 0f, 0f);
+        
     }
     private void WallJump()
     {

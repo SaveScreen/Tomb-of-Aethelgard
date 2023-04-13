@@ -129,6 +129,7 @@ public class PlayerScript : MonoBehaviour
             if (charactercontroller.isGrounded)
             {
                 jumping = playerjump.IsPressed();
+                velocity.x = 0f;
             }
             
             LookAndMove();

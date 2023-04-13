@@ -30,12 +30,11 @@ public class PushablePullable : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector3 dir = (PushPullPoint.position - PushablePullableRigdBody.position);
-
         if(PushPullPoint != null) 
         {
+            Vector3 direction = (PushPullPoint.position - PushablePullableRigdBody.position);
             //PushablePullableRigdBody.MovePosition(PushPullPoint.position);
-            PushablePullableRigdBody.velocity = dir * speed;
+            PushablePullableRigdBody.velocity = direction * speed;
 
         }
     }

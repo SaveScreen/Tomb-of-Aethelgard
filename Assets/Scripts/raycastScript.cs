@@ -173,13 +173,15 @@ public class raycastScript : MonoBehaviour {
                 dir3 = dir - offAngle;
 
                 child1.SetIsProjector(true);
-                child1.CopyRayValues(bouncesRemaining, rayLength, throughPoint, dir1);
+                hit.collider.gameObject.transform.GetChild(0).Rotate(offAngle);
+                child1.CopyRayValues(bouncesRemaining+1, rayLength, throughPoint, dir);
 
                 child2.SetIsProjector(true);
-                child2.CopyRayValues(bouncesRemaining, rayLength, throughPoint, dir2);
+                child2.CopyRayValues(bouncesRemaining+1, rayLength, throughPoint, dir);
 
                 child3.SetIsProjector(true);
-                child3.CopyRayValues(bouncesRemaining, rayLength, throughPoint, dir3);
+                hit.collider.gameObject.transform.GetChild(0).Rotate(-1*offAngle);
+                child3.CopyRayValues(bouncesRemaining+1, rayLength, throughPoint, dir);
 
                 //Debug.Log("1: " + dir1);
                 //Debug.Log("2: " + dir2);

@@ -5,9 +5,10 @@ using UnityEngine;
 public class PushablePullable : MonoBehaviour
 {
     private Rigidbody PushablePullableRigdBody;
-    private Transform PushPullPoint;
+    public Transform PushPullPointInteractable { get; private set; }
     [Header("speed for pushpull")]
     [SerializeField] private float speed = 10;
+    
 
     private void Awake()
     {
@@ -18,26 +19,25 @@ public class PushablePullable : MonoBehaviour
 
     public void PushPullInteract(Transform PushPullPoint)
     {
-        this.PushPullPoint= PushPullPoint;
+        this.PushPullPointInteractable= PushPullPoint;
         PushablePullableRigdBody.isKinematic = false;
     }
 
     public void StopPushingPulling()
     {
-        this.PushPullPoint = null;
+        this.PushPullPointInteractable = null;
         PushablePullableRigdBody.isKinematic = true;
     }
 
     private void FixedUpdate()
     {
-        if(PushPullPoint != null) 
+        if(PushPullPointInteractable != null) 
         {
-            Vector3 direction = (PushPullPoint.position - PushablePullableRigdBody.position);
+            Vector3 direction = (PushPullPointInteractable.position - PushablePullableRigdBody.position);
             //PushablePullableRigdBody.MovePosition(PushPullPoint.position);
             PushablePullableRigdBody.velocity = direction * speed;
 
         }
     }
-
-  
+   
 }

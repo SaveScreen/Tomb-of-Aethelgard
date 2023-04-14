@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class reflectionManager : MonoBehaviour
 {
@@ -10,9 +11,24 @@ public class reflectionManager : MonoBehaviour
 
     private void Update()
     {
-        DoorControlType("isActivated", 1, 1);
-        DoorControlType("isActivated", 2, 2);
-        DoorControlType("isActivated", 3, 3);
+        if(SceneManager.GetActiveScene().name == "TutorialLevel"){
+            DoorControlType("isActivated", 1, 1);
+            DoorControlType("isActivated", 2, 2);
+        }
+        if(SceneManager.GetActiveScene().name == "VSLevelScene"){
+            DoorControlType("isActivated", 1, 1);
+            DoorControlType("isActivated", 2, 2);
+        }
+        if(SceneManager.GetActiveScene().name == "Level2Scene"){
+            DoorControlType("isActivated", 1, 1);
+            DoorControlType("isActivated", 2, 3, 2);
+        }
+        if(SceneManager.GetActiveScene().name == "Level3Scene"){
+            DoorControlType("isActivated", 1, 1);
+            DoorControlType("isActivated", 2, 2);
+            DoorControlType("isActivated", 3, 3);
+        } 
+        
         /*This means that when the IsActivated value of catcher 2 is true, door 1 opens. 
         Otherwise, it closes.*/
 

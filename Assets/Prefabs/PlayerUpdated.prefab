@@ -45,11 +45,11 @@ GameObject:
   - component: {fileID: 3041323656804124342}
   - component: {fileID: 3041323656804124329}
   - component: {fileID: 3041323656804124330}
-  - component: {fileID: 3041323656804124328}
+  - component: {fileID: 227851872716210818}
   - component: {fileID: 3041323656804124335}
+  - component: {fileID: 3041323656804124328}
   - component: {fileID: 7185953941056270833}
   - component: {fileID: 4151148019741756540}
-  - component: {fileID: 227851872716210818}
   m_Layer: 9
   m_Name: PlayerUpdated
   m_TagString: Player
@@ -74,7 +74,7 @@ Transform:
   - {fileID: 227851873522225681}
   - {fileID: 334330077680238600}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!33 &3041323656804124340
 MeshFilter:
@@ -365,27 +365,55 @@ MonoBehaviour:
     m_Flags: 0
   winscreen: {fileID: 0}
   winplatform: {fileID: 0}
+  losescreen: {fileID: 0}
   state: 1
   wallrunning: 1
   anim: {fileID: 0}
---- !u!143 &3041323656804124328
-CharacterController:
+--- !u!114 &227851872716210818
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3041323656804124343}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Height: 2
-  m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37ba1058033bce14183c53edf3918355, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pullspeed: 5
+  playerpushpull:
+    m_Name: Playerpushpull
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: 2b17ebc8-1ade-4c0c-bd27-3fc37a2a044c
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 9777dfb6-c2ba-4563-bbd7-50c135369305
+      m_Path: <Keyboard>/r
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Playerpushpull
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 650cd7fb-967d-40a9-afd6-18e08ebea220
+      m_Path: <Gamepad>/buttonEast
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Playerpushpull
+      m_Flags: 0
+    m_Flags: 0
+  PlayerCameraTransform: {fileID: 3041323656804124331}
+  PushPullPoint: {fileID: 227851873522225681}
+  PushPull:
+    serializedVersion: 2
+    m_Bits: 256
+  pushSound: {fileID: 4151148019741756540}
+  anim: {fileID: 0}
 --- !u!114 &3041323656804124335
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -440,6 +468,24 @@ MonoBehaviour:
   orientation: {fileID: 3041323656804124331}
   ExitingWall: 0
   ExitWallTime: 0.2
+--- !u!143 &3041323656804124328
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3041323656804124343}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!82 &7185953941056270833
 AudioSource:
   m_ObjectHideFlags: 0
@@ -452,7 +498,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 199c2eb177402c546ba6bcdf4c105b52, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.782
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -548,7 +594,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 46676810b48884d4c9d97d172ce36b51, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.108
+  m_Volume: 0.08
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -632,50 +678,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &227851872716210818
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3041323656804124343}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37ba1058033bce14183c53edf3918355, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pullspeed: 5
-  playerpushpull:
-    m_Name: Playerpushpull
-    m_Type: 1
-    m_ExpectedControlType: Button
-    m_Id: 2b17ebc8-1ade-4c0c-bd27-3fc37a2a044c
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 9777dfb6-c2ba-4563-bbd7-50c135369305
-      m_Path: <Keyboard>/r
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Playerpushpull
-      m_Flags: 0
-    - m_Name: 
-      m_Id: 650cd7fb-967d-40a9-afd6-18e08ebea220
-      m_Path: <Gamepad>/buttonEast
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Playerpushpull
-      m_Flags: 0
-    m_Flags: 0
-  PlayerCameraTransform: {fileID: 3041323656804124331}
-  PushPullPoint: {fileID: 227851873522225681}
-  PushPull:
-    serializedVersion: 2
-    m_Bits: 256
-  pushSound: {fileID: 4151148019741756540}
 --- !u!1 &3041323657092259088
 GameObject:
   m_ObjectHideFlags: 0

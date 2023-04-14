@@ -74,8 +74,15 @@ public class PlayerScript : MonoBehaviour
         walking
     }
     public bool wallrunning;
-
     public Animator anim;
+
+
+
+
+    private int rupees;
+
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -342,8 +349,10 @@ public class PlayerScript : MonoBehaviour
     }
     private void LoseGame()
     {
-        Time.timeScale = 0;
-        lose = true;
+        //these statements are commented out until the death animation is added. then maybe re-add
+
+        //Time.timeScale = 0;
+        //lose = true;
         //losescreen.SetActive(true);
         footsteps.Stop();       
         anim.SetBool("isDying", true);
@@ -358,8 +367,15 @@ public class PlayerScript : MonoBehaviour
         }
     }
 
+    public void AddRupees(int amt){
+        rupees += amt;
+        //Debug.Log(rupees + " rupees");
+    }
+
     public Animator GetAnimator(){
         return anim;
     }
+
+
     
 }

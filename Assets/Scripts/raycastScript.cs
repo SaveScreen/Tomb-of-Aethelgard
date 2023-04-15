@@ -131,7 +131,7 @@ public class raycastScript : MonoBehaviour {
 
                 raycastScript filterScript = hit.collider.gameObject.GetComponent<raycastScript>();
                 filterScript.SetIsProjector(true);
-                filterScript.CopyRayValues(bouncesRemaining, rayLength, throughPoint, dir);
+                filterScript.CopyRayValues(bouncesRemaining+1, rayLength, throughPoint, dir);
 
             }else if(hit.collider.tag == "prism"){
                 FinishRenderPoints(hit.point);
@@ -141,6 +141,7 @@ public class raycastScript : MonoBehaviour {
                 throughPoint = ray.GetPoint(Vector3.Distance(pos, hit.point) + 0.1f);
 
                 Vector3 offAngle = new Vector3(0.3f, 0, 0.3f);
+                Vector3 negativeOffAngle = new Vector3(-0.3f, 0, -0.3f);
                 
                 /*
                 when the prism is hit, it activates 
@@ -174,14 +175,14 @@ public class raycastScript : MonoBehaviour {
 
                 child1.SetIsProjector(true);
                 hit.collider.gameObject.transform.GetChild(0).Rotate(offAngle);
-                child1.CopyRayValues(bouncesRemaining+1, rayLength, throughPoint, dir);
+                child1.CopyRayValues(bouncesRemaining+1, rayLength, throughPoint);
 
                 child2.SetIsProjector(true);
-                child2.CopyRayValues(bouncesRemaining+1, rayLength, throughPoint, dir);
+                child2.CopyRayValues(bouncesRemaining+1, rayLength, throughPoint);
 
                 child3.SetIsProjector(true);
-                hit.collider.gameObject.transform.GetChild(0).Rotate(-1*offAngle);
-                child3.CopyRayValues(bouncesRemaining+1, rayLength, throughPoint, dir);
+                hit.collider.gameObject.transform.GetChild(0).Rotate(negativeOffAngle);
+                child3.CopyRayValues(bouncesRemaining+1, rayLength, throughPoint);
 
                 //Debug.Log("1: " + dir1);
                 //Debug.Log("2: " + dir2);
@@ -234,6 +235,13 @@ public class raycastScript : MonoBehaviour {
         rayLength = length;
         startPosition = point;
         startDirection = startDir;
+    }
+    public void CopyRayValues(int bounces, float length, Vector3 point)
+    {
+        rayBounces = bounces;
+        rayLength = length;
+        startPosition = point;
+        startDirection = transform.forward;
     }
     
 

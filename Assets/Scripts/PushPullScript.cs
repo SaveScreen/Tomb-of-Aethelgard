@@ -57,20 +57,21 @@ public class PushPullScript : MonoBehaviour
             {
              return;
             }
-            if (PushablePullable != null)
-            {
-             StopPushingPullingStone();
-            }
-        float PushPullDistance = 1;
-        if (Physics.Raycast(PlayerCameraTransform.position, PlayerCameraTransform.forward, out RaycastHit raycastHit, PushPullDistance, PushPull))
+        if (PushablePullable == null)
         {
-            if (raycastHit.transform.TryGetComponent(out PushablePullable))
+            float PushPullDistance = 1;
+            if (Physics.Raycast(PlayerCameraTransform.position, PlayerCameraTransform.forward, out RaycastHit raycastHit, PushPullDistance, PushPull))
             {
-                StartPushingPullingStone();
+                if (raycastHit.transform.TryGetComponent(out PushablePullable))
+                {
+                    StartPushingPullingStone();
+                }
             }
         }
-        
-
+        else 
+        {
+            StopPushingPullingStone();
+        }
           
           if (!PS.charactercontroller.isGrounded)
            {

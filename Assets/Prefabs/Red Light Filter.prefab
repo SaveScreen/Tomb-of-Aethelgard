@@ -116,8 +116,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 25.677544, y: 370.44244, z: 165.15485}
-  m_Center: {x: 7.15982, y: 186.4796, z: 0.48651695}
+  m_Size: {x: 49.30999, y: 370.44244, z: 224.92336}
+  m_Center: {x: 8.554631, y: 186.47983, z: 2.4168553}
 --- !u!54 &2788344758923907071
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -147,6 +147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  distance: 1
 --- !u!120 &5479187219283637676
 LineRenderer:
   serializedVersion: 2

@@ -14,7 +14,8 @@ public class PushablePullable : MonoBehaviour
     private void Awake()
     {
         PushablePullableRigdBody = GetComponent<Rigidbody>();
-        PushablePullableRigdBody.isKinematic = true;
+        PushablePullableRigdBody.isKinematic = false;
+        PushablePullableRigdBody.useGravity = true;
     }
     void Start()
     {
@@ -30,26 +31,43 @@ public class PushablePullable : MonoBehaviour
     {
         this.PushPullPointInteractable= PushPullPoint;
         PushablePullableRigdBody.isKinematic = false;
+        PushablePullableRigdBody.useGravity = false;
     }
 
     public void StopPushingPulling()
     {
         this.PushPullPointInteractable = null;
-        PushablePullableRigdBody.isKinematic = true;
+        PushablePullableRigdBody.useGravity = true;
+        PushablePullableRigdBody.isKinematic = false;
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            PushablePullableRigdBody.isKinematic = true;
+        }
+    }
+    void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            PushablePullableRigdBody.isKinematic = false;
+        }
     }
 
     private void Update()
-    {
-        if (PushPullPointInteractable != null)
         {
-            float distanceBetween = Vector3.Distance(PPS.PushPullPoint.transform.position, PushablePullableRigdBody.transform.position);
-            Debug.Log("The distance between them " + distanceBetween + " units");
-            if (distanceBetween > distance) 
-            { 
-                PPS.StopPushingPullingStone();
+            if (PushPullPointInteractable != null)
+            {
+                float distanceBetween = Vector3.Distance(PPS.PushPullPoint.transform.position, PushablePullableRigdBody.transform.position);
+                Debug.Log("The distance between them " + distanceBetween + " units");
+                if (distanceBetween > distance) 
+                { 
+                    PPS.StopPushingPullingStone();
+                }
             }
         }
-    }
 
     private void FixedUpdate()
     {

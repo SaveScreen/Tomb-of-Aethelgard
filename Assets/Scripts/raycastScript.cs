@@ -84,7 +84,7 @@ public class raycastScript : MonoBehaviour {
 
         } else{
             //draw no line
-            FinishRenderPoints(transform.position);
+            FinishNoLine(transform.position);
         }
     }
 
@@ -131,7 +131,7 @@ public class raycastScript : MonoBehaviour {
 
                 raycastScript filterScript = hit.collider.gameObject.GetComponent<raycastScript>();
                 filterScript.SetIsProjector(true);
-                filterScript.CopyRayValues(bouncesRemaining+1, rayLength, throughPoint, dir);
+                filterScript.CopyRayValues(bouncesRemaining, rayLength, throughPoint, dir);
 
             }else if(hit.collider.tag == "prism"){
                 FinishRenderPoints(hit.point);
@@ -225,7 +225,20 @@ public class raycastScript : MonoBehaviour {
             by setting all remaining points after to this same position.
             */
         
-        for(int i = pointsRendered; i < rayBounces+2; i++){
+        for(int i = pointsRendered; i < lineRenderer.positionCount; i++){
+            lineRenderer.SetPosition(i, endPoint);
+        }
+    }
+
+    void FinishNoLine(Vector3 endPoint){
+        /* This helper function sets all remaining points of the line renderer
+            to the last meaningful point to prevent visual errors.
+            
+            ex: if the ray hits a non-reflective object, kill the line
+            by setting all remaining points after to this same position.
+            */
+        
+        for(int i = 0; i < lineRenderer.positionCount; i++){
             lineRenderer.SetPosition(i, endPoint);
         }
     }

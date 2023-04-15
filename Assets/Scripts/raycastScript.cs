@@ -131,7 +131,7 @@ public class raycastScript : MonoBehaviour {
 
                 raycastScript filterScript = hit.collider.gameObject.GetComponent<raycastScript>();
                 filterScript.SetIsProjector(true);
-                filterScript.CopyRayValues(bouncesRemaining, rayLength, throughPoint, dir);
+                filterScript.CopyRayValues(bouncesRemaining + 1, rayLength, throughPoint, dir);
 
             }else if(hit.collider.tag == "prism"){
                 FinishRenderPoints(hit.point);

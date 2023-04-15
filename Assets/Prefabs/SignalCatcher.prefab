@@ -35,7 +35,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7645012881236897734
 MeshFilter:
@@ -98,7 +98,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 254.37444, y: 413.0554, z: 254.3745}
+  m_Size: {x: 254.37444, y: 372.13, z: 254.3745}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &9010525839976052094
 MonoBehaviour:
@@ -113,6 +113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   signalCatcherID: 1
+  catcherColor: 0
   isActivatedSoundPlayer: {fileID: 6847598927192027449}
   hasBeenActivatedSoundPlayer: {fileID: 1190112549481549221}
 --- !u!82 &6847598927192027449

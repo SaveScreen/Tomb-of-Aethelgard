@@ -140,8 +140,8 @@ public class raycastScript : MonoBehaviour {
                 Vector3 throughPoint = new Vector3();
                 throughPoint = ray.GetPoint(Vector3.Distance(pos, hit.point) + 0.1f);
 
-                Vector3 offAngle = new Vector3(0.3f, 0, 0.3f);
-                Vector3 negativeOffAngle = new Vector3(-0.3f, 0, -0.3f);
+                Vector3 offAngle = new Vector3(0, 0, 30f);
+                Vector3 negativeOffAngle = new Vector3(0, 0, 330f);
                 
                 /*
                 when the prism is hit, it activates 
@@ -150,7 +150,7 @@ public class raycastScript : MonoBehaviour {
 
                 - child 1 script is grabbed. 
                 - child 1 script is activated.
-                - calculate the new angle for launch (dir + some value)
+                - rotate child 1.
                 - child 1 gets new ray values.
 
                 Repeat for all 3 children.
@@ -173,15 +173,20 @@ public class raycastScript : MonoBehaviour {
                 //dir3 = (dir + Vector3.left)/2;
                 dir3 = dir - offAngle;
 
+                if(!child1.GetIsProjector()){
+                    hit.collider.gameObject.transform.GetChild(0).Rotate(offAngle);
+                }
                 child1.SetIsProjector(true);
-                hit.collider.gameObject.transform.GetChild(0).Rotate(offAngle);
                 child1.CopyRayValues(bouncesRemaining+1, rayLength, throughPoint);
 
                 child2.SetIsProjector(true);
                 child2.CopyRayValues(bouncesRemaining+1, rayLength, throughPoint);
 
+
+                if(!child3.GetIsProjector()){
+                    hit.collider.gameObject.transform.GetChild(2).Rotate(negativeOffAngle);
+                }
                 child3.SetIsProjector(true);
-                hit.collider.gameObject.transform.GetChild(0).Rotate(negativeOffAngle);
                 child3.CopyRayValues(bouncesRemaining+1, rayLength, throughPoint);
 
                 //Debug.Log("1: " + dir1);
@@ -227,6 +232,10 @@ public class raycastScript : MonoBehaviour {
 
     public void SetIsProjector(bool b){
         isProjector = b;
+    }
+
+    public bool GetIsProjector(){
+        return isProjector;
     }
 
     public void CopyRayValues(int bounces, float length, Vector3 point, Vector3 startDir)

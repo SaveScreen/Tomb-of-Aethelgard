@@ -23,7 +23,9 @@ public class SwingingAxe : MonoBehaviour
 
     void Update()
     {
-        float anglex = limitx * Mathf.Sin(Time.time + random * speed); //Time.time is used so then it begins to swing at the beginning of the game         
+        float anglex = limitx * Mathf.Sin(Time.time + random * speed); 
+        //Time.time is used so then it begins to swing at the beginning of the game         
+        
         transform.localRotation = Quaternion.Euler(anglex,Yrotation,0);
     }
 }

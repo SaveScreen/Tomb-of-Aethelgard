@@ -16,8 +16,8 @@ public class PushPullScript : MonoBehaviour
 
     [Header("Refrences")]
     [SerializeField] private Transform PlayerCameraTransform;
-    [SerializeField] private Transform PushPullPoint;
-    [SerializeField] private float distance = 1;
+    public Transform PushPullPoint;
+    //[SerializeField] private float distance = 1;
     private PlayerScript PS;
     private PushablePullable PushablePullable;
 
@@ -55,23 +55,21 @@ public class PushPullScript : MonoBehaviour
 
             if (pushpulling != true)
             {
-            return;
+             return;
             }
-            if (PushablePullable == null)
+            if (PushablePullable != null)
             {
-                float PushPullDistance = 1;
-                if (Physics.Raycast(PlayerCameraTransform.position, PlayerCameraTransform.forward, out RaycastHit raycastHit, PushPullDistance, PushPull))
-                {
-                    if (raycastHit.transform.TryGetComponent(out PushablePullable))
-                    {
-                        StartPushingPullingStone();
-                    }
-                }
+             StopPushingPullingStone();
             }
-            else 
+        float PushPullDistance = 1;
+        if (Physics.Raycast(PlayerCameraTransform.position, PlayerCameraTransform.forward, out RaycastHit raycastHit, PushPullDistance, PushPull))
+        {
+            if (raycastHit.transform.TryGetComponent(out PushablePullable))
             {
-                StopPushingPullingStone();
+                StartPushingPullingStone();
             }
+        }
+        
 
           
           if (!PS.charactercontroller.isGrounded)
@@ -83,17 +81,9 @@ public class PushPullScript : MonoBehaviour
             playerpushpull.Enable();
           }
          }
-    private void DisitanceBetweenpoint()
-    {
-        float distanceBetween = Vector3.Distance (PushPullPoint.transform.position, PushablePullable.PushPullPointInteractable.transform.position); // grabs the player's pushpoint transformation information and the pushablepullable transformation information and calculate's the distance 
-        Debug.Log("The distance between them " + distanceBetween + " units");
-        if (distanceBetween > distance) 
-        {
-            StopPushingPullingStone();
-        }
-    }
+    
 
-    private void StopPushingPullingStone()
+    public void StopPushingPullingStone()
     {
         PushablePullable.StopPushingPulling();
         PushablePullable = null;

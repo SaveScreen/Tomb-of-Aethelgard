@@ -17,6 +17,7 @@ public class PushPullScript : MonoBehaviour
     [Header("Refrences")]
     [SerializeField] private Transform PlayerCameraTransform;
     [SerializeField] private Transform PushPullPoint;
+    [SerializeField] private float distance = 1;
     private PlayerScript PS;
     private PushablePullable PushablePullable;
 
@@ -51,9 +52,11 @@ public class PushPullScript : MonoBehaviour
         private void Update()
        {
             pushpulling = playerpushpull.WasPressedThisFrame();
-            
-          if (pushpulling == true)
-          {
+
+            if (pushpulling != true)
+            {
+            return;
+            }
             if (PushablePullable == null)
             {
                 float PushPullDistance = 1;
@@ -61,33 +64,16 @@ public class PushPullScript : MonoBehaviour
                 {
                     if (raycastHit.transform.TryGetComponent(out PushablePullable))
                     {
-                        PushablePullable.PushPullInteract(PushPullPoint);                   
-                        PS.speed = PS.speed - pullspeed;
-                        PS.playerjump.Disable();
-                        PS.IsPushingPulling = true;
-
-                        
-                        anim.SetBool("isPushing", true);
-
-                        if(!pushSound.isPlaying){
-                            pushSound.Play();
-                        }
+                        StartPushingPullingStone();
                     }
                 }
             }
             else 
             {
-                PushablePullable.StopPushingPulling();
-                PushablePullable = null;
-                PS.speed = PS.speed + pullspeed;
-                PS.playerjump.Enable();
-                PS.IsPushingPulling = false;
-
-                anim.SetBool("isPushing", false);
-
-                pushSound.Stop();
+                StopPushingPullingStone();
             }
-          }
+
+          
           if (!PS.charactercontroller.isGrounded)
            {
             playerpushpull.Disable();
@@ -96,15 +82,43 @@ public class PushPullScript : MonoBehaviour
           {
             playerpushpull.Enable();
           }
-          /*else
-          {
-                PushablePullable.StopPushingPulling();
-                PushablePullable = null;
-                PS.speed = PS.speed + pullspeed;
-                PS.playerjump.Enable();
-                PS.IsPushingPulling = false;
+         }
+    private void DisitanceBetweenpoint()
+    {
+        float distanceBetween = Vector3.Distance (PushPullPoint.transform.position, PushablePullable.PushPullPointInteractable.transform.position); // grabs the player's pushpoint transformation information and the pushablepullable transformation information and calculate's the distance 
+        Debug.Log("The distance between them " + distanceBetween + " units");
+        if (distanceBetween > distance) 
+        {
+            StopPushingPullingStone();
+        }
+    }
 
-                pushSound.Stop();
-         }*/
-       }
+    private void StopPushingPullingStone()
+    {
+        PushablePullable.StopPushingPulling();
+        PushablePullable = null;
+        PS.speed = PS.speed + pullspeed;
+        PS.playerjump.Enable();
+        PS.IsPushingPulling = false;
+
+        anim.SetBool("isPushing", false);
+
+        pushSound.Stop();
+    }
+
+    private void StartPushingPullingStone()
+    {
+        PushablePullable.PushPullInteract(PushPullPoint);
+        PS.speed = PS.speed - pullspeed;
+        PS.playerjump.Disable();
+        PS.IsPushingPulling = true;
+
+
+        anim.SetBool("isPushing", true);
+        if (!pushSound.isPlaying)
+        {
+            pushSound.Play();
+        }
+    }
+
 }

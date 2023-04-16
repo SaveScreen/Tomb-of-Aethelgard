@@ -7585,6 +7585,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: d524d12e4047e8b4ca5bd7d71a299c9c, type: 3}
+--- !u!1 &263696875 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2776361856854516418, guid: 08d3ea66d564d974d9020e3983b11dab, type: 3}
+  m_PrefabInstance: {fileID: 2043245279}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &263777278
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8667,6 +8672,10 @@ PrefabInstance:
       propertyPath: m_LookAt
       value: 
       objectReference: {fileID: 1546214086}
+    - target: {fileID: 8173987045581154690, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
+      propertyPath: m_XAxis.m_InvertInput
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8173987045581154690, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
       propertyPath: m_YAxis.m_InvertInput
       value: 1
@@ -16722,6 +16731,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8517048667660574531, guid: 3f322f13638e64c4b90e0e298e13cb8d, type: 3}
+      propertyPath: filterID
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8517048667660574531, guid: 3f322f13638e64c4b90e0e298e13cb8d, type: 3}
       propertyPath: isProjector
       value: 0
       objectReference: {fileID: 0}
@@ -19390,6 +19403,10 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: -1.571393
       objectReference: {fileID: 0}
+    - target: {fileID: 5411072950481296565, guid: c31e788d6d51f7c479eb10b18a98e824, type: 3}
+      propertyPath: filterID
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7474517757008446573, guid: c31e788d6d51f7c479eb10b18a98e824, type: 3}
       propertyPath: m_Name
       value: 'Green Light Filter '
@@ -19463,6 +19480,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 504055493}
     m_Modifications:
+    - target: {fileID: 5231926999464408274, guid: 776beac3db9d6024ca977711e146553a, type: 3}
+      propertyPath: filterID
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6994422872302420560, guid: 776beac3db9d6024ca977711e146553a, type: 3}
       propertyPath: m_Name
       value: Blue Light Filter
@@ -28988,6 +29009,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
+--- !u!1 &986800161 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2776361856854516418, guid: 08d3ea66d564d974d9020e3983b11dab, type: 3}
+  m_PrefabInstance: {fileID: 1866921974}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &987044380
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32439,6 +32465,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 45becc55d2a8ea44d82139cdc6081272, type: 3}
+--- !u!1 &1101287804 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2776361856854516418, guid: 08d3ea66d564d974d9020e3983b11dab, type: 3}
+  m_PrefabInstance: {fileID: 922489506}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1101390981 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2063506529858872986, guid: 75b1202f0d0b7064f8e2ccee86d511be, type: 3}
@@ -58375,6 +58406,22 @@ PrefabInstance:
       propertyPath: filters.Array.data[2]
       value: 
       objectReference: {fileID: 666534865}
+    - target: {fileID: 6046727511762458274, guid: 59b5ab6022c7e4141b357578a34c87af, type: 3}
+      propertyPath: projectors.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6046727511762458274, guid: 59b5ab6022c7e4141b357578a34c87af, type: 3}
+      propertyPath: projectors.Array.data[0]
+      value: 
+      objectReference: {fileID: 1101287804}
+    - target: {fileID: 6046727511762458274, guid: 59b5ab6022c7e4141b357578a34c87af, type: 3}
+      propertyPath: projectors.Array.data[1]
+      value: 
+      objectReference: {fileID: 263696875}
+    - target: {fileID: 6046727511762458274, guid: 59b5ab6022c7e4141b357578a34c87af, type: 3}
+      propertyPath: projectors.Array.data[2]
+      value: 
+      objectReference: {fileID: 986800161}
     - target: {fileID: 6046727511762458274, guid: 59b5ab6022c7e4141b357578a34c87af, type: 3}
       propertyPath: signalCatchers.Array.size
       value: 3

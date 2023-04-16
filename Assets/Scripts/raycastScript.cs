@@ -28,11 +28,12 @@ public class raycastScript : MonoBehaviour {
         green,
         prism
     }
-    public LightColor rayColor = 0;
 
-    [Header("Projector or Filter")]
+    [Header("Filter Values")]
+    public LightColor rayColor = 0;
     public bool isProjector = true;
 
+    public int filterID;
 
     //private variables
     private int bouncesRemaining;
@@ -42,6 +43,8 @@ public class raycastScript : MonoBehaviour {
     private Vector3 startDirection;
 
     private Color filterColor;
+
+    private GameObject hitSpecialObject = null;
 
     void Start()
     {
@@ -119,8 +122,9 @@ public class raycastScript : MonoBehaviour {
                 FindObjectOfType<reflectionManager>().TurnOffFilters();
 
                 if(catcherScript.GetColor() == (int)rayColor || catcherScript.GetColor()==0){
-                    hit.collider.gameObject.GetComponent<signalCatcherScript>().SetHasBeenActivated(true);
-                    hit.collider.gameObject.GetComponent<signalCatcherScript>().SetIsActivated(true);
+                    //hit.collider.gameObject.GetComponent<signalCatcherScript>().SetHasBeenActivated(true);
+                    //hit.collider.gameObject.GetComponent<signalCatcherScript>().SetIsActivated(true);
+                    hitSpecialObject = hit.collider.gameObject;
                 }
             }else if(hit.collider.tag == "filter"){
                 FinishRenderPoints(hit.point);
@@ -130,8 +134,9 @@ public class raycastScript : MonoBehaviour {
                 throughPoint = ray.GetPoint(Vector3.Distance(pos, hit.point) + 0.1f);
 
                 raycastScript filterScript = hit.collider.gameObject.GetComponent<raycastScript>();
-                filterScript.SetIsProjector(true);
                 filterScript.CopyRayValues(bouncesRemaining, rayLength, throughPoint, dir);
+                
+                hitSpecialObject = hit.collider.gameObject;
 
             }else if(hit.collider.tag == "prism"){
                 FinishRenderPoints(hit.point);
@@ -195,18 +200,19 @@ public class raycastScript : MonoBehaviour {
 
             }
             else {
-                FindObjectOfType<reflectionManager>().SetAllCatchersIsActivated(false);
-                FindObjectOfType<reflectionManager>().TurnOffFilters();
-
-                //lineRenderer.SetPosition(pointsRendered, ray.GetPoint(rayLength));
+                //FindObjectOfType<reflectionManager>().SetAllCatchersIsActivated(false);
+                //FindObjectOfType<reflectionManager>().TurnOffFilters();
+                hitSpecialObject = null;
                 
                 lineRenderer.SetPosition(pointsRendered, hit.point);
                 FinishRenderPoints(hit.point);
             }
         }
         else{
-            FindObjectOfType<reflectionManager>().SetAllCatchersIsActivated(false);
-            FindObjectOfType<reflectionManager>().TurnOffFilters();
+            //FindObjectOfType<reflectionManager>().SetAllCatchersIsActivated(false);
+            //FindObjectOfType<reflectionManager>().TurnOffFilters();
+
+            hitSpecialObject = null;
             
             /*if the line does not collide with an object within rayLength units, the line dies. 
                 Set all remaining points of the lineRenderer to the end point to prevent visual errors.*/
@@ -241,6 +247,16 @@ public class raycastScript : MonoBehaviour {
         for(int i = 0; i < lineRenderer.positionCount; i++){
             lineRenderer.SetPosition(i, endPoint);
         }
+    }
+
+    public void ActivateFilter(bool b){
+        if(b){
+            SetIsProjector(true);
+        }
+    }
+
+    public GameObject GetHitSpecialObject(){
+        return hitSpecialObject;
     }
 
     public void SetIsProjector(bool b){

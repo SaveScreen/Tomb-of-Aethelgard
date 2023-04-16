@@ -9,6 +9,24 @@ public class reflectionManager : MonoBehaviour
     public GameObject[] doors;
     public GameObject[] filters;
 
+    public GameObject[] projectors;
+
+    private bool[,] raysHitReceivers = new bool[5, 5];
+    private bool[,] raysHitFilters = new bool[5, 5];
+
+    private void Start(){
+        for(int i = 0; i < projectors.Length;i++){
+            for(int j = 0; j < filters.Length;j++){
+                raysHitFilters[i, j]= false;
+            }
+        }
+        for(int i = 0; i < projectors.Length;i++){
+            for(int j = 0; j < signalCatchers.Length;j++){
+                raysHitReceivers[i, j]= false;
+            }
+        }
+    }
+
     private void Update()
     {
         if(SceneManager.GetActiveScene().name == "TutorialLevel"){
@@ -28,13 +46,13 @@ public class reflectionManager : MonoBehaviour
             DoorControlType("isActivated", 2, 2);
             DoorControlType("isActivated", 3, 3);
         } 
-        
-        /*This means that when the IsActivated value of catcher 2 is true, door 1 opens. 
-        Otherwise, it closes.*/
 
        // DoorControlType("hasBeenActivated", 1, 2, 2);
         /*This means that when catchers 1 and 2 have been activated at some point, door 2 opens.
-        It does not matter which order. It does not matter if they are currently being activated.*/
+        It does not matter which order. It does not matter if they are currently being activated.*/     
+        CheckProjectors(); 
+        CheckReceivers();
+        CheckFilters();
     }
 
     private void DoorControl(int rID, int doorID)
@@ -123,6 +141,74 @@ public class reflectionManager : MonoBehaviour
     public void TurnOffFilters(){
         for(int i = 0; i < filters.Length; i++){
             filters[i].GetComponent<raycastScript>().SetIsProjector(false);
+        }
+    }
+
+    private void CheckProjectors(){
+        for(int i = 0; i < projectors.Length;i++){
+
+            if(projectors[i].GetComponent<raycastScript>().GetHitSpecialObject() == null){
+                for(int j = 0; j < signalCatchers.Length; j++){
+                    raysHitReceivers[i, j]= false;
+                }
+                for(int k = 0; k < filters.Length; k++){
+                    raysHitFilters[i, k]= false;
+                }
+            }
+            else{
+                //get hit object and record it
+                GameObject hitTarget = projectors[i].GetComponent<raycastScript>().GetHitSpecialObject();
+
+                //check if it is a filter 
+                if(hitTarget.GetComponent<signalCatcherScript>() == null){
+                    //activate filter
+                    
+                    raysHitFilters[i, hitTarget.GetComponent<raycastScript>().filterID-1] = true;
+                }else{
+                    //activate signal catcher
+                    
+                    raysHitReceivers[i, hitTarget.GetComponent<signalCatcherScript>().signalCatcherID-1] = true;
+                    hitTarget.GetComponent<signalCatcherScript>().SetHasBeenActivated(true);
+                }
+            }
+        }
+    }
+
+    private bool CheckOneReceiver(int j){
+        for(int i = 0; i < projectors.Length;i++){
+            if(raysHitReceivers[i, j]){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private bool CheckOneFilter(int j){
+        for(int i = 0; i < projectors.Length;i++){
+            if(raysHitFilters[i, j]){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private void CheckReceivers(){
+        for(int j = 0; j < signalCatchers.Length;j++){
+            if(CheckOneReceiver(j)){
+                signalCatchers[j].GetComponent<signalCatcherScript>().SetIsActivated(true);
+            } else{
+                signalCatchers[j].GetComponent<signalCatcherScript>().SetIsActivated(false);
+            }
+        }
+    }
+    private void CheckFilters(){
+        for(int j = 0; j < filters.Length;j++){
+            if(CheckOneFilter(j)){
+                Debug.Log("helllllo crazy pants");
+                filters[j].GetComponent<raycastScript>().ActivateFilter(true);
+            } else{
+                filters[j].GetComponent<raycastScript>().ActivateFilter(false);
+            }
         }
     }
     

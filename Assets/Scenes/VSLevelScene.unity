@@ -37244,6 +37244,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 460a3dd60a5a7bf429ec232453a6493b, type: 3}
+--- !u!1 &1962545097 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2776361856854516418, guid: 08d3ea66d564d974d9020e3983b11dab, type: 3}
+  m_PrefabInstance: {fileID: 1987018314515721208}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1963872556
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38131,7 +38136,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9010525839976052094, guid: 2fa0d8b844cf2b54d8b68e8ba208c709, type: 3}
       propertyPath: catcherColor
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9010525839976052094, guid: 2fa0d8b844cf2b54d8b68e8ba208c709, type: 3}
       propertyPath: signalCatcherID
@@ -40822,6 +40827,14 @@ PrefabInstance:
       propertyPath: filters.Array.data[3]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6046727511762458274, guid: 59b5ab6022c7e4141b357578a34c87af, type: 3}
+      propertyPath: projectors.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6046727511762458274, guid: 59b5ab6022c7e4141b357578a34c87af, type: 3}
+      propertyPath: projectors.Array.data[0]
+      value: 
+      objectReference: {fileID: 1962545097}
     - target: {fileID: 6046727511762458274, guid: 59b5ab6022c7e4141b357578a34c87af, type: 3}
       propertyPath: signalCatchers.Array.data[0]
       value: 

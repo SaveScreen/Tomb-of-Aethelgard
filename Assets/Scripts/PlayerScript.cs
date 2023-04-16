@@ -54,7 +54,7 @@ public class PlayerScript : MonoBehaviour
 
     [Header("Pause Input")]
     public InputAction pausing;
-    private GameObject pauseMenu;
+    public GameObject pauseMenu;
     public static bool paused = false;
 
     [Header("Win Screen")]

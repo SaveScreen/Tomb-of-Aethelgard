@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.28567404, g: 0.31521487, b: 0.3204815, a: 1}
+  m_IndirectSpecularColor: {r: 0.28553957, g: 0.3149546, b: 0.3203015, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -29604,15 +29604,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8173987045912823934, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
       propertyPath: m_LocalRotation.x
+<<<<<<< Updated upstream
       value: 0.056187756
+=======
+      value: 0.056187764
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 8173987045912823934, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.036226556
+      value: 0.036226526
       objectReference: {fileID: 0}
     - target: {fileID: 8173987045912823934, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
       propertyPath: m_LocalRotation.z
+<<<<<<< Updated upstream
       value: -0.0020400356
+=======
+      value: -0.0020400598
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 8173987045912823935, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
       propertyPath: m_LookAt
@@ -29636,15 +29644,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8173987046217288586, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.07432723
+      value: 0.074327245
       objectReference: {fileID: 0}
     - target: {fileID: 8173987046217288586, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
       propertyPath: m_LocalRotation.y
+<<<<<<< Updated upstream
       value: 0.036183547
       objectReference: {fileID: 0}
     - target: {fileID: 8173987046217288586, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.0026986867
+=======
+      value: 0.0361834
+      objectReference: {fileID: 0}
+    - target: {fileID: 8173987046217288586, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.0026986548
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 8173987046519804472, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
       propertyPath: m_RootOrder
@@ -29652,18 +29668,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8173987046519804472, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 32.02752
+      value: -68.71774
       objectReference: {fileID: 0}
     - target: {fileID: 8173987046519804472, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
       propertyPath: m_LocalPosition.y
+<<<<<<< Updated upstream
       value: 4.46
+=======
+      value: 14.38
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 8173987046519804472, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.5205593
+      value: 1.2834296
       objectReference: {fileID: 0}
     - target: {fileID: 8173987046519804472, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
       propertyPath: m_LocalRotation.w
+<<<<<<< Updated upstream
       value: 0.6667235
       objectReference: {fileID: 0}
     - target: {fileID: 8173987046519804472, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
@@ -29677,6 +29698,21 @@ PrefabInstance:
     - target: {fileID: 8173987046519804472, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0.13463965
+=======
+      value: 0.9276737
+      objectReference: {fileID: 0}
+    - target: {fileID: 8173987046519804472, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.17288989
+      objectReference: {fileID: 0}
+    - target: {fileID: 8173987046519804472, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.3253521
+      objectReference: {fileID: 0}
+    - target: {fileID: 8173987046519804472, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.06063563
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 8173987046519804472, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -29699,11 +29735,24 @@ PrefabInstance:
       value: Main Camera
       objectReference: {fileID: 0}
     - target: {fileID: 8173987046539874385, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8173987046539874385, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8173987046539874385, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8173987046539874385, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.99861586
       objectReference: {fileID: 0}
     - target: {fileID: 8173987046539874385, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
       propertyPath: m_LocalRotation.x
+<<<<<<< Updated upstream
       value: 0.03807768
       objectReference: {fileID: 0}
     - target: {fileID: 8173987046539874385, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
@@ -29713,6 +29762,17 @@ PrefabInstance:
     - target: {fileID: 8173987046539874385, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.0013825396
+=======
+      value: 0.038077697
+      objectReference: {fileID: 0}
+    - target: {fileID: 8173987046539874385, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.036257546
+      objectReference: {fileID: 0}
+    - target: {fileID: 8173987046539874385, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.0013825098
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -40566,15 +40626,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3041323656804124331, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 25.05
+      value: -73.09
       objectReference: {fileID: 0}
     - target: {fileID: 3041323656804124331, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.46
+      value: 11.38
       objectReference: {fileID: 0}
     - target: {fileID: 3041323656804124331, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.96
+      value: 6.75
       objectReference: {fileID: 0}
     - target: {fileID: 3041323656804124331, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
       propertyPath: m_LocalRotation.w

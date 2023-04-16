@@ -8,45 +8,86 @@ public class MainMenuScript : MonoBehaviour
     private GameObject mainmenu;
     public GameObject controlsmenu;
     public GameObject settingsmenu;
-    public GameObject creditsmenu;
+    public GameObject creditsMenu;
+
+    public GameObject playbutton;
+    public GameObject controlsbutton;
+    public GameObject settingsbutton;
+    public GameObject quitbutton;
+    public GameObject creditsbutton;
 
     void Awake()
     {
         controlsmenu.SetActive(false);
         settingsmenu.SetActive(false);
-        creditsmenu.SetActive(false);
+        creditsMenu.SetActive(false);
     }
 
     //controls button
     public void ShowControls()
     {
         controlsmenu.SetActive(true);
+        playbutton.SetActive(false);
+        controlsbutton.SetActive(false);
+        settingsbutton.SetActive(false);
+        quitbutton.SetActive(false);
+        creditsbutton.SetActive(false);
     }
 
     public void HideControls()
     {
         controlsmenu.SetActive(false);
+        playbutton.SetActive(true);
+        controlsbutton.SetActive(true);
+        settingsbutton.SetActive(true);
+        quitbutton.SetActive(true);
+        creditsbutton.SetActive(true);
     }
 
     //credits button
     public void ShowSettings()
     {
         settingsmenu.SetActive(true);
+
+        playbutton.SetActive(false);
+        controlsbutton.SetActive(false);
+        settingsbutton.SetActive(false);
+        quitbutton.SetActive(false);
+        creditsbutton.SetActive(false);
     }
 
     public void HideSettings()
     {
         settingsmenu.SetActive(false);
+
+        playbutton.SetActive(true);
+        controlsbutton.SetActive(true);
+        settingsbutton.SetActive(true);
+        quitbutton.SetActive(true);
+        creditsbutton.SetActive(true);
     }
 
     //credits button
     public void ShowCredits()
     {
-        creditsmenu.SetActive(true);
+        creditsMenu.SetActive(true);
+        creditsMenu.SetActive(true);
+
+        playbutton.SetActive(false);
+        controlsbutton.SetActive(false);
+        settingsbutton.SetActive(false);
+        quitbutton.SetActive(false);
+        creditsbutton.SetActive(false);
     }
     public void HideCredits()
     {
-        creditsmenu.SetActive(false);
+        creditsMenu.SetActive(false);
+
+        playbutton.SetActive(true);
+        controlsbutton.SetActive(true);
+        settingsbutton.SetActive(true);
+        quitbutton.SetActive(true);
+        creditsbutton.SetActive(true);
     }
     //play button
     public void PlayGame()

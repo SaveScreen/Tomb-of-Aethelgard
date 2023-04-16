@@ -2532,17 +2532,17 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 405105587}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -731.2549}
+  m_LocalScale: {x: 1.5137501, y: 1.5137501, z: 1.5137501}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2144364478}
-  m_Father: {fileID: 1778215791}
+  m_Father: {fileID: 605671874}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -442.53662, y: -153}
+  m_AnchoredPosition: {x: -669.99994, y: -224.09563}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &405105589
@@ -3769,6 +3769,39 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: b8a7748950b8c1549b356b50283a10b7, type: 3}
+--- !u!1 &605671873
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 605671874}
+  m_Layer: 0
+  m_Name: CreditsMenu(ActualMenuObject)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &605671874
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 605671873}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.0727785, y: -4.959945, z: 483.07507}
+  m_LocalScale: {x: 0.66061103, y: 0.66061103, z: 0.66061103}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 681883969}
+  - {fileID: 405105588}
+  m_Father: {fileID: 2116195387}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &623824419
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4046,17 +4079,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 681883968}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -731.2549}
+  m_LocalScale: {x: 1.5137501, y: 1.5137501, z: 1.5137501}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1778215791}
+  m_Father: {fileID: 605671874}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -0.11020573, y: 7.5080876}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &681883970
@@ -9388,6 +9421,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1778215791}
   - {fileID: 2116195387}
   - {fileID: 403771341}
   - {fileID: 508771729}
@@ -9610,10 +9644,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 681883969}
-  - {fileID: 405105588}
-  m_Father: {fileID: 2116195387}
+  m_Children: []
+  m_Father: {fileID: 1734291945}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -11355,14 +11387,14 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 773283331}
   - {fileID: 1689089664}
   - {fileID: 64124338}
   - {fileID: 850195412}
   - {fileID: 1313359401}
-  - {fileID: 773283331}
-  - {fileID: 711692562}
   - {fileID: 1883648536}
-  - {fileID: 1778215791}
+  - {fileID: 711692562}
+  - {fileID: 605671874}
   m_Father: {fileID: 1734291945}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11385,7 +11417,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controlsmenu: {fileID: 711692561}
   settingsmenu: {fileID: 1883648535}
-  creditsmenu: {fileID: 1778215787}
+  creditsMenu: {fileID: 605671873}
+  playbutton: {fileID: 1689089663}
+  controlsbutton: {fileID: 64124337}
+  settingsbutton: {fileID: 850195411}
+  quitbutton: {fileID: 1313359400}
+  creditsbutton: {fileID: 773283330}
 --- !u!1001 &2126842500
 PrefabInstance:
   m_ObjectHideFlags: 0

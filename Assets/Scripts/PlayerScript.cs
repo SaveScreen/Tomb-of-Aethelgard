@@ -54,18 +54,10 @@ public class PlayerScript : MonoBehaviour
 
     [Header("Pause Input")]
     public InputAction pausing;
-    public GameObject pauseMenu;
-    public static bool paused = false;
-
-    [Header("Win Screen")]
-    public GameObject winscreen;
-    public GameObject winplatform;
-    public static bool won = false;
-
-    [Header("Lose Screen")]
-
-    public GameObject losescreen;
+    
     public static bool lose = false;
+    public bool won = false;
+    public bool paused = false;
     //movement states if we want the player to be able to run, crouch, slide etc.
     public MovementState state;
     public enum MovementState
@@ -77,7 +69,8 @@ public class PlayerScript : MonoBehaviour
     public Animator anim;
 
 
-
+    public GameObject winLoseManager;
+    private WinLoseScript winLoseScript;
 
     private int rupees;
 
@@ -100,15 +93,9 @@ public class PlayerScript : MonoBehaviour
         Cursor.visible = false;
         IsPushingPulling = false;
 
-        //pause menu panel
-        pauseMenu = GameObject.Find("Pause Panel");
-        pauseMenu.SetActive(false);
-
-        winscreen.SetActive(false);
-
-        losescreen.SetActive(false);
-
         anim = GameObject.Find("Breathing_Idle_1").GetComponent<Animator>();
+
+        winLoseScript = winLoseManager.GetComponent<WinLoseScript>();
 
     }
 
@@ -187,10 +174,10 @@ public class PlayerScript : MonoBehaviour
         if(pausing.WasPressedThisFrame()){
             if(paused){
                 //unpause
-                ResumeGame();
+                winLoseScript.ResumeGame();
             } else{
                 //pause
-                PauseGame();
+                winLoseScript.PauseGame();
             }
         }
 
@@ -306,56 +293,8 @@ public class PlayerScript : MonoBehaviour
         this.velocity += velocity;
     }
     
-    private void PauseGame(){
-        Time.timeScale = 0;
-        paused = true;
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-        pauseMenu.SetActive(true);
-        footsteps.Stop();
-    }
-
-    public void ResumeGame(){
-        Time.timeScale = 1.0f;
-        paused = false;
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-        pauseMenu.SetActive(false);
-    }
-
-    public void GoToHub() {
-        Time.timeScale = 1.0f;
-        paused = false;
-        SceneManager.LoadScene("HubLevel");
-        pauseMenu.SetActive(false);
-    }
-
-    public void GoToMainMenu() {
-        Time.timeScale = 1.0f;
-        paused = false;
-        SceneManager.LoadScene("MainMenuScene");
-        pauseMenu.SetActive(false);
-    }
-
     public void QuitGame() {
         Application.Quit();
-    }
-
-    private void WinGame() {
-        Time.timeScale = 0;
-        won = true;
-        winscreen.SetActive(true);
-        footsteps.Stop();
-    }
-    private void LoseGame()
-    {
-        //these statements are commented out until the death animation is added. then maybe re-add
-
-        //Time.timeScale = 0;
-        //lose = true;
-        //losescreen.SetActive(true);
-        footsteps.Stop();       
-        anim.SetBool("isDying", true);
     }
 
     void OnTriggerEnter(Collider other) {
@@ -372,9 +311,37 @@ public class PlayerScript : MonoBehaviour
         //Debug.Log(rupees + " rupees");
     }
 
+    public void Die(){
+        //these statements are commented out until the death animation is added. then maybe re-add
+
+        //Time.timeScale = 0;
+        //lose = true;
+        //losescreen.SetActive(true); 
+
+        anim.SetBool("isDying", true);
+    }
+
+    private void WinGame(){
+        winLoseScript.WinGame();
+    }
+
+    private void LoseGame(){
+        winLoseScript.LoseGame();
+    }
+
     public Animator GetAnimator(){
         return anim;
     }
+
+    public void SetPaused(bool b){
+        paused = b;
+    }
+
+    public void SetWon(bool b){
+        won = b;
+    }
+
+    
 
 
     

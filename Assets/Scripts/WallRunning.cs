@@ -109,7 +109,7 @@ public class WallRunning : MonoBehaviour
                 ExitWallTimer = ExitWallTime;
             }
 
-            jumping = WallJumpKey.IsPressed();
+            jumping = WallJumpKey.WasPressedThisFrame();
               
             
             //wall jumping 

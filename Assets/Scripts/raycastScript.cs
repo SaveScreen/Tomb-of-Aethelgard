@@ -254,9 +254,9 @@ public class raycastScript : MonoBehaviour {
     }
 
     public void ActivateFilter(bool b){
-        if(b){
-            SetIsProjector(true);
-        }
+        
+        SetIsProjector(b);
+        
     }
 
     public GameObject GetHitSpecialObject(){

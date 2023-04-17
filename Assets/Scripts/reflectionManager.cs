@@ -27,7 +27,7 @@ public class reflectionManager : MonoBehaviour
         }
     }
 
-    private void Update()
+    private void LateUpdate()
     {
         if(SceneManager.GetActiveScene().name == "TutorialLevel"){
             DoorControlType("isActivated", 1, 1);
@@ -50,9 +50,15 @@ public class reflectionManager : MonoBehaviour
        // DoorControlType("hasBeenActivated", 1, 2, 2);
         /*This means that when catchers 1 and 2 have been activated at some point, door 2 opens.
         It does not matter which order. It does not matter if they are currently being activated.*/     
-        CheckProjectors(); 
+        SetProjectors(); 
         CheckReceivers();
         CheckFilters();
+
+        //Debug.Log("Receivers: " + raysHitReceivers);
+        //Debug.Log("Filters: " + raysHitFilters);
+        Debug.Log("Projector 1 on Filters: " + raysHitFilters[0, 0] + raysHitFilters[0, 1] + raysHitFilters[0, 2]);
+        Debug.Log("Projector 2 on Filters: " + raysHitFilters[1, 0] + raysHitFilters[1, 1] + raysHitFilters[1, 2]);
+        Debug.Log("Projector 3 on Filters: " + raysHitFilters[2, 0] + raysHitFilters[2, 1] + raysHitFilters[2, 2]);
     }
 
     private void DoorControl(int rID, int doorID)
@@ -144,7 +150,7 @@ public class reflectionManager : MonoBehaviour
         }
     }
 
-    private void CheckProjectors(){
+    private void SetProjectors(){
         for(int i = 0; i < projectors.Length;i++){
 
             if(projectors[i].GetComponent<raycastScript>().GetHitSpecialObject() == null){
@@ -209,6 +215,7 @@ public class reflectionManager : MonoBehaviour
             } else{
                 filters[j].GetComponent<raycastScript>().ActivateFilter(false);
             }
+            Debug.Log("Filter " + j + " is " + filters[j].GetComponent<raycastScript>().GetIsProjector());
         }
     }
     

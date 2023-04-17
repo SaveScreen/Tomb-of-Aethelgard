@@ -7,6 +7,7 @@ public class SceneSwitcherooScript : MonoBehaviour
 {
     private Scene currentscene;
     private GameObject player;
+    public static int levelscompleted;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +19,10 @@ public class SceneSwitcherooScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (currentscene.name == "TutorialLevel")
+        {
+            levelscompleted = 0;
+        }
         
     }
 
@@ -25,6 +30,28 @@ public class SceneSwitcherooScript : MonoBehaviour
         if (player != null) {
             if (currentscene.name == "TutorialLevel") {
                 SceneManager.LoadScene("HubLevel");
+                levelscompleted = 1;
+            }
+
+            if (currentscene.name == "HubLevel" && levelscompleted == 1)
+            {
+                SceneManager.LoadScene("Level2Scene");
+            }
+            if (currentscene.name == "HubLevel" && levelscompleted == 2)
+            {
+                SceneManager.LoadScene("Level3Scene");
+            }
+            //Add code to trigger end cutscene here
+
+            if (currentscene.name == "Level2Scene")
+            {
+                SceneManager.LoadScene("HubLevel");
+                levelscompleted = 2;
+            }
+            if (currentscene.name == "Level3Scene")
+            {
+                SceneManager.LoadScene("HubLevel");
+                levelscompleted = 3;
             }
         }
     }

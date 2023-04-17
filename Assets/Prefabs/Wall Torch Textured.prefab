@@ -193,6 +193,42 @@ PrefabInstance:
       propertyPath: m_Name
       value: TorchLight
       objectReference: {fileID: 0}
+    - target: {fileID: 229181474037975666, guid: fb969475a5c809f4893276fb25ea8fd6, type: 3}
+      propertyPath: ColorModule.gradient.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 229181474037975666, guid: fb969475a5c809f4893276fb25ea8fd6, type: 3}
+      propertyPath: ColorModule.gradient.minGradient.key0.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 229181474037975666, guid: fb969475a5c809f4893276fb25ea8fd6, type: 3}
+      propertyPath: ColorModule.gradient.minGradient.key0.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 229181474037975666, guid: fb969475a5c809f4893276fb25ea8fd6, type: 3}
+      propertyPath: ColorModule.gradient.minGradient.key0.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 229181474037975666, guid: fb969475a5c809f4893276fb25ea8fd6, type: 3}
+      propertyPath: ColorModule.gradient.minGradient.key1.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 229181474037975666, guid: fb969475a5c809f4893276fb25ea8fd6, type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 229181474037975666, guid: fb969475a5c809f4893276fb25ea8fd6, type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].inSlope
+      value: -1.0486472
+      objectReference: {fileID: 0}
+    - target: {fileID: 229181474037975666, guid: fb969475a5c809f4893276fb25ea8fd6, type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].inWeight
+      value: 0.12886614
+      objectReference: {fileID: 0}
+    - target: {fileID: 229181474037975666, guid: fb969475a5c809f4893276fb25ea8fd6, type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].outSlope
+      value: -1.0486472
+      objectReference: {fileID: 0}
     - target: {fileID: 229181474037975667, guid: fb969475a5c809f4893276fb25ea8fd6, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -239,11 +275,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 229181474163053421, guid: fb969475a5c809f4893276fb25ea8fd6, type: 3}
       propertyPath: m_BoundingSphereOverride.w
-      value: NaN
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 229181474163053421, guid: fb969475a5c809f4893276fb25ea8fd6, type: 3}
       propertyPath: m_BoundingSphereOverride.y
-      value: NaN
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 229181474163053421, guid: fb969475a5c809f4893276fb25ea8fd6, type: 3}
       propertyPath: m_BoundingSphereOverride.z

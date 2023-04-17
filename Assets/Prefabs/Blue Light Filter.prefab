@@ -118,6 +118,7 @@ MonoBehaviour:
   rayLength: 30
   rayColor: 2
   isProjector: 0
+  filterID: 0
 --- !u!120 &2292868451445357081
 LineRenderer:
   serializedVersion: 2

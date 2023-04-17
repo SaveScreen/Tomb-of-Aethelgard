@@ -12653,7 +12653,7 @@ Transform:
   - {fileID: 83226903}
   - {fileID: 810707785}
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &613374114 stripped
 Transform:
@@ -21747,7 +21747,7 @@ Transform:
   - {fileID: 540851329}
   - {fileID: 526949743}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1095023320
 PrefabInstance:
@@ -25190,7 +25190,7 @@ Transform:
   - {fileID: 259357102}
   - {fileID: 983839429}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1308167929
 PrefabInstance:
@@ -29704,7 +29704,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8173987046539874385, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.03807768
+      value: 0.038077686
       objectReference: {fileID: 0}
     - target: {fileID: 8173987046539874385, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
       propertyPath: m_LocalRotation.y
@@ -29712,7 +29712,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8173987046539874385, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0013825396
+      value: -0.001382525
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -31006,7 +31006,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2455362488112571431, guid: 8c9d51a94bf06a845a5c78bfcdc9f18a, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2455362488112571431, guid: 8c9d51a94bf06a845a5c78bfcdc9f18a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -34162,7 +34162,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2455362488112571431, guid: f76b7ad7e8fe0e74882f90b15e911de8, type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 2455362488112571431, guid: f76b7ad7e8fe0e74882f90b15e911de8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -37881,7 +37881,7 @@ Transform:
   - {fileID: 1871094660}
   - {fileID: 1852908555}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1999638781
 PrefabInstance:
@@ -40706,7 +40706,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5140020092217847207, guid: 08900d4e479d0754987975768754e376, type: 3}
       propertyPath: m_RootOrder
-      value: 19
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 5140020092217847207, guid: 08900d4e479d0754987975768754e376, type: 3}
       propertyPath: m_AnchorMax.x
@@ -40801,7 +40801,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6046727511762458274, guid: 59b5ab6022c7e4141b357578a34c87af, type: 3}
       propertyPath: filters.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6046727511762458274, guid: 59b5ab6022c7e4141b357578a34c87af, type: 3}
       propertyPath: doors.Array.data[0]
@@ -40829,12 +40829,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6046727511762458274, guid: 59b5ab6022c7e4141b357578a34c87af, type: 3}
       propertyPath: projectors.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6046727511762458274, guid: 59b5ab6022c7e4141b357578a34c87af, type: 3}
       propertyPath: projectors.Array.data[0]
       value: 
       objectReference: {fileID: 1962545097}
+    - target: {fileID: 6046727511762458274, guid: 59b5ab6022c7e4141b357578a34c87af, type: 3}
+      propertyPath: projectors.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6046727511762458274, guid: 59b5ab6022c7e4141b357578a34c87af, type: 3}
       propertyPath: signalCatchers.Array.data[0]
       value: 

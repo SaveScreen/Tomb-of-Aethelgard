@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 3041323656804124342}
   - component: {fileID: 3041323656804124329}
   - component: {fileID: 3041323656804124330}
+  - component: {fileID: 6096756132656607730}
   - component: {fileID: 227851872716210818}
   - component: {fileID: 3041323656804124335}
   - component: {fileID: 3041323656804124328}
@@ -363,12 +364,24 @@ MonoBehaviour:
       m_Action: Pausing
       m_Flags: 0
     m_Flags: 0
-  winscreen: {fileID: 0}
-  winplatform: {fileID: 0}
-  losescreen: {fileID: 0}
+  won: 0
+  paused: 0
   state: 1
   wallrunning: 1
   anim: {fileID: 0}
+  winLoseManager: {fileID: 0}
+--- !u!114 &6096756132656607730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3041323656804124343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6afae491a37669c4aa7b4e052ce830f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &227851872716210818
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -409,7 +422,6 @@ MonoBehaviour:
     m_Flags: 0
   PlayerCameraTransform: {fileID: 3041323656804124331}
   PushPullPoint: {fileID: 227851873522225681}
-  distance: 1
   PushPull:
     serializedVersion: 2
     m_Bits: 256

@@ -162,17 +162,20 @@ public class raycastScript : MonoBehaviour {
                 */
 
                 //child 1
+                hit.collider.gameObject.transform.GetChild(0).gameObject.SetActive(true);
                 raycastScript child1 = hit.collider.gameObject.transform.GetChild(0).GetComponent<raycastScript>();
                 Vector3 dir1 = new Vector3();
                 //dir1 = (dir - Vector3.left)/2;
                 dir1 = dir + offAngle;
 
                 //child 2
+                hit.collider.gameObject.transform.GetChild(1).gameObject.SetActive(true);
                 raycastScript child2 = hit.collider.gameObject.transform.GetChild(1).GetComponent<raycastScript>();
                 Vector3 dir2 = new Vector3();
                 dir2 = dir;
 
                 //child 3
+                hit.collider.gameObject.transform.GetChild(2).gameObject.SetActive(true);
                 raycastScript child3 = hit.collider.gameObject.transform.GetChild(2).GetComponent<raycastScript>();
                 Vector3 dir3 = new Vector3();
                 //dir3 = (dir + Vector3.left)/2;
@@ -193,6 +196,8 @@ public class raycastScript : MonoBehaviour {
                 }
                 child3.SetIsProjector(true);
                 child3.CopyRayValues(bouncesRemaining+1, rayLength, throughPoint);
+
+                hitSpecialObject = hit.collider.gameObject;
 
                 //Debug.Log("1: " + dir1);
                 //Debug.Log("2: " + dir2);
@@ -242,8 +247,7 @@ public class raycastScript : MonoBehaviour {
             
             ex: if the ray hits a non-reflective object, kill the line
             by setting all remaining points after to this same position.
-            */
-        
+            */        
         for(int i = 0; i < lineRenderer.positionCount; i++){
             lineRenderer.SetPosition(i, endPoint);
         }

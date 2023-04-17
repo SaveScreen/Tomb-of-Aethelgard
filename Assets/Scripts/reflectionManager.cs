@@ -11,8 +11,8 @@ public class reflectionManager : MonoBehaviour
 
     public GameObject[] projectors;
 
-    private bool[,] raysHitReceivers = new bool[5, 5];
-    private bool[,] raysHitFilters = new bool[5, 5];
+    private bool[,] raysHitReceivers = new bool[10, 10];
+    private bool[,] raysHitFilters = new bool[10, 10];
 
     private void Start(){
         for(int i = 0; i < projectors.Length;i++){
@@ -159,10 +159,11 @@ public class reflectionManager : MonoBehaviour
                 //get hit object and record it
                 GameObject hitTarget = projectors[i].GetComponent<raycastScript>().GetHitSpecialObject();
 
-                //check if it is a filter 
+                //check if it is NOT a signal catcher 
                 if(hitTarget.GetComponent<signalCatcherScript>() == null){
                     //activate filter
-                    
+
+                    //otherwise, it is a single filter. set it active.
                     raysHitFilters[i, hitTarget.GetComponent<raycastScript>().filterID-1] = true;
                 }else{
                     //activate signal catcher
@@ -204,7 +205,6 @@ public class reflectionManager : MonoBehaviour
     private void CheckFilters(){
         for(int j = 0; j < filters.Length;j++){
             if(CheckOneFilter(j)){
-                Debug.Log("helllllo crazy pants");
                 filters[j].GetComponent<raycastScript>().ActivateFilter(true);
             } else{
                 filters[j].GetComponent<raycastScript>().ActivateFilter(false);

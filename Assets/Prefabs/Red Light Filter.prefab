@@ -104,7 +104,8 @@ MonoBehaviour:
   rayBounces: 2
   rayLength: 30
   rayColor: 1
-  isProjector: 1
+  isProjector: 0
+  filterID: 0
 --- !u!65 &5537179167924360585
 BoxCollider:
   m_ObjectHideFlags: 0

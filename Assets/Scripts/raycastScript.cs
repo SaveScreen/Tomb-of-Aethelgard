@@ -116,14 +116,9 @@ public class raycastScript : MonoBehaviour {
                 }
             }else if(hit.collider.tag == "signalCatcher"){
                 FinishRenderPoints(hit.point);
-
-                //FindObjectOfType<reflectionManager>().SetAllCatchersIsActivatedExcept(false, );
                 signalCatcherScript catcherScript = hit.collider.gameObject.GetComponent<signalCatcherScript>();
-                FindObjectOfType<reflectionManager>().TurnOffFilters();
 
                 if(catcherScript.GetColor() == (int)rayColor || catcherScript.GetColor()==0){
-                    //hit.collider.gameObject.GetComponent<signalCatcherScript>().SetHasBeenActivated(true);
-                    //hit.collider.gameObject.GetComponent<signalCatcherScript>().SetIsActivated(true);
                     hitSpecialObject = hit.collider.gameObject;
                 }
             }else if(hit.collider.tag == "filter"){
@@ -145,8 +140,8 @@ public class raycastScript : MonoBehaviour {
                 Vector3 throughPoint = new Vector3();
                 throughPoint = ray.GetPoint(Vector3.Distance(pos, hit.point) + 0.1f);
 
-                Vector3 offAngle = new Vector3(0, 0, 30f);
-                Vector3 negativeOffAngle = new Vector3(0, 0, 330f);
+                Vector3 offAngle = new Vector3(0, 30f, 0);
+                Vector3 negativeOffAngle = new Vector3(0, 330f, 0);
                 
                 /*
                 when the prism is hit, it activates 
@@ -199,14 +194,8 @@ public class raycastScript : MonoBehaviour {
 
                 hitSpecialObject = hit.collider.gameObject;
 
-                //Debug.Log("1: " + dir1);
-                //Debug.Log("2: " + dir2);
-                //Debug.Log("3: " + dir3);
-
             }
             else {
-                //FindObjectOfType<reflectionManager>().SetAllCatchersIsActivated(false);
-                //FindObjectOfType<reflectionManager>().TurnOffFilters();
                 hitSpecialObject = null;
                 
                 lineRenderer.SetPosition(pointsRendered, hit.point);
@@ -214,9 +203,6 @@ public class raycastScript : MonoBehaviour {
             }
         }
         else{
-            //FindObjectOfType<reflectionManager>().SetAllCatchersIsActivated(false);
-            //FindObjectOfType<reflectionManager>().TurnOffFilters();
-
             hitSpecialObject = null;
             
             /*if the line does not collide with an object within rayLength units, the line dies. 

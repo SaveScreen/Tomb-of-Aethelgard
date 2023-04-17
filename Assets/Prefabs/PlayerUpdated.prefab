@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1182837772
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1182837773}
+  m_Layer: 0
+  m_Name: Camerapoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1182837773
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1182837772}
+  m_LocalRotation: {x: -0, y: 0.7071057, z: -0, w: 0.7071079}
+  m_LocalPosition: {x: 0, y: 1.1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3041323656804124331}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &227851873522225682
 GameObject:
   m_ObjectHideFlags: 0
@@ -24,7 +55,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 227851873522225682}
   m_LocalRotation: {x: -0, y: 0.7071057, z: -0, w: 0.7071079}
-  m_LocalPosition: {x: 0.000031501055, y: 0.50001, z: 2.749907}
+  m_LocalPosition: {x: 0.000031501055, y: 0.5, z: 2.749907}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -64,17 +95,18 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3041323656804124343}
-  m_LocalRotation: {x: -0, y: -0.7071057, z: -0, w: 0.7071079}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 25.05, y: 1.46, z: 4.96}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1182837773}
   - {fileID: 3041323658253190330}
   - {fileID: 3041323657092259095}
   - {fileID: 227851873522225681}
   - {fileID: 334330077680238600}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!33 &3041323656804124340
 MeshFilter:
@@ -363,12 +395,12 @@ MonoBehaviour:
       m_Action: Pausing
       m_Flags: 0
     m_Flags: 0
-  winscreen: {fileID: 0}
-  winplatform: {fileID: 0}
-  losescreen: {fileID: 0}
+  won: 0
+  paused: 0
   state: 1
   wallrunning: 1
-  anim: {fileID: 0}
+  anim: {fileID: 227851873332324320}
+  winLoseManager: {fileID: 0}
 --- !u!114 &227851872716210818
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -409,7 +441,6 @@ MonoBehaviour:
     m_Flags: 0
   PlayerCameraTransform: {fileID: 3041323656804124331}
   PushPullPoint: {fileID: 227851873522225681}
-  distance: 1
   PushPull:
     serializedVersion: 2
     m_Bits: 256

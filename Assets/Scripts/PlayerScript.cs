@@ -189,6 +189,7 @@ public class PlayerScript : MonoBehaviour
 
     private void FixedUpdate()
     {
+       
         if (direction.magnitude >= 0.1f) {
             charactercontroller.Move(movedir.normalized * speed * Time.deltaTime); 
         }
@@ -208,6 +209,7 @@ public class PlayerScript : MonoBehaviour
     }
 
     //Controls player looking around
+    
     private void LookAndMove() {
         direction = new Vector3(move.x,0,move.z).normalized;
 
@@ -224,6 +226,7 @@ public class PlayerScript : MonoBehaviour
         }
 
     }
+    
 
     /*************************************************************************************
     private void Look() {

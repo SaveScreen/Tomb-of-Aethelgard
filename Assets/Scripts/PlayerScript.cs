@@ -18,6 +18,8 @@ public class PlayerScript : MonoBehaviour
 
     [Header("Jumping Variables")]
     public InputAction playerjump;
+    public InputAction JumpAudioPlay;
+    private bool JumpPlay;
     public float jumpspeed;
     public float jumpgravity;
     private bool jumped;
@@ -48,8 +50,9 @@ public class PlayerScript : MonoBehaviour
     private float smoothrotationvelocity;
     private Vector3 direction;
     private Vector3 movedir;
-    
+
     [Header("Footsteps Audio")]
+    private PlayerSoundsScript PSS;
     public AudioSource footsteps;
 
     [Header("Pause Input")]
@@ -82,10 +85,12 @@ public class PlayerScript : MonoBehaviour
     {
         //camerascript = cam.GetComponent<CameraScript>();
         charactercontroller = gameObject.GetComponent<CharacterController>();
+        PSS = GetComponent<PlayerSoundsScript>();
         //cutscenescript = cutscene.GetComponent<CutsceneScript>();
         isfalling = false;
         jumped = false;
         jumping = false;
+        JumpPlay = false;
         smoothrotationtime = 0.1f;
         gravity = -8f;
         
@@ -103,6 +108,7 @@ public class PlayerScript : MonoBehaviour
     {
         playermove.Enable();
         playerjump.Enable();
+        JumpAudioPlay.Enable();
         pausing.Enable();
     }
 
@@ -110,6 +116,7 @@ public class PlayerScript : MonoBehaviour
     {
         playermove.Disable();
         playerjump.Disable();
+        JumpAudioPlay.Disable();
         pausing.Disable();
     }
     // Update is called once per frame
@@ -123,6 +130,7 @@ public class PlayerScript : MonoBehaviour
             if (charactercontroller.isGrounded)
             {
                 jumping = playerjump.IsPressed();
+                JumpPlay = JumpAudioPlay.WasPressedThisFrame();
                 velocity.x = 0f;
             }
             
@@ -132,19 +140,22 @@ public class PlayerScript : MonoBehaviour
                 jumped = true;
                 //anim.SetBool("isJumping", true);
             }
-
+            if (JumpPlay == true)
+            {
+                PSS.PlayJumpSound();
+            }
             if (jumped == true) {
                 if (!isfalling) {
                     velocity.y = jumpspeed;
                     isfalling = true;
-                    
+                    JumpPlay = false;
                 }
                 else {
                     if (charactercontroller.isGrounded == true) {
                     
                         isfalling = false;
                         jumped = false;
-                        
+                        PSS.PlayLandingSound();
 
                     }
                 }

@@ -135,6 +135,7 @@ public class PlayerScript : MonoBehaviour
                 jumping = playerjump.IsPressed();
                 JumpPlay = JumpAudioPlay.WasPressedThisFrame();
                 velocity.x = 0f;
+                velocity.z = 0f;
             }
             
             LookAndMove();
@@ -271,14 +272,14 @@ public class PlayerScript : MonoBehaviour
         if (wallrunning)
         {
             state = MovementState.wallrunning;
-            footsteps.Stop();
-            anim.SetBool("isRunning", false);
-            anim.SetBool("isJumping", false);
-            anim.SetBool("isWallRunning", true);
             if (!footsteps.isPlaying)
             {
                 PSS.PlayWallrunningSound();
             }
+            anim.SetBool("isRunning", false);
+            anim.SetBool("isJumping", false);
+            anim.SetBool("isWallRunning", true);
+           
         }
 
         //mode-walking
@@ -304,7 +305,7 @@ public class PlayerScript : MonoBehaviour
             }
             
         }
-        if (!charactercontroller.isGrounded) {
+        if ((!charactercontroller.isGrounded)&& (!wallrunning)) {
             anim.SetBool("isJumping", true);
             footsteps.Stop();
         }

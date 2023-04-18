@@ -75,6 +75,8 @@ public class PlayerScript : MonoBehaviour
     public GameObject winLoseManager;
     private WinLoseScript winLoseScript;
 
+    private RupeeHUDScript rupeeHUD;
+
     private int rupees;
 
 
@@ -101,6 +103,7 @@ public class PlayerScript : MonoBehaviour
         anim = GameObject.Find("Breathing_Idle_1").GetComponent<Animator>();
 
         winLoseScript = winLoseManager.GetComponent<WinLoseScript>();
+        rupeeHUD = GameObject.Find("RupeeCounter").GetComponent<RupeeHUDScript>();
 
     }
 
@@ -322,6 +325,7 @@ public class PlayerScript : MonoBehaviour
 
     public void AddRupees(int amt){
         rupees += amt;
+        rupeeHUD.UpdateHUD(amt);
         //Debug.Log(rupees + " rupees");
     }
 

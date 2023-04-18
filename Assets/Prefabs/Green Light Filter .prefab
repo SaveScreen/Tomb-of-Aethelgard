@@ -248,7 +248,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 32.81406, y: 363.13156, z: 171.47026}
+  m_Size: {x: 42, y: 367, z: 171}
   m_Center: {x: 5.8490095, y: 190.13495, z: -1.571393}
 --- !u!114 &5411072950481296565
 MonoBehaviour:
@@ -268,7 +268,7 @@ MonoBehaviour:
   rayColor: 3
   isProjector: 0
   prismChild: 0
-  filterID: 0
+  filterID: 3
 --- !u!114 &5195815627546523123
 MonoBehaviour:
   m_ObjectHideFlags: 0

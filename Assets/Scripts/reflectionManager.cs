@@ -29,7 +29,7 @@ public class reflectionManager : MonoBehaviour
 
     private void LateUpdate()
     {
-        if(SceneManager.GetActiveScene().name == "TutorialLevel"){
+        if(SceneManager.GetActiveScene().name == "TutorialLevelConcept"){
             DoorControlType("isActivated", 1, 1);
             DoorControlType("isActivated", 2, 2);
         }

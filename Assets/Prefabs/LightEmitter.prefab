@@ -18,7 +18,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: edb68b71ec7ded54ca6e67e9252f21c1, type: 2}
     - target: {fileID: 3917850664655598183, guid: 92ce7cc5f654ec642a8498dbf460db4f, type: 3}
       propertyPath: m_RootOrder
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3917850664655598183, guid: 92ce7cc5f654ec642a8498dbf460db4f, type: 3}
       propertyPath: m_LocalScale.x
@@ -200,4 +200,18 @@ MonoBehaviour:
   rayLength: 45
   rayColor: 0
   isProjector: 1
+  prismChild: 0
   filterID: 0
+--- !u!65 &3198258768197439650
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2734879165877025200}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 187.0178, y: 184.89232, z: 193.0751}
+  m_Center: {x: 0.058105484, y: -0.0046463013, z: -0.6782152}

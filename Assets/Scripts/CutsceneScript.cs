@@ -27,6 +27,11 @@ public class CutsceneScript : MonoBehaviour
 
     private Scene currentscene;
 
+    private bool musicoff;
+    public AudioSource music;
+    public GameObject flameplay;
+    private AudioSource flameplayer;
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -36,8 +41,13 @@ public class CutsceneScript : MonoBehaviour
         dialoguestarted = false;
         cutscenecompleted = false;
         currentscene = SceneManager.GetActiveScene();
+        music = gameObject.GetComponent<AudioSource>();
+        flameplayer = flameplay.GetComponent<AudioSource>();
+        music.Stop();
+        flameplayer.Stop();
         transitioning = false;
         fadein = true;
+        musicoff = true;
         transition.alpha = 0;
         foreach (GameObject p in panels) {
             p.SetActive(false);
@@ -92,6 +102,24 @@ public class CutsceneScript : MonoBehaviour
             if (endscene == true) {
                 PanelTransition();
             }
+
+            if (panelindex == 1) {
+                if (musicoff == true) {
+                    flameplayer.loop = true;
+                    music.volume = 0.3f;
+                    music.loop = true;
+                    flameplayer.volume = 0.2f;
+                    flameplayer.Play();
+                    music.Play();
+                    musicoff = false;
+                }
+            }
+            if (panelindex == 2) {
+                if (musicoff == true) {
+                    flameplayer.volume = 0.07f;
+                    musicoff = false;
+                }
+            }
         }
 
         if (cutscene == false)
@@ -142,6 +170,7 @@ public class CutsceneScript : MonoBehaviour
                     fadein = false;
                     textcomponent.text = string.Empty;
                     panelindex += 1;
+                    musicoff = true;
                     NextPage();
                     panels[panelindex].SetActive(true);
                 }
@@ -167,6 +196,7 @@ public class CutsceneScript : MonoBehaviour
 
         
     }
+
 
     IEnumerator TypeOutCharacters()
     {

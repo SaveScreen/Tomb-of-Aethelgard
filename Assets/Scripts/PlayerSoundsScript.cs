@@ -10,7 +10,7 @@ public class PlayerSoundsScript : MonoBehaviour
     public AudioClip landAudio;
     public AudioClip runAudio;
     public AudioClip wallrunAudio;
-    public AudioClip spinMirrorAudio;
+    
     
     public void PlayJumpSound(){
         playerAudio.PlayOneShot(jumpAudio);
@@ -26,10 +26,5 @@ public class PlayerSoundsScript : MonoBehaviour
         playerAudio.clip = wallrunAudio;
         playerAudio.Play();
     }
-
-    public void PlaySpinSound()
-    {
-        playerAudio.clip = spinMirrorAudio;
-        playerAudio.Play();
-    }
+  
 }

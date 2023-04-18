@@ -9,8 +9,9 @@ public class LightInteractionScript : MonoBehaviour
 
     [Header("Refrences")]
     private PlayerScript PS;
+    public AudioSource Audio;
     public bool Interact;
-
+    public AudioClip spinMirrorAudio;
     [Header("Interactions")]
     
 
@@ -37,6 +38,7 @@ public class LightInteractionScript : MonoBehaviour
     void Start()
     {
         GameObject PlayerObject = GameObject.FindWithTag("Player");
+       
         
         //HUD to tell players to press E/Q to rotate the pillar
      //   eqImage = GameObject.Find("Rotate UI");
@@ -73,9 +75,11 @@ public class LightInteractionScript : MonoBehaviour
             */
             if (playerrotatingval > 0) {
                 RotateLightClockWise();
+                
             }
             if (playerrotatingval < 0) {
                 RotateLightCtrClockWise();
+                
             }
         }
 
@@ -106,7 +110,7 @@ public class LightInteractionScript : MonoBehaviour
         }
        
     }
-
+  
     private void RotateLightClockWise()
     {
         rotationTarget = transform.eulerAngles.y + (rotationJump);
@@ -117,6 +121,7 @@ public class LightInteractionScript : MonoBehaviour
         }
         rotCW = true;
         targetTotalRot += rotationJump;
+        PlaySpinSound();
     }
 
     private void RotateLightCtrClockWise()
@@ -129,6 +134,7 @@ public class LightInteractionScript : MonoBehaviour
         }
         rotCW = false;
         targetTotalRot -= rotationJump;
+        PlaySpinSound();
     }
 
     private void RotateTowards(float endRotation){
@@ -160,5 +166,9 @@ public class LightInteractionScript : MonoBehaviour
                 transform.eulerAngles = new Vector3(transform.eulerAngles.x, endRotation, transform.eulerAngles.z);
             }
         }
+    }
+    public void PlaySpinSound()
+    {
+        Audio.PlayOneShot(spinMirrorAudio);
     }
 }

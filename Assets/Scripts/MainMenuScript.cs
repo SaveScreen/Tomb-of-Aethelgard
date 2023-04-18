@@ -93,6 +93,7 @@ public class MainMenuScript : MonoBehaviour
     public void PlayGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); //takes current scene and moves to next scene in scene order
+        CutsceneScript.cutscene = true; //Plays cutscene at the very beginning of the game
     }
 
     public void QuitGame()

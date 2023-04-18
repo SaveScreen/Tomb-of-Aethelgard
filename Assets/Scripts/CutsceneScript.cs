@@ -2,44 +2,82 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class CutsceneScript : MonoBehaviour
 {
     public TextMeshProUGUI textcomponent;
+    public CanvasGroup transition;
+    public float transitionspeed;
+    private bool transitioning;
+    private bool fadein;
+    private bool endscene;
     public string[] lines;
+    public InputAction next;
+    private bool nextclicked;
     public float textspeed;
     private int index;
-    public bool cutscene;
+    private int panelindex;
+    public static bool cutscene;
+    private bool cutscenecompleted;
     private bool dialoguestarted;
-    public GameObject scene1;
+    public GameObject[] panels;
+    public GameObject loading;
+
+    private Scene currentscene;
 
     // Start is called before the first frame update
     private void Start()
     {
-        cutscene = false;
-        scene1.SetActive(false);
+        cutscene = true;
+        loading.SetActive(false);
         textcomponent.text = string.Empty;
         dialoguestarted = false;
+        cutscenecompleted = false;
+        currentscene = SceneManager.GetActiveScene();
+        transitioning = false;
+        fadein = true;
+        transition.alpha = 0;
+        foreach (GameObject p in panels) {
+            p.SetActive(false);
+        }
+    }
+
+    void OnEnable() {
+        next.Enable();
+    }
+
+    void OnDisable() {
+        next.Disable();
     }
 
     // Update is called once per frame
     void Update()
     {
-
         if (cutscene == true)
         {
         
+            nextclicked = next.WasPressedThisFrame();
             if (dialoguestarted == false)
             {
-                scene1.SetActive(true);
+                
                 StartDialogue();
             }
             
-            if (Input.GetKeyDown(KeyCode.E))
+            if (nextclicked)
             {
                 if (textcomponent.text == lines[index])
                 {
-                    NextPage();
+                    //Panel changes will be on lines 2 and line 3
+                    if (index == 2 || index == 3 || index == 4 || index == 5) {
+                        transitioning = true;
+                    }
+                    else {
+                        NextPage();
+                    }
+
+                        
                 }
                 else
                 {
@@ -47,18 +85,24 @@ public class CutsceneScript : MonoBehaviour
                     textcomponent.text = lines[index];
                 }
             }
+
+            if (transitioning == true) {
+                PanelTransition();
+            }
+            if (endscene == true) {
+                PanelTransition();
+            }
         }
 
         if (cutscene == false)
         {
-            scene1.SetActive(false);
             dialoguestarted = false;
             textcomponent.text = string.Empty;
-
-            //Starts cutscene
-            if (Input.GetKeyDown(KeyCode.R))
-            {
-                cutscene = true;
+            if (currentscene.name == "CutsceneScene") {
+                if (cutscenecompleted) {
+                    
+                    SceneManager.LoadScene("TutorialLevelConcept");
+                }
             }
         }
 
@@ -69,6 +113,8 @@ public class CutsceneScript : MonoBehaviour
     void StartDialogue()
     {
         index = 0;
+        panelindex = 0;
+        panels[panelindex].SetActive(true);
         StartCoroutine(TypeOutCharacters());
         dialoguestarted = true;
     }
@@ -83,8 +129,43 @@ public class CutsceneScript : MonoBehaviour
         }
         else
         {
-            cutscene = false;
+            endscene = true;
+                      
         }
+    }
+
+    void PanelTransition() {
+        if (endscene == false) {
+            if (fadein == true) {
+                transition.alpha += transitionspeed * Time.deltaTime;
+                if (transition.alpha >= 1) {
+                    fadein = false;
+                    textcomponent.text = string.Empty;
+                    panelindex += 1;
+                    NextPage();
+                    panels[panelindex].SetActive(true);
+                }
+            }
+            else {
+                transition.alpha -= transitionspeed * Time.deltaTime;
+                if (transition.alpha <= 0) {
+                    transitioning = false;
+                    fadein = true;
+                }
+            }
+        } else {
+            if (fadein == true) {
+                transition.alpha += transitionspeed * Time.deltaTime;
+                if (transition.alpha >= 1) {
+                    loading.SetActive(true);
+                    cutscene = false;
+                    cutscenecompleted = true; 
+                }
+            }
+        }
+        
+
+        
     }
 
     IEnumerator TypeOutCharacters()

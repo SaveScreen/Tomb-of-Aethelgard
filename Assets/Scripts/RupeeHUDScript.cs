@@ -17,6 +17,7 @@ public class RupeeHUDScript : MonoBehaviour
     public float timerDuration = 5.0f;
     public float moveSpeed = 20f;
     public float distanceFromTopOfScreen = 50f;
+    private float timeGoal; 
 
     void Start()
     {
@@ -37,13 +38,20 @@ public class RupeeHUDScript : MonoBehaviour
         }
 
         //if(atTarget && !Mathf.Approximately(textElement.transform.position.y, startPosition.y)){
-        if(atTarget){
+        /*if(atTarget){
             activeTimer -= (Time.deltaTime);
         }
         if(activeTimer <= 0){
             positionTarget = startPosition;
+        }*/
+
+        //id like to use Time.deltaTime but it was being buggy and returning absurdly small values
+        //no clue why
+        //this new solution works below
+        
+        if(Time.time>= timeGoal){
+            positionTarget = startPosition;
         }
-        //Debug.Log("active timer: " + activeTimer);
     }
 
     public void UpdateHUD(int amtChanged){
@@ -54,5 +62,9 @@ public class RupeeHUDScript : MonoBehaviour
         activeTimer = timerDuration;
         atTarget = false;
         positionTarget = startPosition + new Vector3(0f, -1*distanceFromTopOfScreen, 0f);
+
+        timeGoal = Time.time + timerDuration;
+        //Debug.Log("timeGoal: " + timeGoal);
+        //Debug.Log("time: " + Time.time);
     }
 }

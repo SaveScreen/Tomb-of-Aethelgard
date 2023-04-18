@@ -103,7 +103,7 @@ public class PlayerScript : MonoBehaviour
         anim = GameObject.Find("Breathing_Idle_1").GetComponent<Animator>();
 
         winLoseScript = winLoseManager.GetComponent<WinLoseScript>();
-        rupeeHUD = GameObject.Find("RupeeCounter").GetComponent<RupeeHUDScript>();
+        //rupeeHUD = GameObject.Find("RupeeCounter").GetComponent<RupeeHUDScript>();
 
     }
 

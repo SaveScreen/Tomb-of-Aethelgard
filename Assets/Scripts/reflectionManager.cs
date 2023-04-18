@@ -60,11 +60,10 @@ public class reflectionManager : MonoBehaviour
         CheckReceivers();
         CheckFilters();
 
-        //Debug.Log("Receivers: " + raysHitReceivers);
-        //Debug.Log("Filters: " + raysHitFilters);
-        //Debug.Log("Projector 1 on Filters: " + raysHitFilters[0, 0] + raysHitFilters[0, 1] + raysHitFilters[0, 2]);
-        //Debug.Log("Projector 2 on Filters: " + raysHitFilters[1, 0] + raysHitFilters[1, 1] + raysHitFilters[1, 2]);
-        //Debug.Log("Projector 3 on Filters: " + raysHitFilters[2, 0] + raysHitFilters[2, 1] + raysHitFilters[2, 2]);
+        /*
+        Debug.Log("Projector 1 on Filters: " + raysHitFilters[0, 0] + raysHitFilters[0, 1] + raysHitFilters[0, 2]);
+        Debug.Log("Projector 2 on Filters: " + raysHitFilters[1, 0] + raysHitFilters[1, 1] + raysHitFilters[1, 2]);
+        Debug.Log("Projector 3 on Filters: " + raysHitFilters[2, 0] + raysHitFilters[2, 1] + raysHitFilters[2, 2]);
         Debug.Log("Projector 1 on Receivers: " + raysHitReceivers[0, 0] + raysHitReceivers[0, 1] + raysHitReceivers[0, 2]);
         Debug.Log("Projector 2 on Receivers: " + raysHitReceivers[1, 0] + raysHitReceivers[1, 1] + raysHitReceivers[1, 2]);
         Debug.Log("Projector 3 on Receivers: " + raysHitReceivers[2, 0] + raysHitReceivers[2, 1] + raysHitReceivers[2, 2]);
@@ -74,6 +73,7 @@ public class reflectionManager : MonoBehaviour
         Debug.Log("Projector 7 on Receivers: " + raysHitReceivers[6, 0] + raysHitReceivers[6, 1] + raysHitReceivers[6, 2]);
         Debug.Log("Projector 8 on Receivers: " + raysHitReceivers[7, 0] + raysHitReceivers[7, 1] + raysHitReceivers[7, 2]);
         Debug.Log("Projector 9 on Receivers: " + raysHitReceivers[8, 0] + raysHitReceivers[8, 1] + raysHitReceivers[8, 2]);
+        */
     }
 
     private void DoorControl(int rID, int doorID)
@@ -168,6 +168,11 @@ public class reflectionManager : MonoBehaviour
     private void SetProjectors(){
         for(int i = 0; i < projectors.Length;i++){
 
+            //the following code has errors when
+            //a light ray moves off of a filter to immediately hitting a receiver.
+            //in this case the filter's beam does not disappear even though it should.
+            //minor error but still clunky.
+            
             if(projectors[i].GetComponent<raycastScript>().GetHitSpecialObject() == null){
                 for(int j = 0; j < signalCatchers.Length; j++){
                     raysHitReceivers[i, j]= false;
@@ -175,16 +180,31 @@ public class reflectionManager : MonoBehaviour
                 for(int k = 0; k < filters.Length; k++){
                     raysHitFilters[i, k]= false;
                 }
-            }
-            else{
+            }else{
+
                 //get hit object and record it
                 GameObject hitTarget = projectors[i].GetComponent<raycastScript>().GetHitSpecialObject();
+
+                if(hitTarget.GetComponent<raycastScript>() == null){
+                    for(int j = 0; j < filters.Length; j++){
+                        raysHitFilters[i, j]= false;
+                    }
+                }
+                if(hitTarget.GetComponent<signalCatcherScript>() == null){
+                    for(int k = 0; k < signalCatchers.Length; k++){
+                        raysHitReceivers[i, k]= false;
+                    }
+                }
 
                 //check if it is a filter
                 if(hitTarget.GetComponent<raycastScript>() != null){
                     //activate filter
 
                     raysHitFilters[i, hitTarget.GetComponent<raycastScript>().filterID-1] = true;
+                    
+                    for(int k = 0; k < signalCatchers.Length; k++){
+                        raysHitReceivers[i, k]= false;
+                    }
                 }
                 //check if it is a signal catcher
                 if (hitTarget.GetComponent<signalCatcherScript>() != null){
@@ -192,15 +212,19 @@ public class reflectionManager : MonoBehaviour
                     
                     raysHitReceivers[i, hitTarget.GetComponent<signalCatcherScript>().signalCatcherID-1] = true;
                     hitTarget.GetComponent<signalCatcherScript>().SetHasBeenActivated(true);
+
+                    for(int j = 0; j < filters.Length; j++){
+                        raysHitFilters[i, j]= false;
+                    }
                 }
                 //check if it is a prism
                 if (hitTarget.GetComponent<PrismScript>() != null)
                 {
                     //activate prism
 
-                    raysHitFilters[i, hitTarget.GetComponent<PrismScript>().filterIDs[0] - 4] = true;
-                    raysHitFilters[i, hitTarget.GetComponent<PrismScript>().filterIDs[1] - 4] = true;
-                    raysHitFilters[i, hitTarget.GetComponent<PrismScript>().filterIDs[2] - 4] = true;
+                    raysHitFilters[i, hitTarget.GetComponent<PrismScript>().filterIDs[0]-2] = true;
+                    raysHitFilters[i, hitTarget.GetComponent<PrismScript>().filterIDs[1]-2] = true;
+                    raysHitFilters[i, hitTarget.GetComponent<PrismScript>().filterIDs[2]-2] = true;
                 }
             }
         }

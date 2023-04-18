@@ -32,6 +32,8 @@ public class raycastScript : MonoBehaviour {
     [Header("Filter Values")]
     public LightColor rayColor = 0;
     public bool isProjector = true;
+    public bool prismChild = false;
+    private bool alwaysProjector;
 
     public int filterID;
 
@@ -45,6 +47,9 @@ public class raycastScript : MonoBehaviour {
     private Color filterColor;
 
     private GameObject hitSpecialObject = null;
+
+    private bool prismCh1Rot = false;
+    private bool prismCh3Rot = false;
 
     void Start()
     {
@@ -72,14 +77,23 @@ public class raycastScript : MonoBehaviour {
             lineRenderer.startColor = filterColor;
             lineRenderer.endColor = filterColor;
         }
+        alwaysProjector = isProjector;
 
-        startPosition = transform.position;
-        startDirection = transform.forward;
+        //for projectors, sets their direction
+        if(alwaysProjector || prismChild){
+            startPosition = transform.position;
+            startDirection = transform.forward;
+        }
+        
     }
 
     // Update is called once per frame
     void Update()
     {   
+        if(alwaysProjector || prismChild){
+            startPosition = transform.position;
+            startDirection = transform.forward;
+        }
         if(isProjector){
             pointsRendered = 0;        
             bouncesRemaining = rayBounces;
@@ -88,6 +102,8 @@ public class raycastScript : MonoBehaviour {
         } else{
             //draw no line
             FinishNoLine(transform.position);
+            //hit no object
+            hitSpecialObject = null;
         }
     }
 
@@ -120,6 +136,8 @@ public class raycastScript : MonoBehaviour {
 
                 if(catcherScript.GetColor() == (int)rayColor || catcherScript.GetColor()==0){
                     hitSpecialObject = hit.collider.gameObject;
+                }else{
+                    hitSpecialObject = null;
                 }
             }else if(hit.collider.tag == "filter"){
                 FinishRenderPoints(hit.point);
@@ -176,21 +194,29 @@ public class raycastScript : MonoBehaviour {
                 //dir3 = (dir + Vector3.left)/2;
                 dir3 = dir - offAngle;
 
-                if(!child1.GetIsProjector()){
-                    hit.collider.gameObject.transform.GetChild(0).Rotate(offAngle);
-                }
+                
                 child1.SetIsProjector(true);
                 child1.CopyRayValues(bouncesRemaining+1, rayLength, throughPoint);
+                if(!child1.GetAlwaysProjector()){
+                    if(!prismCh1Rot){
+                        Debug.Log("rotated child 1");
+                        hit.collider.gameObject.transform.GetChild(0).Rotate(offAngle);
+                        prismCh1Rot = true;
+                    }
+                }
 
                 child2.SetIsProjector(true);
                 child2.CopyRayValues(bouncesRemaining+1, rayLength, throughPoint);
 
 
-                if(!child3.GetIsProjector()){
-                    hit.collider.gameObject.transform.GetChild(2).Rotate(negativeOffAngle);
-                }
                 child3.SetIsProjector(true);
                 child3.CopyRayValues(bouncesRemaining+1, rayLength, throughPoint);
+                if(!child3.GetAlwaysProjector()){
+                    if(!prismCh3Rot){
+                        hit.collider.gameObject.transform.GetChild(2).Rotate(negativeOffAngle);
+                        prismCh3Rot = true;
+                    }
+                }
 
                 hitSpecialObject = hit.collider.gameObject;
 
@@ -240,9 +266,7 @@ public class raycastScript : MonoBehaviour {
     }
 
     public void ActivateFilter(bool b){
-        
         SetIsProjector(b);
-        
     }
 
     public GameObject GetHitSpecialObject(){
@@ -255,6 +279,10 @@ public class raycastScript : MonoBehaviour {
 
     public bool GetIsProjector(){
         return isProjector;
+    }
+
+    public bool GetAlwaysProjector(){
+        return alwaysProjector;
     }
 
     public void CopyRayValues(int bounces, float length, Vector3 point, Vector3 startDir)

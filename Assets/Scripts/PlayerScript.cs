@@ -146,6 +146,7 @@ public class PlayerScript : MonoBehaviour
             if (JumpPlay == true)
             {
                 PSS.PlayJumpSound();
+                
             }
             if (jumped == true) {
                 if (!isfalling) {
@@ -274,6 +275,10 @@ public class PlayerScript : MonoBehaviour
             anim.SetBool("isRunning", false);
             anim.SetBool("isJumping", false);
             anim.SetBool("isWallRunning", true);
+            if (!footsteps.isPlaying)
+            {
+                PSS.PlayWallrunningSound();
+            }
         }
 
         //mode-walking
@@ -290,7 +295,7 @@ public class PlayerScript : MonoBehaviour
                 anim.SetBool("isRunning", true);
 
                 if(!footsteps.isPlaying){
-                    footsteps.Play();
+                    PSS.PlayRunSound();
                 }
             }
             else {

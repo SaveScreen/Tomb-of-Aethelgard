@@ -27,5 +27,9 @@ public class PlayerSoundsScript : MonoBehaviour
         playerAudio.Play();
     }
 
-
+    public void PlaySpinSound()
+    {
+        playerAudio.clip = spinMirrorAudio;
+        playerAudio.Play();
+    }
 }

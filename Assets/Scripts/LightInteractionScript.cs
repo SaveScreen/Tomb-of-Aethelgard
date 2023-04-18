@@ -27,8 +27,6 @@ public class LightInteractionScript : MonoBehaviour
     [Header("Inputs")]
     public InputAction playerrotating;
     private float playerrotatingval;
-    //public KeyCode RotateClockWise = KeyCode.Q;
-    //public KeyCode RotateCtrClockWise = KeyCode.E;
 
     private float rotationTarget;
 

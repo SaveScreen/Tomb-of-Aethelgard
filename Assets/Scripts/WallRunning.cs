@@ -37,6 +37,7 @@ public class WallRunning : MonoBehaviour
     [Header("refrences")]
     public Transform orientation;
     private PlayerScript PS;
+    private PlayerSoundsScript PSS;
     private CharacterController CC;
 
     [Header("Exiting Wallrun")]
@@ -48,6 +49,7 @@ public class WallRunning : MonoBehaviour
     {
         //CC = GetComponent<CharacterController>();
         PS = GetComponent<PlayerScript>();
+        PSS = GetComponent<PlayerSoundsScript>();
     }
 
     void OnEnable() {

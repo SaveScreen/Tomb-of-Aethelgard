@@ -61,6 +61,7 @@ GameObject:
   - component: {fileID: 5411072950481296565}
   - component: {fileID: 5195815627546523123}
   - component: {fileID: 1749548834854149590}
+  - component: {fileID: 8655824849619174707}
   m_Layer: 8
   m_Name: 'Green Light Filter '
   m_TagString: filter
@@ -299,3 +300,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!65 &8655824849619174707
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7474517757008446573}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 218.0758, y: 159.5309, z: 332.7902}
+  m_Center: {x: 0, y: 81.02383, z: 0}

@@ -61,6 +61,7 @@ GameObject:
   - component: {fileID: 2292868451445357081}
   - component: {fileID: 6748148959591327570}
   - component: {fileID: 8021520259284811768}
+  - component: {fileID: 8328271620294345164}
   m_Layer: 8
   m_Name: Blue Light Filter
   m_TagString: filter
@@ -299,3 +300,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   distance: 1
+--- !u!65 &8328271620294345164
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6994422872302420560}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 218.0758, y: 159.53093, z: 332.7901}
+  m_Center: {x: 0, y: 81.023834, z: 0}

@@ -61,6 +61,7 @@ GameObject:
   - component: {fileID: 2788344758923907071}
   - component: {fileID: 7731088992258838835}
   - component: {fileID: 5479187219283637676}
+  - component: {fileID: 8514876974001749184}
   m_Layer: 8
   m_Name: Red Light Filter
   m_TagString: filter
@@ -299,3 +300,16 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
+--- !u!65 &8514876974001749184
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6069894192777517188}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 218.0758, y: 159.5309, z: 332.7902}
+  m_Center: {x: 0, y: 81.02383, z: 0}

@@ -30112,6 +30112,10 @@ PrefabInstance:
       value: 0.00003376603
       objectReference: {fileID: 0}
     - target: {fileID: 227851873522225681, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 227851873522225681, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
       propertyPath: m_LocalPosition.z
       value: 2
       objectReference: {fileID: 0}
@@ -56066,7 +56070,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1876458312}
   m_Layer: 0
-  m_Name: PushMirrorHolder
+  m_Name: w
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

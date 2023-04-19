@@ -15,5 +15,15 @@ public class CompletionManagerScript : MonoBehaviour
         if (tutorialcomplete && level1complete && level2complete && level3complete) {
             allclear = true;
         }
+
+        //Debug
+        if (Input.GetKeyDown(KeyCode.T)) {
+            Debug.Log(tutorialcomplete.ToString());
+            Debug.Log(level1complete.ToString());
+            Debug.Log(level2complete.ToString());
+            Debug.Log(level3complete.ToString());
+            Debug.Log(allclear.ToString());
+        }
+        
     }
 }

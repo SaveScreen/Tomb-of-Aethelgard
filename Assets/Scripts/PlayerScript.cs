@@ -197,6 +197,15 @@ public class PlayerScript : MonoBehaviour
             }
         }
 
+        //Determining what levels have been completed
+        if (Input.GetKeyDown(KeyCode.T)) {
+            Debug.Log(CompletionManagerScript.tutorialcomplete.ToString());
+            Debug.Log(CompletionManagerScript.level1complete.ToString());
+            Debug.Log(CompletionManagerScript.level2complete.ToString());
+            Debug.Log(CompletionManagerScript.level3complete.ToString());
+            Debug.Log(CompletionManagerScript.allclear.ToString());
+        }
+
         //FOR DEBUG PURPOSES | DO NO REMOVE
         if (Input.GetKeyDown(KeyCode.Escape)) {
             Application.Quit();

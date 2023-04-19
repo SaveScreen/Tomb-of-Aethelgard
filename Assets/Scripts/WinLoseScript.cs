@@ -51,6 +51,7 @@ public class WinLoseScript : MonoBehaviour
     public void GoToHub() {
         Time.timeScale = 1.0f;
         player.SetPaused(false);
+        AudioListener.pause = false;
         SceneManager.LoadScene("HubLevel");
         pauseMenu.SetActive(false);
     }
@@ -58,6 +59,7 @@ public class WinLoseScript : MonoBehaviour
     public void GoToMainMenu() {
         Time.timeScale = 1.0f;
         player.SetPaused(false);
+        AudioListener.pause = false;
         SceneManager.LoadScene("MainMenuScene");
         pauseMenu.SetActive(false);
     }

@@ -100,6 +100,16 @@ public class WallRunning : MonoBehaviour
             {
                 BeginWallRun();
             }
+            if (WallIsLeft) 
+            { 
+                PS.isWallRunningOnLeftWall = true;
+                PS.isWallRunningOnRightWall = false;
+            }
+            if (WallIsRight)
+            {
+                PS.isWallRunningOnLeftWall = false;
+                PS.isWallRunningOnRightWall = true;
+            }
             //wall run timer
             if (WallRunTimer > 0)
             {

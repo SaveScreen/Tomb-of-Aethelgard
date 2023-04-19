@@ -10,6 +10,8 @@ public class PlayerScript : MonoBehaviour
     [Header("Movement Variables")]
     public InputAction playermove;
     public CharacterController charactercontroller;
+    public bool isWallRunningOnLeftWall;
+    public bool isWallRunningOnRightWall;
 
     [Header("Camera Refrence")]
     public GameObject cam;
@@ -93,6 +95,8 @@ public class PlayerScript : MonoBehaviour
         jumped = false;
         jumping = false;
         JumpPlay = false;
+        isWallRunningOnLeftWall= false;
+        isWallRunningOnRightWall= false;
         smoothrotationtime = 0.1f;
         gravity = -8f;
         
@@ -286,11 +290,20 @@ public class PlayerScript : MonoBehaviour
                 PSS.PlayWallrunningSound();
             }
             anim.SetBool("isRunning", false);
-            anim.SetBool("isJumping", false);
-            anim.SetBool("isWallRunning", true);
-           
+            if (isWallRunningOnLeftWall)
+            {
+                anim.SetBool("isWallRunning", true);
+                anim.SetBool("isOnLeftWall", true);
+                anim.SetBool("isJumping", false);
+            }
+            if (isWallRunningOnRightWall)
+            {
+                anim.SetBool("isWallRunning", true);
+                anim.SetBool("isOnRightWall", true);
+                anim.SetBool("isJumping", false);
+            }
         }
-
+       
         //mode-walking
         if (charactercontroller.isGrounded)
         {

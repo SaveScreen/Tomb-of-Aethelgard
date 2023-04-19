@@ -28,11 +28,10 @@ public class SceneSwitcherooScript : MonoBehaviour
     void OnTriggerEnter(Collider other) {
         
         if (other.gameObject == player) {
-            Debug.Log("Ayyy");
-            
+
             if (currentscene.name == "TutorialLevel") {
                 SceneManager.LoadScene("HubLevel");
-                
+                CompletionManagerScript.tutorialcomplete = true;
             }
 
             if (currentscene.name == "HubLevel" && level == 1)
@@ -50,18 +49,20 @@ public class SceneSwitcherooScript : MonoBehaviour
 
 
             //For exiting the other levels
-            if (currentscene.name == "VSLevelScene") {
+            if (currentscene.name == "VSLevelScene" && level == 1) {
                 SceneManager.LoadScene("HubLevel");
+                CompletionManagerScript.level1complete = true;
             }
-            if (currentscene.name == "Level2Scene")
+            if (currentscene.name == "Level2Scene" && level == 2)
             {
                 SceneManager.LoadScene("HubLevel");
+                CompletionManagerScript.level2complete = true;
                 
             }
-            if (currentscene.name == "Level3Scene")
+            if (currentscene.name == "Level3Scene" && level == 3)
             {
                 SceneManager.LoadScene("HubLevel");
-                
+                CompletionManagerScript.level3complete = true;
             }
             
         }

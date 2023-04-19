@@ -282,7 +282,7 @@ public class PlayerScript : MonoBehaviour
     private void StateHandler()
     {
         //mode-wallrunning
-        if (wallrunning)
+        if ((wallrunning) && (!charactercontroller.isGrounded))
         {
             state = MovementState.wallrunning;
             if (!footsteps.isPlaying)
@@ -290,17 +290,18 @@ public class PlayerScript : MonoBehaviour
                 PSS.PlayWallrunningSound();
             }
             anim.SetBool("isRunning", false);
+
             if (isWallRunningOnLeftWall)
             {
                 anim.SetBool("isWallRunning", true);
                 anim.SetBool("isOnLeftWall", true);
-                anim.SetBool("isJumping", false);
+                
             }
             if (isWallRunningOnRightWall)
             {
                 anim.SetBool("isWallRunning", true);
                 anim.SetBool("isOnRightWall", true);
-                anim.SetBool("isJumping", false);
+                
             }
         }
        
@@ -310,6 +311,8 @@ public class PlayerScript : MonoBehaviour
             
             //If player is not moving, footsteps sound stops playing
             anim.SetBool("isJumping", false);
+            isWallRunningOnRightWall = false;
+            isWallRunningOnLeftWall = false;
             anim.SetBool("isWallRunning", false);
             if (direction.magnitude >= 0.1f) {
                 state = MovementState.walking;
@@ -329,6 +332,9 @@ public class PlayerScript : MonoBehaviour
         }
         if ((!charactercontroller.isGrounded)&& (!wallrunning)) {
             anim.SetBool("isJumping", true);
+            anim.SetBool("isOnRightWall", false);
+            anim.SetBool("isOnLeftWall", false);
+            anim.SetBool("isWallRunning", false);
             footsteps.Stop();
         }
     }

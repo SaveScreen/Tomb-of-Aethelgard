@@ -18,6 +18,8 @@ public class MainMenuScript : MonoBehaviour
 
     void Awake()
     {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         controlsmenu.SetActive(false);
         settingsmenu.SetActive(false);
         creditsMenu.SetActive(false);

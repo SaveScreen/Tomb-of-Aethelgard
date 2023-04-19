@@ -29,7 +29,7 @@ public class SceneSwitcherooScript : MonoBehaviour
         
         if (other.gameObject == player) {
 
-            if (currentscene.name == "TutorialLevel") {
+            if (currentscene.name == "TutorialLevelConcept") {
                 SceneManager.LoadScene("HubLevel");
                 CompletionManagerScript.tutorialcomplete = true;
             }

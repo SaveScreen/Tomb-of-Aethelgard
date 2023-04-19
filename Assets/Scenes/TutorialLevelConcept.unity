@@ -5727,7 +5727,7 @@ PrefabInstance:
     - target: {fileID: 6096756132656607730, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
       propertyPath: runAudio
       value: 
-      objectReference: {fileID: 8300000, guid: b4963aaded397484d8579b1c3f0e2c7e, type: 3}
+      objectReference: {fileID: 8300000, guid: 199c2eb177402c546ba6bcdf4c105b52, type: 3}
     - target: {fileID: 6096756132656607730, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
       propertyPath: jumpAudio
       value: 
@@ -40304,7 +40304,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8173987046217288586, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0026986566
+      value: -0.0026986564
       objectReference: {fileID: 0}
     - target: {fileID: 8173987046519804472, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
       propertyPath: m_RootOrder

@@ -107,7 +107,7 @@ Transform:
   - {fileID: 334330077680238600}
   - {fileID: 33068970546312722}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!33 &3041323656804124340
 MeshFilter:
@@ -364,6 +364,15 @@ MonoBehaviour:
       m_Action: Playerjump
       m_Flags: 0
     m_Flags: 0
+  JumpAudioPlay:
+    m_Name: Jump Audio Play
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 0ff0ce30-bdb7-416d-881a-d901ec12ef76
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
   jumpspeed: 20
   jumpgravity: -30
   speed: 10
@@ -414,12 +423,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6afae491a37669c4aa7b4e052ce830f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerAudio: {fileID: 0}
-  jumpAudio: {fileID: 0}
-  landAudio: {fileID: 0}
-  runAudio: {fileID: 0}
-  wallrunAudio: {fileID: 0}
-  spinMirrorAudio: {fileID: 0}
+  playerAudio: {fileID: 7185953941056270833}
+  jumpAudio: {fileID: 8300000, guid: 72eaf545692b8f64d9d4a2b268ddc12b, type: 3}
+  landAudio: {fileID: 8300000, guid: 90f426c5b57e9404883ccb76e14585cb, type: 3}
+  runAudio: {fileID: 8300000, guid: 199c2eb177402c546ba6bcdf4c105b52, type: 3}
+  wallrunAudio: {fileID: 8300000, guid: 5365d04406dca0947ac8d02983a030e3, type: 3}
 --- !u!114 &227851872716210818
 MonoBehaviour:
   m_ObjectHideFlags: 0

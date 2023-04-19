@@ -27530,19 +27530,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8173987046539874385, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9986159
+      value: 0.99861586
       objectReference: {fileID: 0}
     - target: {fileID: 8173987046539874385, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.038077697
+      value: 0.03807769
       objectReference: {fileID: 0}
     - target: {fileID: 8173987046539874385, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.036257457
+      value: 0.036257453
       objectReference: {fileID: 0}
     - target: {fileID: 8173987046539874385, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0013825035
+      value: -0.0013824996
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -37486,9 +37486,10 @@ GameObject:
   - component: {fileID: 2145841904}
   - component: {fileID: 2145841905}
   - component: {fileID: 2145841906}
+  - component: {fileID: 2145841907}
   m_Layer: 8
   m_Name: MirrorGrabBox
-  m_TagString: PushPullObject
+  m_TagString: reflector
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37520,7 +37521,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.9032118, y: 1.3426268, z: 2.862531}
+  m_Size: {x: 2.9032118, y: 1.212674, z: 2.862531}
   m_Center: {x: -0.015180824, y: -1.1668922, z: 0.06839967}
 --- !u!114 &2145841905
 MonoBehaviour:
@@ -37552,6 +37553,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!65 &2145841907
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2145841902}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.103212, y: 2.342627, z: 3.162531}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &2146767287
 PrefabInstance:
   m_ObjectHideFlags: 0

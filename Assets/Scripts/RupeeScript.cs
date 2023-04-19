@@ -54,8 +54,10 @@ public class RupeeScript : MonoBehaviour
         if(other.gameObject.GetComponent<PlayerScript>() == null){
             return;
         }else{
-            other.gameObject.GetComponent<PlayerScript>().AddRupees(rupeeValue);
-            PlayCollectedAnimation();
+            if(!collected){
+                other.gameObject.GetComponent<PlayerScript>().AddRupees(rupeeValue);
+                PlayCollectedAnimation();
+            }
         }
     }
 

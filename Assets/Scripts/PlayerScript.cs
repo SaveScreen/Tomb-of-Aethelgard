@@ -201,6 +201,10 @@ public class PlayerScript : MonoBehaviour
             }
         }
 
+        if (CompletionManagerScript.tutorialcomplete && CompletionManagerScript.level1complete && CompletionManagerScript.level2complete && CompletionManagerScript.level3complete) {
+            CompletionManagerScript.allclear = true;
+        }
+
         //Determining what levels have been completed
         if (Input.GetKeyDown(KeyCode.T)) {
             Debug.Log(CompletionManagerScript.tutorialcomplete.ToString());
@@ -209,6 +213,19 @@ public class PlayerScript : MonoBehaviour
             Debug.Log(CompletionManagerScript.level3complete.ToString());
             Debug.Log(CompletionManagerScript.allclear.ToString());
         }
+        
+        //Debug for opening the hub door
+        /******************************************************
+        if (Input.GetKeyDown(KeyCode.O)) {
+            CompletionManagerScript.allclear = true;
+        }
+        if (Input.GetKeyDown(KeyCode.I)) {
+            CompletionManagerScript.tutorialcomplete = true;
+            CompletionManagerScript.level1complete = true;
+            CompletionManagerScript.level2complete = true;
+            CompletionManagerScript.level3complete = true;
+        }
+        *******************************************************/
 
         //FOR DEBUG PURPOSES | DO NO REMOVE
         if (Input.GetKeyDown(KeyCode.Escape)) {

@@ -743,6 +743,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6138453889076753451, guid: 5d0d630922707da47a98e1ffa630b80b, type: 3}
   m_PrefabInstance: {fileID: 29276719}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &29559833 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5231760412575986679, guid: 08900d4e479d0754987975768754e376, type: 3}
+  m_PrefabInstance: {fileID: 580403256}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &31284337
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7743,7 +7748,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8173987046217288586, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0026986562
+      value: -0.0026986566
       objectReference: {fileID: 0}
     - target: {fileID: 8173987046519804472, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
       propertyPath: m_RootOrder
@@ -8107,7 +8112,7 @@ PrefabInstance:
     - target: {fileID: 3041323656804124330, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
       propertyPath: winLoseManager
       value: 
-      objectReference: {fileID: 580403257}
+      objectReference: {fileID: 29559833}
     - target: {fileID: 3041323656804124330, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
       propertyPath: JumpAudioPlay.m_Id
       value: 940ee25d-4678-46af-b57d-bee6570dfed2
@@ -11926,11 +11931,6 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 08900d4e479d0754987975768754e376, type: 3}
---- !u!1 &580403257 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5140020092217847211, guid: 08900d4e479d0754987975768754e376, type: 3}
-  m_PrefabInstance: {fileID: 580403256}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &580638026
 PrefabInstance:
   m_ObjectHideFlags: 0

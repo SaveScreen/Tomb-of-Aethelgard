@@ -51,7 +51,7 @@ public class MainMenuCutsceneScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(director.state.ToString());
+        
         if (!menustarted) {
             menustarter = menuinput.IsPressed();
 

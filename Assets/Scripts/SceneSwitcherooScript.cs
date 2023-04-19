@@ -45,7 +45,10 @@ public class SceneSwitcherooScript : MonoBehaviour
             if (currentscene.name == "HubLevel" && level == 3) {
                 SceneManager.LoadScene("Level3Scene");
             }
-            //Add code to trigger end cutscene here
+            if (currentscene.name == "HubLevel" && level == 4)
+            {
+                SceneManager.LoadScene("EndCutsceneScene");
+            }
 
 
             //For exiting the other levels

@@ -338,8 +338,8 @@ public class PlayerScript : MonoBehaviour
     public void Die(){
         //these statements are commented out until the death animation is added. then maybe re-add
 
-        //Time.timeScale = 0;
-        //lose = true;
+        Time.timeScale = 0;
+        lose = true;
         //losescreen.SetActive(true); 
 
         anim.SetBool("isDying", true);

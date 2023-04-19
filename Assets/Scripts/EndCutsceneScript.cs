@@ -201,6 +201,11 @@ public class EndCutsceneScript : MonoBehaviour
     IEnumerator ReturnToMenu()
     {
         yield return new WaitForSeconds(3.0f);
+        CompletionManagerScript.tutorialcomplete = false;
+        CompletionManagerScript.level1complete = false;
+        CompletionManagerScript.level2complete = false;
+        CompletionManagerScript.level3complete = false;
+        CompletionManagerScript.allclear = false;
         SceneManager.LoadScene("MainMenuScene");
     }
 }

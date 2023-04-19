@@ -32,7 +32,7 @@ Transform:
   m_Children:
   - {fileID: 229181474163053330}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!198 &229181474037975666
 ParticleSystem:
@@ -995,12 +995,12 @@ ParticleSystem:
           outWeight: 0
         - serializedVersion: 3
           time: 1
-          value: 1
-          inSlope: 0
-          outSlope: 0
+          value: 0
+          inSlope: -1.3682408
+          outSlope: -1.3682408
           tangentMode: 0
           weightedMode: 0
-          inWeight: 0
+          inWeight: 0.059259355
           outWeight: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
@@ -4904,7 +4904,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 3.4e-44, z: 3.6e-43, w: 5.4749493e+28}
+  m_BoundingSphereOverride: {x: 3.5e-44, y: 1.9429e-41, z: 6e-44, w: 2.524355e-29}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0

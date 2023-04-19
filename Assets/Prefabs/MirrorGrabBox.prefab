@@ -56,6 +56,7 @@ GameObject:
   - component: {fileID: 3435156658790262492}
   - component: {fileID: 3435156658790262467}
   - component: {fileID: 3435156658790262466}
+  - component: {fileID: 4549262371114471286}
   m_Layer: 8
   m_Name: MirrorGrabBox
   m_TagString: PushPullObject
@@ -90,8 +91,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.9032118, y: 1.1956695, z: 2.862531}
-  m_Center: {x: -0.015180828, y: -1.0934088, z: 0.06839967}
+  m_Size: {x: 2.9032118, y: 0.9921638, z: 2.862531}
+  m_Center: {x: -0.015180826, y: -0.9916554, z: 0.06839967}
 --- !u!114 &3435156658790262466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106,6 +107,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   distance: 2
+--- !u!65 &4549262371114471286
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3435156658790262493}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.503212, y: 1.19567, z: 3.462531}
+  m_Center: {x: -0.01518083, y: -1.093409, z: 0.06839967}
 --- !u!1001 &3435156657109062722
 PrefabInstance:
   m_ObjectHideFlags: 0

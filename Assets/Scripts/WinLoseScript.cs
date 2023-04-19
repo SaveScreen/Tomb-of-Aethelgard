@@ -74,5 +74,6 @@ public class WinLoseScript : MonoBehaviour
     public void LoseGame()
     {
         player.Die();
+        loseScreen.SetActive(true);
     }
 }

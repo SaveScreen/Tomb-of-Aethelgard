@@ -12,15 +12,20 @@ public class RupeeHUDScript : MonoBehaviour
 
     Vector3 startPosition;
     Vector3 positionTarget;
-    private bool atTarget = true;
+    
+    //never used boolean
+    //private bool atTarget = true;
     float activeTimer;
     public float timerDuration = 5.0f;
     public float moveSpeed = 20f;
     public float distanceFromTopOfScreen = 50f;
+    public float fractionalDistanceFromTopOfScreen = 0.2f;
     private float timeGoal; 
 
     void Start()
     {
+        distanceFromTopOfScreen = fractionalDistanceFromTopOfScreen*Screen.height;
+
         textElement.text = rupeeText;
         startPosition = textElement.transform.position;
         positionTarget = startPosition;
@@ -33,7 +38,8 @@ public class RupeeHUDScript : MonoBehaviour
             textElement.transform.position = Vector3.MoveTowards(textElement.transform.position, positionTarget, moveSpeed * Time.deltaTime);
         }
         else{
-            atTarget = true;
+            //never used boolean
+            //atTarget = true; 
             activeTimer = timerDuration;
         }
 
@@ -60,7 +66,9 @@ public class RupeeHUDScript : MonoBehaviour
         rupeeText = "" + rupees;
         textElement.text = rupeeText;
         activeTimer = timerDuration;
-        atTarget = false;
+        
+        //never used boolean
+        //atTarget = false;
         positionTarget = startPosition + new Vector3(0f, -1*distanceFromTopOfScreen, 0f);
 
         timeGoal = Time.time + timerDuration;

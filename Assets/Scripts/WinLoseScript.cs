@@ -21,6 +21,7 @@ public class WinLoseScript : MonoBehaviour
     void Start()
     {
         player = playerObject.GetComponent<PlayerScript>();
+        AudioListener.pause = false;
 
         //pause menu panel
         pauseMenu.SetActive(false);
@@ -77,5 +78,6 @@ public class WinLoseScript : MonoBehaviour
     {
         player.Die();
         loseScreen.SetActive(true);
+        AudioListener.pause = true;
     }
 }

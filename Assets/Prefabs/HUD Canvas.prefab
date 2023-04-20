@@ -55,6 +55,7 @@ MonoBehaviour:
   timerDuration: 4
   moveSpeed: 200
   distanceFromTopOfScreen: 70
+  fractionalDistanceFromTopOfScreen: 0.15
 --- !u!222 &5927316095848356627
 CanvasRenderer:
   m_ObjectHideFlags: 0

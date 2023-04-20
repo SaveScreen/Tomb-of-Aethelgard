@@ -61,7 +61,7 @@ public class PushablePullable : MonoBehaviour
             if (PushPullPointInteractable != null)
             {
                 float distanceBetween = Vector3.Distance(PPS.PushPullPoint.transform.position, PushablePullableRigdBody.transform.position);
-                Debug.Log("The distance between them " + distanceBetween + " units");
+               
             PushablePullableRigdBody.isKinematic = false;
             if (distanceBetween > distance) 
                 { 

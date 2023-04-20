@@ -12,8 +12,9 @@ public class CompletionManagerScript : MonoBehaviour
     public static bool allclear = false;
 
     void Update() {
-        if (tutorialcomplete && level1complete && level2complete && level3complete) {
+        if (level1complete && level2complete && level3complete) {
             allclear = true;
+            //tutorial not needed to be cleared
         }
 
         //Debug

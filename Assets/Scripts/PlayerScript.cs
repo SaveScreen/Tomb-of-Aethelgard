@@ -98,7 +98,7 @@ public class PlayerScript : MonoBehaviour
         isWallRunningOnLeftWall= false;
         isWallRunningOnRightWall= false;
         smoothrotationtime = 0.1f;
-        gravity = -8f;
+        gravity = -3f;
         
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;

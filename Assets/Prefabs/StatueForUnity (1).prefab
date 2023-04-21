@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7137997165288441661}
   - component: {fileID: 7137997165288441662}
   - component: {fileID: 6529033120577704626}
+  - component: {fileID: 6065508775489583586}
   m_Layer: 8
   m_Name: StatueForUnity (1)
   m_TagString: PushPullObject
@@ -35,7 +36,7 @@ Transform:
   m_Children:
   - {fileID: 3871050676329341720}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!33 &5992637929305926688
 MeshFilter:
@@ -113,6 +114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  distance: 1
 --- !u!54 &6529033120577704626
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -129,6 +131,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!65 &6065508775489583586
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8056424387209902399}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 347.6296, y: 367.64807, z: 347.9808}
+  m_Center: {x: 0.0009765625, y: 10.485733, z: 0}
 --- !u!1001 &7137997165567257814
 PrefabInstance:
   m_ObjectHideFlags: 0

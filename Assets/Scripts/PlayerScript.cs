@@ -265,7 +265,7 @@ public class PlayerScript : MonoBehaviour
     private void LineForRotate()
     {
         IsrotatingMirror = Physics.Raycast(transform.position, transform.forward, out RotatingMirror, DistanceCheck, RotateMirror);
-        Debug.DrawRay(transform.position, transform.forward, Color.red);
+        
         if (IsrotatingMirror)
         {
             CanInteractRotatingMirror = true;

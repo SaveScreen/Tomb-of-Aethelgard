@@ -15,6 +15,8 @@ public class WinLoseScript : MonoBehaviour
     [Header("Lose Screen")]
 
     public GameObject loseScreen;
+    public GameObject loseScreenAxe;
+    public GameObject loseScreenSpike;
     public GameObject playerObject;
     private PlayerScript player;
 
@@ -29,6 +31,10 @@ public class WinLoseScript : MonoBehaviour
         winScreen.SetActive(false);
 
         loseScreen.SetActive(false);
+
+        loseScreenAxe.SetActive(false);
+
+        loseScreenSpike.SetActive(false);
     }
 
     public void PauseGame(){
@@ -78,6 +84,18 @@ public class WinLoseScript : MonoBehaviour
     {
         player.Die();
         loseScreen.SetActive(true);
+        AudioListener.pause = true;
+    }
+    public void LoseGameAxe()
+    {
+        player.Die();
+        loseScreenAxe.SetActive(true);
+        AudioListener.pause = true;
+    }
+    public void LoseGameSpike()
+    {
+        player.Die();
+        loseScreenSpike.SetActive(true);
         AudioListener.pause = true;
     }
 }

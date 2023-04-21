@@ -372,6 +372,14 @@ public class PlayerScript : MonoBehaviour
        if (other.gameObject.tag == "LoseScreen") {
             LoseGame();
         }
+        if (other.gameObject.tag == "LoseScreenAxe")
+        {
+            LoseGameAxe();
+        }
+        if (other.gameObject.tag == "LoseScreenSpike")
+        {
+            LoseGameSpike();
+        }
     }
 
     public void AddRupees(int amt){
@@ -398,6 +406,14 @@ public class PlayerScript : MonoBehaviour
         winLoseScript.LoseGame();
     }
 
+    private void LoseGameAxe()
+    {
+        winLoseScript.LoseGameAxe();
+    }
+    private void LoseGameSpike()
+    {
+        winLoseScript.LoseGameSpike();
+    }
     public Animator GetAnimator(){
         return anim;
     }

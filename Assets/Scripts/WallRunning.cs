@@ -75,10 +75,16 @@ public class WallRunning : MonoBehaviour
 
     private void CheckForWall() 
     {
-        WallIsRight = Physics.Raycast(transform.position, orientation.right, out RightWall, WallCheckDistance, IsThisWall);
-      
-        WallIsLeft = Physics.Raycast(transform.position, -orientation.right, out LeftWall, WallCheckDistance, IsThisWall);
-        
+        WallIsRight = Physics.Raycast(transform.position, orientation.right - transform.forward, out RightWall, WallCheckDistance, IsThisWall);
+        WallIsRight = Physics.Raycast(transform.position, orientation.right + transform.forward, out RightWall, WallCheckDistance, IsThisWall);
+        Debug.DrawRay(transform.position, orientation.right * WallCheckDistance - transform.forward, Color.yellow);
+        Debug.DrawRay(transform.position, orientation.right * WallCheckDistance + transform.forward, Color.yellow);
+
+        WallIsLeft = Physics.Raycast(transform.position, -orientation.right - transform.forward, out LeftWall, WallCheckDistance, IsThisWall);
+        WallIsLeft = Physics.Raycast(transform.position, -orientation.right + transform.forward, out LeftWall, WallCheckDistance, IsThisWall);
+        Debug.DrawRay(transform.position, -orientation.right * WallCheckDistance - transform.forward, Color.yellow);
+        Debug.DrawRay(transform.position, -orientation.right * WallCheckDistance + transform.forward, Color.yellow);
+
     }
     private bool AboveGround()
     {

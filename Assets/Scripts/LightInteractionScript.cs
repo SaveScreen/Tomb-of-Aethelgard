@@ -10,11 +10,9 @@ public class LightInteractionScript : MonoBehaviour
     [Header("Refrences")]
     private PlayerScript PS;
     public AudioSource Audio;
-    public bool Interact;
     public AudioClip spinMirrorAudio;
-    [Header("Interactions")]
-    
 
+    [Header("Interactions")]    
     public float rotationJump = 10.0f;
     public float rotationSpeed = 5f;
 
@@ -38,13 +36,15 @@ public class LightInteractionScript : MonoBehaviour
     void Start()
     {
         GameObject PlayerObject = GameObject.FindWithTag("Player");
-       
-        
-        //HUD to tell players to press E/Q to rotate the pillar
-     //   eqImage = GameObject.Find("Rotate UI");
-//        eqImage.SetActive(false);
+        if (PlayerObject != null)
+        {
+            PS = PlayerObject.GetComponent<PlayerScript>();
+        }
+            //HUD to tell players to press E/Q to rotate the pillar
+            //   eqImage = GameObject.Find("Rotate UI");
+            //        eqImage.SetActive(false);
 
-        Interact = false;
+            
       
     }
 
@@ -61,7 +61,7 @@ public class LightInteractionScript : MonoBehaviour
         playerrotatingval = playerrotating.ReadValue<float>();
 
         //need to add a line here to make this input impossible while paused
-        if (Interact == true && !currentlyRotating)
+        if (PS.CanInteractRotatingMirror == true && !currentlyRotating)
         {
             /*
             if (Input.GetKeyDown(RotateClockWise))
@@ -97,7 +97,7 @@ public class LightInteractionScript : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            Interact = true;
+            
             //  eqImage.SetActive(true);
         }
     }
@@ -105,7 +105,7 @@ public class LightInteractionScript : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            Interact = false;
+            
             //  eqImage.SetActive(false);
         }
        

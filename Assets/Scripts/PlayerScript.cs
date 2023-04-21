@@ -28,6 +28,13 @@ public class PlayerScript : MonoBehaviour
     private bool jumping;
     private bool isfalling;
 
+    [Header("Refrence for Rotate mirror")]
+    public float DistanceCheck = 1f;
+    public LayerMask RotateMirror;
+    private RaycastHit RotatingMirror;
+    public bool IsrotatingMirror;
+    public bool CanInteractRotatingMirror;
+
     [Header("Character Movement")]
     public float speed;
     private Vector3 move;
@@ -95,7 +102,8 @@ public class PlayerScript : MonoBehaviour
         jumped = false;
         jumping = false;
         JumpPlay = false;
-        isWallRunningOnLeftWall= false;
+        CanInteractRotatingMirror = false;
+        isWallRunningOnLeftWall = false;
         isWallRunningOnRightWall= false;
         smoothrotationtime = 0.1f;
         gravity = -3f;
@@ -143,7 +151,7 @@ public class PlayerScript : MonoBehaviour
             }
             
             LookAndMove();
-
+            LineForRotate();
             if (jumping == true) {
                 jumped = true;
                 //anim.SetBool("isJumping", true);
@@ -252,6 +260,21 @@ public class PlayerScript : MonoBehaviour
 
         charactercontroller.Move(velocity * Time.deltaTime); 
         
+    }
+
+    private void LineForRotate()
+    {
+        IsrotatingMirror = Physics.Raycast(transform.position, transform.forward, out RotatingMirror, DistanceCheck, RotateMirror);
+        Debug.DrawRay(transform.position, transform.forward, Color.red);
+        if (IsrotatingMirror)
+        {
+            CanInteractRotatingMirror = true;
+            
+        }
+        else 
+        {
+            CanInteractRotatingMirror = false;
+        }
     }
 
     //Controls player looking around

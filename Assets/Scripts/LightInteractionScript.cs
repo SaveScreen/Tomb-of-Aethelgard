@@ -15,7 +15,7 @@ public class LightInteractionScript : MonoBehaviour
     [Header("Interactions")]    
     public float rotationJump = 10.0f;
     public float rotationSpeed = 5f;
-
+    public bool Interact;
     private bool rotCW; //is Rotating Clockwise
     private float targetTotalRot; //in degrees, counts past 360
     private float currentTotalRot = 0f; //in degrees, counts past 360
@@ -61,18 +61,9 @@ public class LightInteractionScript : MonoBehaviour
         playerrotatingval = playerrotating.ReadValue<float>();
 
         //need to add a line here to make this input impossible while paused
-        if (PS.CanInteractRotatingMirror == true && !currentlyRotating)
+        if ((PS.CanInteractRotatingMirror == true) && (!currentlyRotating) && (Interact))
         {
-            /*
-            if (Input.GetKeyDown(RotateClockWise))
-            {
-                RotateLightClockWise();
-            }
-            if (Input.GetKeyDown(RotateCtrClockWise))
-            {
-                RotateLightCtrClockWise();
-            }
-            */
+            
             if (playerrotatingval > 0) {
                 RotateLightClockWise();
                 
@@ -90,14 +81,13 @@ public class LightInteractionScript : MonoBehaviour
             currentlyRotating = false;
         }
 
-    //   Debug.Log("current y: " + transform.eulerAngles.y);
-    //   Debug.Log("target: " + rotationTarget);
+   
     }
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
-            
+            Interact = true;
             //  eqImage.SetActive(true);
         }
     }
@@ -105,7 +95,7 @@ public class LightInteractionScript : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            
+            Interact = false;
             //  eqImage.SetActive(false);
         }
        

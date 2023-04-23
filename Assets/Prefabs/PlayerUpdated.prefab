@@ -502,7 +502,7 @@ MonoBehaviour:
   WallRunForce: 200
   MaxWallRunTime: 2
   WallJumpUpForce: 20
-  WallJumpSideForce: 10
+  WallJumpSideForce: 30
   WallJumpKey:
     m_Name: Wall Jump Key
     m_Type: 1

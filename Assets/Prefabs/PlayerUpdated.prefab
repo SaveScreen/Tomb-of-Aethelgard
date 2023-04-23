@@ -337,6 +337,8 @@ MonoBehaviour:
       m_Flags: 8
     m_Flags: 0
   charactercontroller: {fileID: 0}
+  isWallRunningOnLeftWall: 0
+  isWallRunningOnRightWall: 0
   cam: {fileID: 0}
   IsPushingPulling: 0
   playerjump:
@@ -375,6 +377,12 @@ MonoBehaviour:
     m_Flags: 0
   jumpspeed: 20
   jumpgravity: -30
+  DistanceCheck: 2
+  RotateMirror:
+    serializedVersion: 2
+    m_Bits: 0
+  IsrotatingMirror: 0
+  CanInteractRotatingMirror: 0
   speed: 10
   velocity: {x: 0, y: 0, z: 0}
   orientation: {fileID: 3041323658253190330}

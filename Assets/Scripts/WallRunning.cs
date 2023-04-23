@@ -125,10 +125,14 @@ public class WallRunning : MonoBehaviour
             }
 
             jumping = WallJumpKey.WasPressedThisFrame();
-              
-            
+
+
             //wall jumping 
-            if (jumping) WallJump();
+            if (jumping) 
+            { 
+                WallJump();
+                Debug.Log("1");
+            }
         }
 
         //state 2 - exiting wall run
@@ -188,9 +192,9 @@ public class WallRunning : MonoBehaviour
     {
         Vector3 wallNormal = WallIsRight ? RightWall.normal : LeftWall.normal;
 
-        Vector3 ForceToApply = transform.up * WallJumpUpForce + wallNormal * WallJumpSideForce;
+        Vector3 ForceToApply = wallNormal * WallJumpSideForce + transform.up * WallJumpUpForce ;
         //resets the y velocity adds the force
-        //PS.velocity = new Vector3(PS.velocity.x, 0f, PS.velocity.z);
+        PS.velocity = new Vector3(0f, PS.velocity.y, 0f);
         PS.AddVelocity(ForceToApply);
     }
 }

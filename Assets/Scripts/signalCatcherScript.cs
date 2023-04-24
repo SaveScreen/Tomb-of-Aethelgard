@@ -18,9 +18,18 @@ public class signalCatcherScript : MonoBehaviour
 
     public LightColor catcherColor = 0;
 
+    [Header("Rotation Values")]
+    public float xRotation = 0;
+    public float yRotation = 5f;
+    public float zRotation = 0;
+
     [Header("Audio")]
     public AudioSource isActivatedSoundPlayer;
     public AudioSource hasBeenActivatedSoundPlayer;
+
+    void Update(){
+        RotateIfActivated();
+    }
 
     public bool GetHasBeenActivated()
     {
@@ -53,6 +62,13 @@ public class signalCatcherScript : MonoBehaviour
 
     public int GetColor(){
         return (int)catcherColor;
+    }
+
+    private void RotateIfActivated(){
+        if(isActivated){
+            Vector3 rot = new Vector3(xRotation, yRotation, zRotation);
+            this.gameObject.transform.Rotate(rot);
+        }
     }
 
 

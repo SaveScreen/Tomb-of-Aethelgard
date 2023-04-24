@@ -42,9 +42,9 @@ public class reflectionManager : MonoBehaviour
             DoorControlType("isActivated", 2, 3, 2);
         }
         if(SceneManager.GetActiveScene().name == "Level3Scene"){
-            DoorControlType("isActivated", 1, 1);
+            DoorControlType("isActivated", 3, 1);
             DoorControlType("isActivated", 2, 2);
-            DoorControlType("isActivated", 3, 3);
+            DoorControlType("isActivated", 1, 3);
         }
         if (SceneManager.GetActiveScene().name == "PrismTestScene")
         {

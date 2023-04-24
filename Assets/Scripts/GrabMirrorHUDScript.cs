@@ -16,10 +16,8 @@ public class GrabMirrorHUDScript : MonoBehaviour
     void Update(){
         if(playerScript.LineForRotate()){
             grabMirrorHUD.enabled = true;
-            Debug.Log("On");
         }else{
             grabMirrorHUD.enabled = false;
-            Debug.Log("Off");
         }
     }
 }

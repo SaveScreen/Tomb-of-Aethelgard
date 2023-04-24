@@ -5242,7 +5242,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 936bf6cce23bd0540acd01786dbdf7ee, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: be84fd7877913e545a1a0d338b800ab6, type: 2}
+      objectReference: {fileID: 2100000, guid: 909c20d5ed1e117499f1d291250e0c2d, type: 2}
     - target: {fileID: 919132149155446097, guid: 936bf6cce23bd0540acd01786dbdf7ee, type: 3}
       propertyPath: m_Name
       value: Blue Crystal
@@ -39575,7 +39575,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8173987045581154689, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.0000014487296
+      value: 0.000001398339
       objectReference: {fileID: 0}
     - target: {fileID: 8173987045581154689, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
       propertyPath: m_LocalPosition.y
@@ -39619,11 +39619,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8173987045912823934, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.03622649
+      value: 0.036226504
       objectReference: {fileID: 0}
     - target: {fileID: 8173987045912823934, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.002040053
+      value: -0.0020400553
       objectReference: {fileID: 0}
     - target: {fileID: 8173987046217288586, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
       propertyPath: m_LocalPosition.x
@@ -39643,7 +39643,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8173987046217288586, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.07432725
+      value: 0.07432727
       objectReference: {fileID: 0}
     - target: {fileID: 8173987046217288586, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
       propertyPath: m_LocalRotation.y
@@ -39651,7 +39651,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8173987046217288586, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0026986592
+      value: -0.00269866
       objectReference: {fileID: 0}
     - target: {fileID: 8173987046519804472, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
       propertyPath: m_RootOrder
@@ -39671,11 +39671,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8173987046519804472, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.0000015847702
+      value: -0.0000015900781
       objectReference: {fileID: 0}
     - target: {fileID: 8173987046519804472, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.00000019875873
+      value: -0.00000019942446
       objectReference: {fileID: 0}
     - target: {fileID: 8173987046519804472, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
       propertyPath: m_LocalRotation.y
@@ -39731,11 +39731,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8173987046539874385, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.03625754
+      value: 0.03625755
       objectReference: {fileID: 0}
     - target: {fileID: 8173987046539874385, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0013825163
+      value: -0.0013825184
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -48690,7 +48690,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 936bf6cce23bd0540acd01786dbdf7ee, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: cdbe7d29a78f52f46828610ef65e380f, type: 2}
+      objectReference: {fileID: 2100000, guid: bd5f77ef84e2dd0438881f67b1082d64, type: 2}
     - target: {fileID: 919132149155446097, guid: 936bf6cce23bd0540acd01786dbdf7ee, type: 3}
       propertyPath: m_Name
       value: Red Crystal
@@ -52009,7 +52009,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 936bf6cce23bd0540acd01786dbdf7ee, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: b933aac4e6cb08a43922eb073cbf9f47, type: 2}
+      objectReference: {fileID: 2100000, guid: f2e0d0abee78d1d4691de893743a92ee, type: 2}
     - target: {fileID: 919132149155446097, guid: 936bf6cce23bd0540acd01786dbdf7ee, type: 3}
       propertyPath: m_Name
       value: Green Crystal

@@ -65,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fc7451aaf0adbea47936153562025b72, type: 2}
+  - {fileID: 2100000, guid: 2305a2b4f07f2ed4dbd409ad5f0f4b13, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -114,6 +114,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   signalCatcherID: 1
   catcherColor: 0
+  xRotation: 0
+  yRotation: 5
+  zRotation: 0
   isActivatedSoundPlayer: {fileID: 6847598927192027449}
   hasBeenActivatedSoundPlayer: {fileID: 1190112549481549221}
 --- !u!82 &6847598927192027449

@@ -267,18 +267,19 @@ public class PlayerScript : MonoBehaviour
         
     }
 
-    private void LineForRotate()
+    public bool LineForRotate()
     {
         IsrotatingMirror = Physics.Raycast(transform.position, transform.forward, out RotatingMirror, DistanceCheck, RotateMirror);
         
         if (IsrotatingMirror)
         {
             CanInteractRotatingMirror = true;
-            
+            return true;
         }
         else 
         {
             CanInteractRotatingMirror = false;
+            return false;
         }
     }
 

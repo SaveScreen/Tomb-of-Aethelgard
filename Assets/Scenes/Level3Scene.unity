@@ -24460,6 +24460,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   signalCatcherID: 1
   catcherColor: 1
+  xRotation: 0
+  yRotation: 5
+  zRotation: 0
   isActivatedSoundPlayer: {fileID: 869953474}
   hasBeenActivatedSoundPlayer: {fileID: 869953473}
 --- !u!65 &869953476
@@ -29778,8 +29781,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48b94343944e0f8408d47a0c3a116cc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  signalCatcherID: 2
+  signalCatcherID: 3
   catcherColor: 2
+  xRotation: 0
+  yRotation: 5
+  zRotation: 0
   isActivatedSoundPlayer: {fileID: 1000458833}
   hasBeenActivatedSoundPlayer: {fileID: 1000458832}
 --- !u!65 &1000458835
@@ -30445,15 +30451,15 @@ PrefabInstance:
     - target: {fileID: 6046727511762458274, guid: 59b5ab6022c7e4141b357578a34c87af, type: 3}
       propertyPath: signalCatchers.Array.data[0]
       value: 
-      objectReference: {fileID: 1000458828}
+      objectReference: {fileID: 869953469}
     - target: {fileID: 6046727511762458274, guid: 59b5ab6022c7e4141b357578a34c87af, type: 3}
       propertyPath: signalCatchers.Array.data[1]
       value: 
-      objectReference: {fileID: 869953469}
+      objectReference: {fileID: 1466108821}
     - target: {fileID: 6046727511762458274, guid: 59b5ab6022c7e4141b357578a34c87af, type: 3}
       propertyPath: signalCatchers.Array.data[2]
       value: 
-      objectReference: {fileID: 1466108821}
+      objectReference: {fileID: 1000458828}
     - target: {fileID: 6046727511762458275, guid: 59b5ab6022c7e4141b357578a34c87af, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -39569,7 +39575,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8173987045581154689, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.0000014476236
+      value: 0.0000014487296
       objectReference: {fileID: 0}
     - target: {fileID: 8173987045581154689, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
       propertyPath: m_LocalPosition.y
@@ -39613,7 +39619,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8173987045912823934, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.036226492
+      value: 0.03622649
       objectReference: {fileID: 0}
     - target: {fileID: 8173987045912823934, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
       propertyPath: m_LocalRotation.z
@@ -39665,11 +39671,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8173987046519804472, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.0000015855884
+      value: -0.0000015847702
       objectReference: {fileID: 0}
     - target: {fileID: 8173987046519804472, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.00000019886136
+      value: -0.00000019875873
       objectReference: {fileID: 0}
     - target: {fileID: 8173987046519804472, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
       propertyPath: m_LocalRotation.y
@@ -43866,8 +43872,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48b94343944e0f8408d47a0c3a116cc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  signalCatcherID: 3
+  signalCatcherID: 2
   catcherColor: 3
+  xRotation: 0
+  yRotation: 5
+  zRotation: 0
   isActivatedSoundPlayer: {fileID: 1466108826}
   hasBeenActivatedSoundPlayer: {fileID: 1466108825}
 --- !u!65 &1466108828

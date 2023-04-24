@@ -4,6 +4,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using Cinemachine;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -86,7 +87,7 @@ public class PlayerScript : MonoBehaviour
 
     private RupeeHUDScript rupeeHUD;
 
-    private int rupees;
+    private static int rupees;
 
 
 
@@ -125,6 +126,7 @@ public class PlayerScript : MonoBehaviour
         playerjump.Enable();
         JumpAudioPlay.Enable();
         pausing.Enable();
+        
     }
 
     private void OnDisable()
@@ -133,6 +135,7 @@ public class PlayerScript : MonoBehaviour
         playerjump.Disable();
         JumpAudioPlay.Disable();
         pausing.Disable();
+        
     }
     // Update is called once per frame
     void Update()
@@ -141,6 +144,7 @@ public class PlayerScript : MonoBehaviour
         if(!paused && !won && !lose){
             StateHandler();
             move = playermove.ReadValue<Vector3>();
+
 
             if (charactercontroller.isGrounded)
             {
@@ -176,7 +180,8 @@ public class PlayerScript : MonoBehaviour
 
                     }
                 }
-            }   
+            }
+            
         }
 
         if (won) {
@@ -235,7 +240,7 @@ public class PlayerScript : MonoBehaviour
         }
         *******************************************************/
 
-        //FOR DEBUG PURPOSES | DO NO REMOVE
+        //FOR DEBUG PURPOSES | DO NOT REMOVE
         if (Input.GetKeyDown(KeyCode.Escape)) {
             Application.Quit();
         }
@@ -406,8 +411,9 @@ public class PlayerScript : MonoBehaviour
     }
 
     public void AddRupees(int amt){
+        
+        rupeeHUD.UpdateHUD(rupees, amt);
         rupees += amt;
-        rupeeHUD.UpdateHUD(amt);
         //Debug.Log(rupees + " rupees");
     }
 
@@ -448,9 +454,5 @@ public class PlayerScript : MonoBehaviour
     public void SetWon(bool b){
         won = b;
     }
-
-    
-
-
     
 }

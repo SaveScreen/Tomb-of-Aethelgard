@@ -9489,11 +9489,11 @@ PrefabInstance:
       objectReference: {fileID: 985888031}
     - target: {fileID: 8173987045912823934, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.056187764
+      value: 0.05618776
       objectReference: {fileID: 0}
     - target: {fileID: 8173987045912823934, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0020400526
+      value: -0.0020400486
       objectReference: {fileID: 0}
     - target: {fileID: 8173987046217288586, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
       propertyPath: m_LocalRotation.w
@@ -43454,7 +43454,7 @@ PrefabInstance:
     - target: {fileID: 5709549391939533137, guid: 3f322f13638e64c4b90e0e298e13cb8d, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 14b4696ee732b9f44bbdf53aaf89a7a1, type: 2}
+      objectReference: {fileID: 2100000, guid: 22b99d52736bf2841859472ae37ca6fc, type: 2}
     - target: {fileID: 6069894192777517188, guid: 3f322f13638e64c4b90e0e298e13cb8d, type: 3}
       propertyPath: m_Name
       value: Red Light Filter

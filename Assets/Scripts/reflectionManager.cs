@@ -43,8 +43,8 @@ public class reflectionManager : MonoBehaviour
         }
         if(SceneManager.GetActiveScene().name == "Level3Scene"){
             DoorControlType("isActivated", 1, 1);
-            DoorControlType("isActivated", 2, 2);
-            DoorControlType("isActivated", 3, 3);
+            DoorControlType("isActivated", 2, 3);
+            DoorControlType("isActivated", 3, 2);
         }
         if (SceneManager.GetActiveScene().name == "PrismTestScene")
         {
@@ -114,7 +114,7 @@ public class reflectionManager : MonoBehaviour
             }    
         }
         if(type == "isActivated"){
-            if (signalCatchers[rID1 - 1].GetComponent<signalCatcherScript>().GetIsActivated() && signalCatchers[rID2 - 1].GetComponent<signalCatcherScript>().GetHasBeenActivated())
+            if (signalCatchers[rID1 - 1].GetComponent<signalCatcherScript>().GetIsActivated() && signalCatchers[rID2 - 1].GetComponent<signalCatcherScript>().GetIsActivated())
             {
                 //Debug.Log("door " + (doorID - 1) + " has been set to true");
                 doors[doorID - 1].GetComponent<doorScript>().SetOpen(true);

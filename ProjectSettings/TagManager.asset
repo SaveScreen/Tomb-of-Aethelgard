@@ -9,6 +9,10 @@ TagManager:
   - Ground
   - PushPullObject
   - door
+  - filter
+  - LoseScreenSpike
+  - LoseScreenAxe
+  - prism
   layers:
   - Default
   - TransparentFX
@@ -21,7 +25,7 @@ TagManager:
   - PushPull
   - Player
   - RotateMirror
-  - 
+  - PostProcessing
   - 
   - 
   - 

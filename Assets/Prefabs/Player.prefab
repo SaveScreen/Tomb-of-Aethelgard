@@ -301,6 +301,8 @@ MonoBehaviour:
       m_Flags: 8
     m_Flags: 0
   charactercontroller: {fileID: 0}
+  isWallRunningOnLeftWall: 0
+  isWallRunningOnRightWall: 0
   cam: {fileID: 0}
   IsPushingPulling: 0
   playerjump:
@@ -328,8 +330,23 @@ MonoBehaviour:
       m_Action: Playerjump
       m_Flags: 0
     m_Flags: 0
+  JumpAudioPlay:
+    m_Name: 
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: c59337c1-68ee-41ff-ac99-af5bf461ecf6
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
   jumpspeed: 10
   jumpgravity: 0
+  DistanceCheck: 1
+  RotateMirror:
+    serializedVersion: 2
+    m_Bits: 0
+  IsrotatingMirror: 0
+  CanInteractRotatingMirror: 0
   speed: 10
   velocity: {x: 0, y: 0, z: 0}
   orientation: {fileID: 2962680066131869391}
@@ -344,11 +361,12 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings: []
     m_Flags: 0
-  winscreen: {fileID: 0}
-  winplatform: {fileID: 0}
+  won: 0
+  paused: 0
   state: 1
   wallrunning: 1
   anim: {fileID: 0}
+  winLoseManager: {fileID: 0}
 --- !u!143 &2962680066301672669
 CharacterController:
   m_ObjectHideFlags: 0

@@ -15,6 +15,7 @@ public class MainMenuScript : MonoBehaviour
     public GameObject settingsbutton;
     public GameObject quitbutton;
     public GameObject creditsbutton;
+    public GameObject SubmenuBackground;
 
     void Awake()
     {
@@ -23,6 +24,7 @@ public class MainMenuScript : MonoBehaviour
         controlsmenu.SetActive(false);
         settingsmenu.SetActive(false);
         creditsMenu.SetActive(false);
+        SubmenuBackground.SetActive(false);
     }
 
     //controls button
@@ -34,6 +36,7 @@ public class MainMenuScript : MonoBehaviour
         settingsbutton.SetActive(false);
         quitbutton.SetActive(false);
         creditsbutton.SetActive(false);
+        SubmenuBackground.SetActive(true);
     }
 
     public void HideControls()
@@ -44,6 +47,7 @@ public class MainMenuScript : MonoBehaviour
         settingsbutton.SetActive(true);
         quitbutton.SetActive(true);
         creditsbutton.SetActive(true);
+        SubmenuBackground.SetActive(false);
     }
 
     //credits button
@@ -56,6 +60,7 @@ public class MainMenuScript : MonoBehaviour
         settingsbutton.SetActive(false);
         quitbutton.SetActive(false);
         creditsbutton.SetActive(false);
+        SubmenuBackground.SetActive(true);
     }
 
     public void HideSettings()
@@ -67,6 +72,7 @@ public class MainMenuScript : MonoBehaviour
         settingsbutton.SetActive(true);
         quitbutton.SetActive(true);
         creditsbutton.SetActive(true);
+        SubmenuBackground.SetActive(false);
     }
 
     //credits button
@@ -80,6 +86,7 @@ public class MainMenuScript : MonoBehaviour
         settingsbutton.SetActive(false);
         quitbutton.SetActive(false);
         creditsbutton.SetActive(false);
+        SubmenuBackground.SetActive(true);
     }
     public void HideCredits()
     {
@@ -90,6 +97,7 @@ public class MainMenuScript : MonoBehaviour
         settingsbutton.SetActive(true);
         quitbutton.SetActive(true);
         creditsbutton.SetActive(true);
+        SubmenuBackground.SetActive(false);
     }
     //play button
     public void PlayGame()

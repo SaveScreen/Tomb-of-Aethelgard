@@ -87,7 +87,7 @@ public class PlayerScript : MonoBehaviour
 
     private RupeeHUDScript rupeeHUD;
 
-    private int rupees;
+    private static int rupees;
 
 
 
@@ -411,8 +411,9 @@ public class PlayerScript : MonoBehaviour
     }
 
     public void AddRupees(int amt){
+        
+        rupeeHUD.UpdateHUD(rupees, amt);
         rupees += amt;
-        rupeeHUD.UpdateHUD(amt);
         //Debug.Log(rupees + " rupees");
     }
 

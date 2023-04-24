@@ -60,9 +60,9 @@ public class RupeeHUDScript : MonoBehaviour
         }
     }
 
-    public void UpdateHUD(int amtChanged){
+    public void UpdateHUD(int amt, int amtChanged){
         //Debug.Log("updating hud");
-        rupees += amtChanged;
+        rupees = amt + amtChanged;
         rupeeText = "" + rupees;
         textElement.text = rupeeText;
         activeTimer = timerDuration;

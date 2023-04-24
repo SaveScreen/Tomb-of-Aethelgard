@@ -358,7 +358,9 @@ public class PlayerScript : MonoBehaviour
             //If player is not moving, footsteps sound stops playing
             anim.SetBool("isJumping", false);
             isWallRunningOnRightWall = false;
+            anim.SetBool("isOnRightWall", false);
             isWallRunningOnLeftWall = false;
+            anim.SetBool("isOnLeftWall", false);
             anim.SetBool("isWallRunning", false);
             if (direction.magnitude >= 0.1f) {
                 state = MovementState.walking;

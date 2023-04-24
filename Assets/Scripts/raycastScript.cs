@@ -64,16 +64,19 @@ public class raycastScript : MonoBehaviour {
         if((int)rayColor == 1)
         {
             filterColor = Color.red;
+            lineRenderer.material.SetColor("_EmissionColor", Color.red);
             lineRenderer.startColor = filterColor;
             lineRenderer.endColor = filterColor;
         } else if((int)rayColor == 2)
         {
             filterColor = Color.blue;
+            lineRenderer.material.SetColor("_EmissionColor", Color.blue);
             lineRenderer.startColor = filterColor;
             lineRenderer.endColor = filterColor;
         } else if((int)rayColor == 3)
         {
             filterColor = Color.green;
+            lineRenderer.material.SetColor("_EmissionColor", Color.green);
             lineRenderer.startColor = filterColor;
             lineRenderer.endColor = filterColor;
         }

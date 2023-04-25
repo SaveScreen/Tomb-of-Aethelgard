@@ -384,6 +384,7 @@ public class PlayerScript : MonoBehaviour
             anim.SetBool("isOnLeftWall", false);
             anim.SetBool("isWallRunning", false);
             footsteps.Stop();
+            PSS.StopLandingSound();           
         }
     }
     //this function is for adding force when wall jumping
@@ -411,6 +412,7 @@ public class PlayerScript : MonoBehaviour
         {
             LoseGameSpike();
         }
+       
     }
 
     public void AddRupees(int amt){

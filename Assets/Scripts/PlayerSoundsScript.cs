@@ -6,6 +6,8 @@ public class PlayerSoundsScript : MonoBehaviour
 {
 
     public AudioSource playerAudio;
+    public AudioSource LandAudio;
+    public AudioSource JumpAudio;
     public AudioClip jumpAudio;
     public AudioClip landAudio;
     public AudioClip runAudio;
@@ -13,10 +15,14 @@ public class PlayerSoundsScript : MonoBehaviour
     
     
     public void PlayJumpSound(){
-        playerAudio.PlayOneShot(jumpAudio);
+        JumpAudio.PlayOneShot(jumpAudio);
     }
     public void PlayLandingSound(){
-        playerAudio.PlayOneShot(landAudio);
+        LandAudio.clip = landAudio;
+        LandAudio.Play();
+    }
+    public void StopLandingSound() {
+        LandAudio.Stop();
     }
     public void PlayRunSound(){
         playerAudio.clip = runAudio;

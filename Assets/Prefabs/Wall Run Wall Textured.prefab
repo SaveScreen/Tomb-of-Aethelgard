@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 886168837039835545}
   - component: {fileID: 3145969490388794707}
   - component: {fileID: 399287297825747682}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall Run Wall Textured
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,13 +26,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3506130261055675526}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -24.242592, y: 0, z: -76.49873}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalScale: {x: 0.010000002, y: 0.01, z: 0.010000002}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &886168837039835545
 MeshFilter:
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -2231738272434801136, guid: fd12c129f4545ac49a8f07e49fdd5909, type: 3}
+  - {fileID: 2100000, guid: a3c06a4ea90bed54ea0b3397c3e1cdaf, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

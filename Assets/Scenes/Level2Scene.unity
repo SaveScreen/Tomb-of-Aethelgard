@@ -49075,7 +49075,7 @@ BoxCollider:
   m_GameObject: {fileID: 1531952770}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 3.0079727, y: 1.1992524, z: 3.202531}
   m_Center: {x: 0.00050354004, y: 0.66460025, z: 0.06839967}
@@ -49120,7 +49120,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.7416134, y: 1.3309276, z: 1.0646076}
+  m_Size: {x: 1.7416134, y: 1.09, z: 1.0646076}
   m_Center: {x: -0.03964901, y: 0.7653831, z: 0.011824608}
 --- !u!4 &1532463791 stripped
 Transform:

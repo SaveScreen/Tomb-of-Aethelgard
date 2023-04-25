@@ -9725,11 +9725,11 @@ PrefabInstance:
       objectReference: {fileID: 985888031}
     - target: {fileID: 8173987045912823934, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.056187764
+      value: 0.05618776
       objectReference: {fileID: 0}
     - target: {fileID: 8173987045912823934, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0020400526
+      value: -0.0020400486
       objectReference: {fileID: 0}
     - target: {fileID: 8173987046217288586, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
       propertyPath: m_LocalRotation.w
@@ -32486,16 +32486,56 @@ PrefabInstance:
       value: Recentercamera
       objectReference: {fileID: 0}
     - target: {fileID: 3041323656804124330, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
+      propertyPath: JumpAudioPlay.m_SingletonActionBindings.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041323656804124330, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
       propertyPath: recentercamera.m_SingletonActionBindings.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041323656804124330, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
+      propertyPath: JumpAudioPlay.m_SingletonActionBindings.Array.data[0].m_Id
+      value: 3c61f82d-f7e0-4761-a2a0-75673cba07e6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041323656804124330, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
+      propertyPath: JumpAudioPlay.m_SingletonActionBindings.Array.data[1].m_Id
+      value: c1c4d614-9567-444f-959c-df96deede712
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041323656804124330, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
+      propertyPath: JumpAudioPlay.m_SingletonActionBindings.Array.data[2].m_Id
+      value: c1c4d614-9567-444f-959c-df96deede712
       objectReference: {fileID: 0}
     - target: {fileID: 3041323656804124330, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
       propertyPath: recentercamera.m_SingletonActionBindings.Array.data[0].m_Id
       value: 58addc12-b2b0-4f64-a897-fc5a652de5fb
       objectReference: {fileID: 0}
     - target: {fileID: 3041323656804124330, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
+      propertyPath: JumpAudioPlay.m_SingletonActionBindings.Array.data[0].m_Path
+      value: <Gamepad>/buttonSouth
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041323656804124330, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
+      propertyPath: JumpAudioPlay.m_SingletonActionBindings.Array.data[1].m_Path
+      value: <Keyboard>/space
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041323656804124330, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
+      propertyPath: JumpAudioPlay.m_SingletonActionBindings.Array.data[2].m_Path
+      value: <Keyboard>/space
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041323656804124330, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
       propertyPath: recentercamera.m_SingletonActionBindings.Array.data[0].m_Path
       value: <Keyboard>/f
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041323656804124330, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
+      propertyPath: JumpAudioPlay.m_SingletonActionBindings.Array.data[0].m_Action
+      value: Jump Audio Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041323656804124330, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
+      propertyPath: JumpAudioPlay.m_SingletonActionBindings.Array.data[1].m_Action
+      value: Jump Audio Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041323656804124330, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
+      propertyPath: JumpAudioPlay.m_SingletonActionBindings.Array.data[2].m_Action
+      value: Jump Audio Play
       objectReference: {fileID: 0}
     - target: {fileID: 3041323656804124330, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
       propertyPath: recentercamera.m_SingletonActionBindings.Array.data[0].m_Action
@@ -32558,6 +32598,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 199c2eb177402c546ba6bcdf4c105b52, type: 3}
     - target: {fileID: 6096756132656607730, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
+      propertyPath: JumpAudio
+      value: 
+      objectReference: {fileID: 985888033}
+    - target: {fileID: 6096756132656607730, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
+      propertyPath: LandAudio
+      value: 
+      objectReference: {fileID: 985888032}
+    - target: {fileID: 6096756132656607730, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
       propertyPath: jumpAudio
       value: 
       objectReference: {fileID: 8300000, guid: 907f89c5fb88e4b4c9442d17b9bc6396, type: 3}
@@ -32583,6 +32631,16 @@ PrefabInstance:
 --- !u!4 &985888031 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 33068970546312722, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
+  m_PrefabInstance: {fileID: 985888030}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &985888032 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7303399547087692942, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
+  m_PrefabInstance: {fileID: 985888030}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &985888033 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6494648908179435645, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
   m_PrefabInstance: {fileID: 985888030}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &987044380

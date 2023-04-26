@@ -6,18 +6,22 @@ using UnityEngine.SceneManagement;
 
 public class GameSettingsScript : MonoBehaviour
 {
-    public static float mousexsensitivity;
-    public static float mouseysensitivity;
+    public static float mousexsensitivity = 120f;
+    public static float mouseysensitivity = 1.5f;
+   
     public static bool settingschanged = false;
+    public static bool scenechanged = false;
     
     private GameObject cam;
     private CinemachineFreeLook freelookcam;
     private Scene currentscene;
     private bool camerareferenced = false;
+    private float sensitivityvalx;
+    private float sensitivityvaly;
+    //private bool dontloadsensitivity = false;
     
 
 
-    // Start is called before the first frame update
     void Awake()
     {
         currentscene = SceneManager.GetActiveScene();
@@ -25,29 +29,46 @@ public class GameSettingsScript : MonoBehaviour
             Debug.Log ("Found FreeLook");
             cam = GameObject.FindWithTag("FreeLook");
             freelookcam = cam.GetComponent<CinemachineFreeLook>();
-            camerareferenced = true;
+            camerareferenced = true; 
         }
-        UpdateSensitivity();
+    
+        sensitivityvalx = PlayerPrefs.GetFloat("SensitivityX");    
+        sensitivityvaly = PlayerPrefs.GetFloat("SensitivityY"); 
         
+    }
+
+    void Start() {
+        LoadOriginalSensitivity(); 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if ((settingschanged && camerareferenced)) {
+        //If the settings are changed in the middle of a scene with a freelook.
+        if ((settingschanged || scenechanged) && camerareferenced) {
             UpdateSensitivity();
+            
         }
     }
 
-    void UpdateSensitivity() {
-        float sensitivityvalx = PlayerPrefs.GetFloat("SensitivityX");
-        float sensitivityvaly = PlayerPrefs.GetFloat("SensitivityY");
-        mousexsensitivity = sensitivityvalx;
-        mouseysensitivity = sensitivityvaly;
+    void LoadOriginalSensitivity() {
         freelookcam.m_XAxis.m_MaxSpeed = mousexsensitivity;
         freelookcam.m_YAxis.m_MaxSpeed = mouseysensitivity;
         Debug.Log("Settings Changed to" + freelookcam.m_XAxis.m_MaxSpeed.ToString());
         Debug.Log("Settings Changed to" + freelookcam.m_YAxis.m_MaxSpeed.ToString());
-        settingschanged = false;
+        //dontloadsensitivity = true;
     }
+
+    void UpdateSensitivity() {
+        freelookcam.m_XAxis.m_MaxSpeed = sensitivityvalx;
+        freelookcam.m_YAxis.m_MaxSpeed = sensitivityvaly;
+        mousexsensitivity = sensitivityvalx;
+        mouseysensitivity = sensitivityvaly;
+        Debug.Log("Settings Changed to" + freelookcam.m_XAxis.m_MaxSpeed.ToString());
+        Debug.Log("Settings Changed to" + freelookcam.m_YAxis.m_MaxSpeed.ToString()); 
+        settingschanged = false;
+        scenechanged = false;
+    }
+
+    
 }

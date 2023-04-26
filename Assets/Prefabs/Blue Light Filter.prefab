@@ -1,50 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &257441304196134922
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2741162277146899163}
-  - component: {fileID: 8663076904243150502}
-  m_Layer: 0
-  m_Name: collision off inator
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2741162277146899163
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 257441304196134922}
-  m_LocalRotation: {x: -0, y: 0.70710576, z: -0, w: 0.7071079}
-  m_LocalPosition: {x: 0, y: 100, z: 0}
-  m_LocalScale: {x: 99.999985, y: 100, z: 99.999985}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7663717162649147626}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &8663076904243150502
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 257441304196134922}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.1013505, y: 1, z: 1.1143178}
-  m_Center: {x: -0.008605002, y: 0, z: 0.05715894}
 --- !u!1 &6994422872302420560
 GameObject:
   m_ObjectHideFlags: 0
@@ -56,12 +11,12 @@ GameObject:
   - component: {fileID: 7663717162649147626}
   - component: {fileID: 6770359063483733839}
   - component: {fileID: 8796043524569801605}
+  - component: {fileID: 8328271620294345164}
   - component: {fileID: 6326138843585025745}
   - component: {fileID: 5231926999464408274}
   - component: {fileID: 2292868451445357081}
   - component: {fileID: 6748148959591327570}
   - component: {fileID: 8021520259284811768}
-  - component: {fileID: 8328271620294345164}
   m_Layer: 8
   m_Name: Blue Light Filter
   m_TagString: filter
@@ -80,8 +35,7 @@ Transform:
   m_LocalPosition: {x: 37.450886, y: 0.39807606, z: 16.276531}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2741162277146899163}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -135,6 +89,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8328271620294345164
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6994422872302420560}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 172.88574, y: 159.5309, z: 275.78384}
+  m_Center: {x: 2.5632918, y: 81.02383, z: -4.0102005}
 --- !u!65 &6326138843585025745
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -146,8 +113,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 42, y: 367, z: 171}
-  m_Center: {x: 5.8490095, y: 188.14449, z: -1.571393}
+  m_Size: {x: 41.999996, y: 360.61575, z: 161.60727}
+  m_Center: {x: 5.8490095, y: 191.336, z: -0.32491684}
 --- !u!114 &5231926999464408274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -300,16 +267,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   distance: 1
---- !u!65 &8328271620294345164
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6994422872302420560}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 218.0758, y: 159.53093, z: 332.7901}
-  m_Center: {x: 0, y: 81.023834, z: 0}

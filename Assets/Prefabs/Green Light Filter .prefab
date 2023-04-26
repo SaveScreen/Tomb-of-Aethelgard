@@ -1,50 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &271780343438713337
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2828231595289350456}
-  - component: {fileID: 1503774868696073933}
-  m_Layer: 0
-  m_Name: collision off inator
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2828231595289350456
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 271780343438713337}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 60.192394, z: 0}
-  m_LocalScale: {x: 100, y: 100, z: 100}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7850058789924822743}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!65 &1503774868696073933
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 271780343438713337}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.1013505, y: 1, z: 1.1143178}
-  m_Center: {x: -0.008605002, y: 0, z: 0.05715894}
 --- !u!1 &7474517757008446573
 GameObject:
   m_ObjectHideFlags: 0
@@ -57,11 +12,11 @@ GameObject:
   - component: {fileID: 6583938803967840626}
   - component: {fileID: 8987546843407263160}
   - component: {fileID: 4798343006793521720}
+  - component: {fileID: 8655824849619174707}
   - component: {fileID: 3691962373097228872}
   - component: {fileID: 5411072950481296565}
   - component: {fileID: 5195815627546523123}
   - component: {fileID: 1749548834854149590}
-  - component: {fileID: 8655824849619174707}
   m_Layer: 8
   m_Name: 'Green Light Filter '
   m_TagString: filter
@@ -80,8 +35,7 @@ Transform:
   m_LocalPosition: {x: 36.349415, y: 0.39807606, z: 20.154522}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2828231595289350456}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -238,6 +192,19 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
+--- !u!65 &8655824849619174707
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7474517757008446573}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 172.88574, y: 159.5309, z: 275.78384}
+  m_Center: {x: 2.5632918, y: 81.02383, z: -4.0102005}
 --- !u!65 &3691962373097228872
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -249,8 +216,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 42, y: 367, z: 171}
-  m_Center: {x: 5.8490095, y: 190.13495, z: -1.571393}
+  m_Size: {x: 41.999996, y: 360.61575, z: 161.60727}
+  m_Center: {x: 5.8490095, y: 191.336, z: -0.32491684}
 --- !u!114 &5411072950481296565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -300,16 +267,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!65 &8655824849619174707
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7474517757008446573}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 218.0758, y: 159.5309, z: 332.7902}
-  m_Center: {x: 0, y: 81.02383, z: 0}

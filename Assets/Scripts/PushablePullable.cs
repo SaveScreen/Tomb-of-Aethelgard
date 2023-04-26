@@ -66,7 +66,7 @@ public class PushablePullable : MonoBehaviour
         {
             float distanceBetween = Vector3.Distance(PPS.PushPullPoint.transform.position, PushablePullableRigdBody.transform.position);
 
-            //PushablePullableRigdBody.isKinematic = false;
+            PushablePullableRigdBody.isKinematic = false;
             triggerBoxCollider.enabled = false;
             if (distanceBetween > distance)
             {

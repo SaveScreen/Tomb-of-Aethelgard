@@ -39,12 +39,7 @@ public class LightInteractionScript : MonoBehaviour
         if (PlayerObject != null)
         {
             PS = PlayerObject.GetComponent<PlayerScript>();
-        }
-            //HUD to tell players to press E/Q to rotate the pillar
-            //   eqImage = GameObject.Find("Rotate UI");
-            //        eqImage.SetActive(false);
-
-            
+        }           
       
     }
 
@@ -75,11 +70,15 @@ public class LightInteractionScript : MonoBehaviour
         }
 
         if(!Mathf.Approximately(transform.eulerAngles.y,  rotationTarget)){
+        //if(!IsWithin(transform.eulerAngles.y,  rotationTarget, 0.1f)){
             currentlyRotating = true;
             RotateTowards(rotationTarget);
         } else{
             currentlyRotating = false;
         }
+        //Debug.Log(currentlyRotating);
+        //Debug.Log(rotationTarget);
+        //Debug.Log(transform.eulerAngles.y);
 
    
     }
@@ -128,6 +127,10 @@ public class LightInteractionScript : MonoBehaviour
     }
 
     private void RotateTowards(float endRotation){
+        if(IsWithin(endRotation, 0, 0.1f)){
+            endRotation = 0;
+        }
+        
         if(rotCW){
             Vector3 eulerA = new Vector3();
             eulerA = transform.eulerAngles;
@@ -139,7 +142,10 @@ public class LightInteractionScript : MonoBehaviour
 
             //adjust for overshooting
             if(currentTotalRot > targetTotalRot){
-                transform.eulerAngles = new Vector3(transform.eulerAngles.x, endRotation, transform.eulerAngles.z);
+                Vector3 eulerB = new Vector3(transform.eulerAngles.x, endRotation, transform.eulerAngles.z);
+                transform.eulerAngles = eulerB;
+                currentTotalRot = targetTotalRot;
+                currentlyRotating = false;
             }
         }
         else{
@@ -154,11 +160,17 @@ public class LightInteractionScript : MonoBehaviour
             //adjust for overshooting
             if(currentTotalRot < targetTotalRot){
                 transform.eulerAngles = new Vector3(transform.eulerAngles.x, endRotation, transform.eulerAngles.z);
+                currentTotalRot = targetTotalRot;
+                currentlyRotating = false;
             }
         }
     }
     public void PlaySpinSound()
     {
         Audio.PlayOneShot(spinMirrorAudio);
+    }
+
+    private bool IsWithin(float f1, float f2, float threshold){
+        return ((f1-f2) <= threshold);
     }
 }

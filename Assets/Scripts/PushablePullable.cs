@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PushablePullable : MonoBehaviour
 {
+    public Collider triggerBoxCollider{get; private set;}
     public Rigidbody PushablePullableRigdBody { get; private set; }
     private Transform PushPullPointInteractable;
     private PushPullScript PPS;
@@ -14,6 +15,7 @@ public class PushablePullable : MonoBehaviour
     private void Awake()
     {
         PushablePullableRigdBody = GetComponent<Rigidbody>();
+        triggerBoxCollider = GetComponent<Collider>();
         PushablePullableRigdBody.isKinematic = false;
         PushablePullableRigdBody.useGravity = true;
     }
@@ -46,6 +48,7 @@ public class PushablePullable : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             PushablePullableRigdBody.isKinematic = true;
+            //triggerBoxCollider.enabled = true;
         }
     }
     void OnTriggerExit(Collider other)
@@ -53,21 +56,27 @@ public class PushablePullable : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             PushablePullableRigdBody.isKinematic = false;
+            //triggerBoxCollider.enabled = false;
         }
     }
 
     private void Update()
         {
-            if (PushPullPointInteractable != null)
+        if (PushPullPointInteractable != null)
+        {
+            float distanceBetween = Vector3.Distance(PPS.PushPullPoint.transform.position, PushablePullableRigdBody.transform.position);
+
+            //PushablePullableRigdBody.isKinematic = false;
+            triggerBoxCollider.enabled = false;
+            if (distanceBetween > distance)
             {
-                float distanceBetween = Vector3.Distance(PPS.PushPullPoint.transform.position, PushablePullableRigdBody.transform.position);
-               
-            PushablePullableRigdBody.isKinematic = false;
-            if (distanceBetween > distance) 
-                { 
-                    PPS.StopPushingPullingStone();
-                }
+                PPS.StopPushingPullingStone();
             }
+        }
+        else 
+        {
+            triggerBoxCollider.enabled = true;
+        }
         }
 
     private void FixedUpdate()

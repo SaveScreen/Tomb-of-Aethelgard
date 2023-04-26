@@ -25,9 +25,9 @@ public class GameSettingsScript : MonoBehaviour
             Debug.Log ("Found FreeLook");
             cam = GameObject.FindWithTag("FreeLook");
             freelookcam = cam.GetComponent<CinemachineFreeLook>();
-            UpdateSensitivity();
             camerareferenced = true;
         }
+        UpdateSensitivity();
         
     }
 

@@ -21,7 +21,7 @@ public class SettingsManagerScript : MonoBehaviour
         sliderx.value = GameSettingsScript.mousexsensitivity;
         slidery.value = GameSettingsScript.mouseysensitivity;
         settingssaved.SetActive(false);
-        LoadSensitivity();
+        SaveSensitivity();
     }
 
     // Update is called once per frame
@@ -69,8 +69,8 @@ public class SettingsManagerScript : MonoBehaviour
     public void LoadSensitivity() {
         float sensitivityvalx = PlayerPrefs.GetFloat("SensitivityX");
         float sensitivityvaly = PlayerPrefs.GetFloat("SensitivityY");
-        sensitivityvalx = GameSettingsScript.mousexsensitivity;
-        sensitivityvaly = GameSettingsScript.mouseysensitivity;
+        GameSettingsScript.mousexsensitivity = sensitivityvalx;
+        GameSettingsScript.mouseysensitivity = sensitivityvaly;
         sliderx.value = sensitivityvalx;
         slidery.value = sensitivityvaly;
     }

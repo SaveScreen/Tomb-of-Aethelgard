@@ -32,9 +32,6 @@ public class MainMenuScript : MonoBehaviour
         settingsmenu.SetActive(false);
         creditsMenu.SetActive(false);
         SubmenuBackground.SetActive(false);
-        GameSettingsScript.mousexsensitivity = 120f;
-        GameSettingsScript.mouseysensitivity = 1.5f;
-        //LoadSensitivity();
     }
 
     //controls button

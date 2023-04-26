@@ -6,8 +6,11 @@ using UnityEngine.UI;
 public class VolumeSettingsScript : MonoBehaviour
 {
     [SerializeField] Slider volumeSlider; 
+    private AudioListener audioListener;
     void Start()
     {
+        audioListener = GameObject.Find("Main Camera").GetComponent<AudioListener>();
+
         if(!PlayerPrefs.HasKey("musicVolume")){
             PlayerPrefs.SetFloat("musicVolume", 0.75f);
             Load();
@@ -18,6 +21,7 @@ public class VolumeSettingsScript : MonoBehaviour
 
     public void ChangeVolume(){
         AudioListener.volume = volumeSlider.value;
+        Debug.Log("Volume " + volumeSlider.value);
         Save();
     }
 

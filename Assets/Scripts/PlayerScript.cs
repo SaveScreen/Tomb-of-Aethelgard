@@ -94,10 +94,10 @@ public class PlayerScript : MonoBehaviour
     private float legCrunchTimer;
     private bool playerCanMove;
 
+    [Header("Powerups")]
+    public GameObject rupeeMagnetZone;
+    private static bool rupeeMagnetCollected = false;
 
-
-
-    // Start is called before the first frame update
     void Start()
     {
         //camerascript = cam.GetComponent<CameraScript>();
@@ -123,6 +123,10 @@ public class PlayerScript : MonoBehaviour
 
         winLoseScript = winLoseManager.GetComponent<WinLoseScript>();
         rupeeHUD = GameObject.Find("RupeeCounter").GetComponent<RupeeHUDScript>();
+
+        if(rupeeMagnetCollected){
+            rupeeMagnetZone.SetActive(true);
+        }
 
     }
 
@@ -427,6 +431,12 @@ public class PlayerScript : MonoBehaviour
             playerCanMove = false;
             anim.SetBool("legCrunching", true);
             //Debug.Log("leg crunching");
+            Destroy(other.gameObject);
+        }
+        if(other.gameObject.tag == "MagnetPowerup"){
+            rupeeMagnetCollected = true;
+            rupeeMagnetZone.SetActive(true);
+            Debug.Log("rupee magnet collected");
             Destroy(other.gameObject);
         }
        

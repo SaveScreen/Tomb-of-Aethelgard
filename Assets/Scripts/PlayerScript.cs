@@ -13,6 +13,7 @@ public class PlayerScript : MonoBehaviour
     public CharacterController charactercontroller;
     public bool isWallRunningOnLeftWall;
     public bool isWallRunningOnRightWall;
+    public float legCrunchTime = 1f;
 
     [Header("Camera Refrence")]
     public GameObject cam;
@@ -89,6 +90,9 @@ public class PlayerScript : MonoBehaviour
 
     private static int rupees;
 
+    private float legCrunchTimer;
+    private bool playerCanMove;
+
 
 
 
@@ -140,8 +144,12 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Time.time >= legCrunchTimer){
+            playerCanMove = true;
+            anim.SetBool("legCrunching", false);
+        }
 
-        if(!paused && !won && !lose){
+        if(!paused && !won && !lose && playerCanMove){
             StateHandler();
             move = playermove.ReadValue<Vector3>();
 
@@ -412,11 +420,17 @@ public class PlayerScript : MonoBehaviour
         {
             LoseGameSpike();
         }
+        if(other.gameObject.tag == "LegCrunchBox"){
+            legCrunchTimer = Time.time + legCrunchTime;
+            playerCanMove = false;
+            anim.SetBool("legCrunching", true);
+            //Debug.Log("leg crunching");
+            Destroy(other.gameObject);
+        }
        
     }
 
-    public void AddRupees(int amt){
-        
+    public void AddRupees(int amt){ 
         rupeeHUD.UpdateHUD(rupees, amt);
         rupees += amt;
         //Debug.Log(rupees + " rupees");

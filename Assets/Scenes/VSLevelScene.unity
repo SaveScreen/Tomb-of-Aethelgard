@@ -6212,7 +6212,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 8a777739af84bda4fbc3b49599c879c3, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 83c2621b0324b3b4e9392df6f7cca961, type: 2}
+      objectReference: {fileID: 2100000, guid: 13a364ed8e237cf43814f7f87d9f9ae7, type: 2}
     - target: {fileID: 919132149155446097, guid: 8a777739af84bda4fbc3b49599c879c3, type: 3}
       propertyPath: m_Name
       value: MirrorForUnity (1)
@@ -23540,7 +23540,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 5dbb18fae40ded44c8700d239f34a628, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 8694c99c549a17a42bca0f6ccee0ca87, type: 2}
+      objectReference: {fileID: 2100000, guid: 4819467c2a4ca2241802d85afc829289, type: 2}
     - target: {fileID: 919132149155446097, guid: 5dbb18fae40ded44c8700d239f34a628, type: 3}
       propertyPath: m_Name
       value: StatueForUnity
@@ -30288,7 +30288,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8173987046217288586, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.07432722
+      value: 0.07432723
       objectReference: {fileID: 0}
     - target: {fileID: 8173987046217288586, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
       propertyPath: m_LocalRotation.y
@@ -30296,7 +30296,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8173987046217288586, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0026986862
+      value: -0.0026986713
       objectReference: {fileID: 0}
     - target: {fileID: 8173987046519804472, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
       propertyPath: m_RootOrder
@@ -36132,6 +36132,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1850480057585438387, guid: f65bf7bf219e523478df50b0313acde6, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 13a364ed8e237cf43814f7f87d9f9ae7, type: 2}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: f65bf7bf219e523478df50b0313acde6, type: 3}

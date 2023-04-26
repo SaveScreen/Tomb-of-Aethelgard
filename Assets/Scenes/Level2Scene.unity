@@ -45485,6 +45485,22 @@ PrefabInstance:
       propertyPath: m_Drag
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 5479187219283637676, guid: 3f322f13638e64c4b90e0e298e13cb8d, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5479187219283637676, guid: 3f322f13638e64c4b90e0e298e13cb8d, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5479187219283637676, guid: 3f322f13638e64c4b90e0e298e13cb8d, type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5479187219283637676, guid: 3f322f13638e64c4b90e0e298e13cb8d, type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.g
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5709549391939533137, guid: 3f322f13638e64c4b90e0e298e13cb8d, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 

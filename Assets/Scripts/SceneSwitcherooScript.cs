@@ -28,7 +28,8 @@ public class SceneSwitcherooScript : MonoBehaviour
     void OnTriggerEnter(Collider other) {
         
         if (other.gameObject == player) {
-
+            
+            GameSettingsScript.settingschanged = true;
             if (currentscene.name == "TutorialLevelConcept") {
                 SceneManager.LoadScene("HubLevel");
                 CompletionManagerScript.tutorialcomplete = true;

@@ -57,6 +57,7 @@ public class WinLoseScript : MonoBehaviour
 
     public void GoToHub() {
         Time.timeScale = 1.0f;
+        GameSettingsScript.settingschanged = true;
         player.SetPaused(false);
         AudioListener.pause = false;
         SceneManager.LoadScene("HubLevel");

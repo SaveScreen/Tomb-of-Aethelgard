@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1518265578}
   m_Layer: 0
   m_Name: CM FreeLook1
-  m_TagString: Untagged
+  m_TagString: FreeLook
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -104,7 +104,7 @@ MonoBehaviour:
   m_XAxis:
     Value: 0
     m_SpeedMode: 0
-    m_MaxSpeed: 200
+    m_MaxSpeed: 120
     m_AccelTime: 0.1
     m_DecelTime: 0.05
     m_InputAxisName: Mouse X
@@ -400,7 +400,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8173987045912823808}
-  m_LocalRotation: {x: 0.05618776, y: 0.036226586, z: -0.0020400486, w: 0.9977607}
+  m_LocalRotation: {x: 0.05618777, y: 0.03622651, z: -0.002040057, w: 0.9977607}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -605,7 +605,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8173987046217288588}
-  m_LocalRotation: {x: -0.0743271, y: -0.036183517, z: 0.0026986725, w: -0.9965736}
+  m_LocalRotation: {x: 0.07432723, y: 0.036183383, z: -0.0026986548, w: 0.9965737}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -675,7 +675,7 @@ GameObject:
   - component: {fileID: 142092584013681990}
   m_Layer: 0
   m_Name: Main Camera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -687,14 +687,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8173987046519804476}
-  m_LocalRotation: {x: 0.03514698, y: 0.036251593, z: -0.0012666497, w: 0.9987237}
+  m_LocalRotation: {x: 0.03514698, y: 0.036254715, z: -0.0012671753, w: 0.99872357}
   m_LocalPosition: {x: 367.0099, y: -161.61607, z: -273.38956}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8173987045581154689}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 4.031, y: 4.158, z: 0.001}
 --- !u!20 &8173987046519804473
 Camera:
@@ -934,7 +934,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8173987046539874387}
-  m_LocalRotation: {x: 0.0380777, y: 0.03625758, z: -0.0013825194, w: 0.99861586}
+  m_LocalRotation: {x: 0.038077697, y: 0.03625756, z: -0.0013825198, w: 0.99861586}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

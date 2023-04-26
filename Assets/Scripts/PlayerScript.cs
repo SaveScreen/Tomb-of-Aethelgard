@@ -17,6 +17,7 @@ public class PlayerScript : MonoBehaviour
 
     [Header("Camera Refrence")]
     public GameObject cam;
+    //private CinemachineFreeLook flcam;
     //private CameraScript camerascript;
     public bool IsPushingPulling;
 
@@ -101,6 +102,7 @@ public class PlayerScript : MonoBehaviour
     {
         //camerascript = cam.GetComponent<CameraScript>();
         charactercontroller = gameObject.GetComponent<CharacterController>();
+        //flcam = cam.GetComponent<CinemachineFreeLook>();
         PSS = GetComponent<PlayerSoundsScript>();
         //cutscenescript = cutscene.GetComponent<CutsceneScript>();
         isfalling = false;

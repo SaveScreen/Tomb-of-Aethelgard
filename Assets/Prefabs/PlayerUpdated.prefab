@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 227851873522225682}
   m_LocalRotation: {x: -0, y: 0.7071057, z: -0, w: 0.7071079}
-  m_LocalPosition: {x: 0.000031501055, y: 0.819, z: 2.749907}
+  m_LocalPosition: {x: 0.000031501055, y: 0.6287255, z: 2.749907}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -82,6 +82,7 @@ GameObject:
   - component: {fileID: 3041323656804124328}
   - component: {fileID: 7185953941056270833}
   - component: {fileID: 4151148019741756540}
+  - component: {fileID: 1997552834}
   m_Layer: 9
   m_Name: PlayerUpdated
   m_TagString: Player
@@ -109,7 +110,7 @@ Transform:
   - {fileID: 2803352233386394513}
   - {fileID: 4690238514014140761}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!33 &3041323656804124340
 MeshFilter:
@@ -338,7 +339,7 @@ MonoBehaviour:
       m_Action: Playermove
       m_Flags: 8
     m_Flags: 0
-  charactercontroller: {fileID: 0}
+  charactercontroller: {fileID: 3041323656804124328}
   isWallRunningOnLeftWall: 0
   isWallRunningOnRightWall: 0
   cam: {fileID: 0}
@@ -372,12 +373,12 @@ MonoBehaviour:
     m_Name: Jump Audio Play
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: 0ff0ce30-bdb7-416d-881a-d901ec12ef76
+    m_Id: 836476d6-6a83-4ad1-a73c-deaad5b4662a
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: 9cd10f92-6d31-4b8b-8b8f-bd54839c9391
+      m_Id: 492898d8-2917-41e4-8902-0dd8e5e9d8da
       m_Path: <Gamepad>/buttonSouth
       m_Interactions: 
       m_Processors: 
@@ -385,7 +386,7 @@ MonoBehaviour:
       m_Action: Jump Audio Play
       m_Flags: 0
     - m_Name: 
-      m_Id: aad2890c-d807-463b-96d1-d62941b41b20
+      m_Id: 058f494c-7031-4bd4-a574-eab8a8396ce5
       m_Path: <Keyboard>/space
       m_Interactions: 
       m_Processors: 
@@ -398,7 +399,7 @@ MonoBehaviour:
   DistanceCheck: 2
   RotateMirror:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
   IsrotatingMirror: 0
   CanInteractRotatingMirror: 0
   speed: 10
@@ -452,7 +453,7 @@ MonoBehaviour:
   playerAudio: {fileID: 7185953941056270833}
   LandAudio: {fileID: 7303399547087692942}
   JumpAudio: {fileID: 6494648908179435645}
-  jumpAudio: {fileID: 8300000, guid: 72eaf545692b8f64d9d4a2b268ddc12b, type: 3}
+  jumpAudio: {fileID: 8300000, guid: 907f89c5fb88e4b4c9442d17b9bc6396, type: 3}
   landAudio: {fileID: 8300000, guid: 90f426c5b57e9404883ccb76e14585cb, type: 3}
   runAudio: {fileID: 8300000, guid: 199c2eb177402c546ba6bcdf4c105b52, type: 3}
   wallrunAudio: {fileID: 8300000, guid: 5365d04406dca0947ac8d02983a030e3, type: 3}
@@ -500,7 +501,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   pushSound: {fileID: 4151148019741756540}
-  anim: {fileID: 0}
+  anim: {fileID: 227851873332324320}
 --- !u!114 &3041323656804124335
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -765,6 +766,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1997552834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3041323656804124343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2b2b7188efaa5141a4c15ca39237ef8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3041323657092259088
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using TMPro;
+
 
 public class MainMenuScript : MonoBehaviour
 {
@@ -17,6 +20,10 @@ public class MainMenuScript : MonoBehaviour
     public GameObject creditsbutton;
     public GameObject SubmenuBackground;
 
+    //public Slider slider;
+    //public TextMeshProUGUI slidertext;
+    
+
     void Awake()
     {
         Cursor.lockState = CursorLockMode.None;
@@ -25,6 +32,9 @@ public class MainMenuScript : MonoBehaviour
         settingsmenu.SetActive(false);
         creditsMenu.SetActive(false);
         SubmenuBackground.SetActive(false);
+        GameSettingsScript.mousexsensitivity = 120f;
+        GameSettingsScript.mouseysensitivity = 1.5f;
+        //LoadSensitivity();
     }
 
     //controls button
@@ -99,6 +109,25 @@ public class MainMenuScript : MonoBehaviour
         creditsbutton.SetActive(true);
         SubmenuBackground.SetActive(false);
     }
+
+    /***
+    public void ChangeSensitivity(float sensitivity) {
+        slidertext.text = sensitivity.ToString("0.0");
+    }
+
+    public void SaveSensitivity() {
+        float sensitivityval = slider.value;
+        PlayerPrefs.SetFloat("Sensitivity",sensitivityval);
+        LoadSensitivity();
+    }
+
+    public void LoadSensitivity() {
+        float sensitivityval = PlayerPrefs.GetFloat("Sensitivity");
+        slider.value = sensitivityval;
+        cam.m_YAxis.m_MaxSpeed = sensitivityval;
+    }
+    ***/
+
     //play button
     public void PlayGame()
     {

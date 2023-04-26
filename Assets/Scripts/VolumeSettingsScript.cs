@@ -9,7 +9,7 @@ public class VolumeSettingsScript : MonoBehaviour
     private AudioListener audioListener;
     void Start()
     {
-        audioListener = GameObject.Find("Main Camera").GetComponent<AudioListener>();
+        audioListener = FindObjectOfType<AudioListener>().GetComponent<AudioListener>();
 
         if(!PlayerPrefs.HasKey("musicVolume")){
             PlayerPrefs.SetFloat("musicVolume", 0.75f);

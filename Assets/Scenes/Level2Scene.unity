@@ -17,7 +17,7 @@ RenderSettings:
   m_Fog: 1
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.013
+  m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.5803922, g: 0.78431374, b: 0.9254902, a: 1}
@@ -5983,6 +5983,19 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2776361856854516418, guid: 08d3ea66d564d974d9020e3983b11dab, type: 3}
   m_PrefabInstance: {fileID: 196360694}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &196360701
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196360696}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 187.0178, y: 184.89232, z: 193.0751}
+  m_Center: {x: 0.058105484, y: -0.0046463013, z: -0.6782152}
 --- !u!4 &201271266 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6138453889076753451, guid: 5d0d630922707da47a98e1ffa630b80b, type: 3}
@@ -45873,6 +45886,32 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3300099259657992312, guid: 08d3ea66d564d974d9020e3983b11dab, type: 3}
   m_PrefabInstance: {fileID: 1394783901}
   m_PrefabAsset: {fileID: 0}
+--- !u!61 &1394783908
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1394783902}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.058105484, y: -0.0046463013}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 187.0178, y: 184.89232}
+  m_EdgeRadius: 0
 --- !u!1001 &1394960014
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -61909,13 +61948,33 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2292868451445357081, guid: 776beac3db9d6024ca977711e146553a, type: 3}
+      propertyPath: m_Parameters.colorGradient.ctime1
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 2292868451445357081, guid: 776beac3db9d6024ca977711e146553a, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.g
+      value: 0.28773582
+      objectReference: {fileID: 0}
+    - target: {fileID: 2292868451445357081, guid: 776beac3db9d6024ca977711e146553a, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.r
+      value: 0.28773582
+      objectReference: {fileID: 0}
+    - target: {fileID: 2292868451445357081, guid: 776beac3db9d6024ca977711e146553a, type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.g
+      value: 0.28773582
+      objectReference: {fileID: 0}
+    - target: {fileID: 2292868451445357081, guid: 776beac3db9d6024ca977711e146553a, type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.r
+      value: 0.28773582
+      objectReference: {fileID: 0}
     - target: {fileID: 5231926999464408274, guid: 776beac3db9d6024ca977711e146553a, type: 3}
       propertyPath: filterID
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6748148959591327570, guid: 776beac3db9d6024ca977711e146553a, type: 3}
       propertyPath: m_Drag
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6994422872302420560, guid: 776beac3db9d6024ca977711e146553a, type: 3}
       propertyPath: m_Name
@@ -70651,6 +70710,10 @@ PrefabInstance:
       propertyPath: InitialModule.startSize.scalar
       value: 0.18
       objectReference: {fileID: 0}
+    - target: {fileID: 4708703069109041965, guid: 33d7aa01b839ae54dbccf27626333fc3, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 180
+      objectReference: {fileID: 0}
     - target: {fileID: 4708703069109041967, guid: 33d7aa01b839ae54dbccf27626333fc3, type: 3}
       propertyPath: m_Name
       value: DustParticles (1)
@@ -71640,6 +71703,14 @@ PrefabInstance:
     - target: {fileID: 4708703069109041962, guid: 33d7aa01b839ae54dbccf27626333fc3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4708703069109041964, guid: 33d7aa01b839ae54dbccf27626333fc3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: cde1826cd46c39e48998aa21149fabab, type: 2}
+    - target: {fileID: 4708703069109041965, guid: 33d7aa01b839ae54dbccf27626333fc3, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 175
       objectReference: {fileID: 0}
     - target: {fileID: 4708703069109041967, guid: 33d7aa01b839ae54dbccf27626333fc3, type: 3}
       propertyPath: m_Name

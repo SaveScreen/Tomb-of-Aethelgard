@@ -10,6 +10,7 @@ public class RupeeScript : MonoBehaviour
     public float rotationSpeed = 30f;
     public float hoverHeight = 0.5f;
     public bool randomStart = true;
+    public float magnetSpeed = 10f;
     private float random = 0;
     private float totalOffset = 0;
     private float totalScale = 1;
@@ -51,13 +52,28 @@ public class RupeeScript : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other){
-        if(other.gameObject.GetComponent<PlayerScript>() == null){
-            return;
-        }else{
-            if(!collected){
-                other.gameObject.GetComponent<PlayerScript>().AddRupees(rupeeValue);
-                PlayCollectedAnimation();
+        if(other.gameObject.tag == "RupeeMagnetZone"){
+            MoveTowardsPlayer(other.gameObject);
+        }
+        
+        if(other.gameObject.tag == "Player"){
+            if(other.gameObject.GetComponent<PlayerScript>() == null){
+                return;
+            }else{
+                if(!collected){
+                    other.gameObject.GetComponent<PlayerScript>().AddRupees(rupeeValue);
+                    PlayCollectedAnimation();
+                }
             }
+        }
+    }
+
+    private void OnTriggerStay(Collider other){
+        if(other.gameObject.tag == "RupeeMagnetZone"){
+            if(!collected){
+                MoveTowardsPlayer(other.gameObject);
+            }
+            
         }
     }
 
@@ -65,5 +81,10 @@ public class RupeeScript : MonoBehaviour
         collected = true;
         totalOffset += 0.1f;
         GetComponent<AudioSource>().Play();
+    }
+
+    private void MoveTowardsPlayer(GameObject target){
+        this.gameObject.transform.position = Vector3.MoveTowards(this.gameObject.transform.position, target.transform.position, magnetSpeed*Time.deltaTime);
+        Debug.Log("moving towards player");
     }
 }

@@ -42,7 +42,7 @@ public class doorScript : MonoBehaviour
             if (transform.position != openPosition.transform.position)
             {
                 Translate(openPosition.transform.position, openSpeed);
-//                ScreenShakeManager.instance.CameraShake(impulseSource);
+                ScreenShakeManager.instance.CameraShake(impulseSource);
             }
             else
             {
@@ -55,7 +55,7 @@ public class doorScript : MonoBehaviour
             if (transform.position != closedPosition.transform.position)
             {
                 Translate(closedPosition.transform.position, closeSpeed);
-            //    ScreenShakeManager.instance.CameraShake(impulseSource);
+                ScreenShakeManager.instance.CameraShake(impulseSource);
             }
             else
             {

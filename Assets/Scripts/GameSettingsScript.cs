@@ -8,6 +8,9 @@ public class GameSettingsScript : MonoBehaviour
 {
     public static float mousexsensitivity = 120f;
     public static float mouseysensitivity = 1.5f;
+
+    public static bool mousexinverted = false;
+    public static bool mouseyinverted = true;
    
     public static bool settingschanged = false;
     public static bool scenechanged = false;
@@ -18,6 +21,9 @@ public class GameSettingsScript : MonoBehaviour
     private bool camerareferenced = false;
     private float sensitivityvalx;
     private float sensitivityvaly;
+    private int invertxval;
+    private int invertyval;
+    
     //private bool dontloadsensitivity = false;
     
 
@@ -34,6 +40,8 @@ public class GameSettingsScript : MonoBehaviour
     
         sensitivityvalx = PlayerPrefs.GetFloat("SensitivityX");    
         sensitivityvaly = PlayerPrefs.GetFloat("SensitivityY"); 
+        invertxval = PlayerPrefs.GetInt("InvertX");
+        invertyval = PlayerPrefs.GetInt("InvertY");
         
     }
 
@@ -54,6 +62,8 @@ public class GameSettingsScript : MonoBehaviour
     void LoadOriginalSensitivity() {
         freelookcam.m_XAxis.m_MaxSpeed = mousexsensitivity;
         freelookcam.m_YAxis.m_MaxSpeed = mouseysensitivity;
+        freelookcam.m_XAxis.m_InvertInput = mousexinverted;
+        freelookcam.m_YAxis.m_InvertInput = mouseyinverted;
         Debug.Log("Settings Changed to" + freelookcam.m_XAxis.m_MaxSpeed.ToString());
         Debug.Log("Settings Changed to" + freelookcam.m_YAxis.m_MaxSpeed.ToString());
         //dontloadsensitivity = true;
@@ -64,10 +74,29 @@ public class GameSettingsScript : MonoBehaviour
         freelookcam.m_YAxis.m_MaxSpeed = sensitivityvaly;
         mousexsensitivity = sensitivityvalx;
         mouseysensitivity = sensitivityvaly;
+
+        freelookcam.m_XAxis.m_InvertInput = intToBool(invertxval);
+        freelookcam.m_YAxis.m_InvertInput = intToBool(invertyval);
+
         Debug.Log("Settings Changed to" + freelookcam.m_XAxis.m_MaxSpeed.ToString());
         Debug.Log("Settings Changed to" + freelookcam.m_YAxis.m_MaxSpeed.ToString()); 
         settingschanged = false;
         scenechanged = false;
+    }
+
+    int boolToInt(bool val) {
+        if (val)
+        return 1;
+        else
+        return 0;
+    }
+
+    bool intToBool(int val) {
+        if (val != 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     

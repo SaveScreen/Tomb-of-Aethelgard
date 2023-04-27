@@ -28081,7 +28081,7 @@ MonoBehaviour:
     m_DissipationMode: 2
     m_DissipationDistance: 100
     m_PropagationSpeed: 343
-  m_DefaultVelocity: {x: -0.2, y: -0.1, z: 0.3}
+  m_DefaultVelocity: {x: 0, y: -1, z: 0}
 --- !u!4 &850933079 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4315458112267535932, guid: bea5aba23c6e09f43bf60192c90d4f6b, type: 3}
@@ -46677,7 +46677,7 @@ MonoBehaviour:
     m_DissipationMode: 2
     m_DissipationDistance: 100
     m_PropagationSpeed: 343
-  m_DefaultVelocity: {x: -0.2, y: -0.1, z: 0.3}
+  m_DefaultVelocity: {x: 0, y: -1, z: 0}
 --- !u!1001 &1415341837
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -48518,7 +48518,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33cd3c5678135c14fb940905a77d111d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalShakeForce: 0.5
+  GlobalShakeForce: 0.1
 --- !u!4 &1464748751
 Transform:
   m_ObjectHideFlags: 0

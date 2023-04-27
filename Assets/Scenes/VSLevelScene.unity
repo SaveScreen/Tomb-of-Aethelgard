@@ -30167,7 +30167,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8173987046217288586, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.07432722
+      value: 0.07432723
       objectReference: {fileID: 0}
     - target: {fileID: 8173987046217288586, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
       propertyPath: m_LocalRotation.y
@@ -30175,7 +30175,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8173987046217288586, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0026986862
+      value: -0.0026986713
       objectReference: {fileID: 0}
     - target: {fileID: 8173987046519804472, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
       propertyPath: m_RootOrder
@@ -35171,7 +35171,7 @@ MonoBehaviour:
     m_DissipationMode: 2
     m_DissipationDistance: 100
     m_PropagationSpeed: 343
-  m_DefaultVelocity: {x: -1, y: -1, z: -1}
+  m_DefaultVelocity: {x: 0, y: -1, z: 0}
 --- !u!1001 &1826236943
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40217,7 +40217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33cd3c5678135c14fb940905a77d111d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalShakeForce: 0.2
+  GlobalShakeForce: 0.1
 --- !u!4 &2100354246
 Transform:
   m_ObjectHideFlags: 0

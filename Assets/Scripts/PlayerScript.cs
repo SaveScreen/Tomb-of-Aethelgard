@@ -98,6 +98,9 @@ public class PlayerScript : MonoBehaviour
     public GameObject rupeeMagnetZone;
     private static bool rupeeMagnetCollected = false;
 
+    [Header("Player Material")]
+    public Material playerMat;
+
     void Start()
     {
         //camerascript = cam.GetComponent<CameraScript>();
@@ -439,7 +442,36 @@ public class PlayerScript : MonoBehaviour
             Debug.Log("rupee magnet collected");
             Destroy(other.gameObject);
         }
+        if(other.gameObject.tag == "BlackOutfit"){
+            if(rupees>= 0){
+                //this.gameObject.transform.GetChild(3).GetComponent<Renderer>().material = other.gameObject.GetComponent<Renderer>().material;
+                SetMaterials(other.gameObject.GetComponent<Renderer>().material);
+                Destroy(other.gameObject);
+                AddRupees(-100);
+            }
+        }
+        if(other.gameObject.tag == "BlueOutfit"){
+            if(rupees>=0){
+                //this.gameObject.transform.GetChild(3).GetComponent<Renderer>().material = other.gameObject.GetComponent<Renderer>().material;
+                SetMaterials(other.gameObject.GetComponent<Renderer>().material);
+                Destroy(other.gameObject);
+                AddRupees(-150);
+            }
+        }
        
+    }
+
+    private void SetMaterials(Material mat){
+        /*Animator anim = this.gameObject.transform.GetChild(3).GetComponent<Animator>();
+        AnimationClip[] clips = anim.runtimeAnimatorController.animationClips;
+        foreach(AnimationClip c in clips){
+            //c.
+        }*/
+
+        playerMat.SetTexture("_MainTex",mat.GetTexture("_MainTex"));
+        Debug.Log("old material: " + playerMat.GetTexture("_MainText"));
+        Debug.Log("new material: " + mat.GetTexture("_MainTex"));
+
     }
 
     public void AddRupees(int amt){ 

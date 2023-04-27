@@ -504,6 +504,7 @@ MonoBehaviour:
   anim: {fileID: 227851873332324320}
   winLoseManager: {fileID: 0}
   rupeeMagnetZone: {fileID: 2729359599447309553}
+  playerMat: {fileID: 2100000, guid: 7e9d3c3ab6a5b3a47923e14a76fe6a2b, type: 2}
 --- !u!114 &6096756132656607730
 MonoBehaviour:
   m_ObjectHideFlags: 0

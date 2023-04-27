@@ -20,9 +20,15 @@ public class EndCutsceneScript : MonoBehaviour
     private int index; //Line index
     private int panelindex; //Panel index
     public static bool cutscene;
+    private bool creditsrollstart;
+    private bool creditsstartrolling;
     private bool cutscenecompleted;
     private bool dialoguestarted;
     public GameObject[] panels;
+    public GameObject creditsroll;
+    private Transform creditstransform;
+    public GameObject finalcreditsposition;
+    public float movespeed;
     
 
     private Scene currentscene;
@@ -33,8 +39,11 @@ public class EndCutsceneScript : MonoBehaviour
         cutscene = true;
         textcomponent.text = string.Empty;
         dialoguestarted = false;
+        creditsrollstart = false;
+        creditsstartrolling = false;
         cutscenecompleted = false;
         currentscene = SceneManager.GetActiveScene();
+        creditstransform = creditsroll.GetComponent<Transform>();
         transitioning = false;
         fadein = true;
         transition.alpha = 0;
@@ -42,6 +51,7 @@ public class EndCutsceneScript : MonoBehaviour
         {
             p.SetActive(false);
         }
+        creditsroll.SetActive(false);
     }
 
     void OnEnable()
@@ -101,21 +111,26 @@ public class EndCutsceneScript : MonoBehaviour
 
         }
 
-        if (cutscene == false)
-        {
-            dialoguestarted = false;
-            textcomponent.text = string.Empty;
-            if (currentscene.name == "EndCutsceneScene")
-            {
-                if (cutscenecompleted)
-                {
-                    StartCoroutine(ReturnToMenu());
-                    
+        if (creditsrollstart) {
+                dialoguestarted = false;
+                textcomponent.text = string.Empty;
+                
+                StartCoroutine(WaitASec());
+                if (creditsstartrolling) {
+                    StopAllCoroutines();
+                    creditstransform.position = Vector3.MoveTowards(creditstransform.position, finalcreditsposition.transform.position, movespeed * Time.deltaTime);
+                }
+                
+                if (creditstransform.position.y == finalcreditsposition.transform.position.y) {
+                    creditsstartrolling = false;
+                    cutscenecompleted = true;
                 }
             }
+        if (cutscenecompleted)
+        {
+            StartCoroutine(ReturnToMenu());
+                
         }
-
-
 
     }
 
@@ -177,9 +192,10 @@ public class EndCutsceneScript : MonoBehaviour
                 if (transition.alpha >= 1)
                 {
                     cutscene = false;
-                    cutscenecompleted = true;
+                    creditsrollstart = true;
+                    fadein = false;
                 }
-            }
+            } 
         }
 
 
@@ -207,5 +223,12 @@ public class EndCutsceneScript : MonoBehaviour
         CompletionManagerScript.level3complete = false;
         CompletionManagerScript.allclear = false;
         SceneManager.LoadScene("MainMenuScene");
+    }
+
+    IEnumerator WaitASec() {
+        yield return new WaitForSeconds(1.0f);
+        creditsroll.SetActive(true);
+        yield return new WaitForSeconds(3.0f);
+        creditsstartrolling = true;
     }
 }

@@ -29,6 +29,9 @@ public class EndCutsceneScript : MonoBehaviour
     private Transform creditstransform;
     public GameObject finalcreditsposition;
     public float movespeed;
+    public GameObject voiceaudio;
+    private AudioSource va;
+    public AudioClip[] voicelines;
     
 
     private Scene currentscene;
@@ -44,6 +47,7 @@ public class EndCutsceneScript : MonoBehaviour
         cutscenecompleted = false;
         currentscene = SceneManager.GetActiveScene();
         creditstransform = creditsroll.GetComponent<Transform>();
+        va = voiceaudio.GetComponent<AudioSource>();
         transitioning = false;
         fadein = true;
         transition.alpha = 0;
@@ -108,7 +112,7 @@ public class EndCutsceneScript : MonoBehaviour
             {
                 PanelTransition();
             }
-
+            
         }
 
         if (creditsrollstart) {
@@ -140,21 +144,24 @@ public class EndCutsceneScript : MonoBehaviour
         panelindex = 0;
         panels[panelindex].SetActive(true);
         StartCoroutine(TypeOutCharacters());
+        PlayVoiceSound(voicelines[index]);
         dialoguestarted = true;
     }
 
     void NextPage()
     {
+        va.Stop();
         if (index < lines.Length - 1)
         {
             index++;
             textcomponent.text = string.Empty;
             StartCoroutine(TypeOutCharacters());
+            PlayVoiceSound(voicelines[index]);
         }
         else
         {
             endscene = true;
-
+            va.Stop();
         }
     }
 
@@ -200,6 +207,10 @@ public class EndCutsceneScript : MonoBehaviour
 
 
 
+    }
+
+    void PlayVoiceSound(AudioClip audio) {
+        va.PlayOneShot(audio);
     }
 
 

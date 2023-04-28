@@ -110,7 +110,7 @@ public class CutsceneScript : MonoBehaviour
             if (panelindex == 1) {
                 if (musicoff == true) {
                     flameplayer.loop = true;
-                    music.volume = 0.3f;
+                    music.volume = 0.15f;
                     music.loop = true;
                     flameplayer.volume = 0.2f;
                     flameplayer.Play();
@@ -124,6 +124,16 @@ public class CutsceneScript : MonoBehaviour
                     musicoff = false;
                 }
             }
+
+            if (va.isPlaying) {
+                if (index == 4 || index == 6) {
+                    va.volume = 1f;
+                }
+                else {
+                    va.volume = 0.7f;
+                }
+            }
+            
         }
 
         if (cutscene == false)
@@ -148,21 +158,24 @@ public class CutsceneScript : MonoBehaviour
         panelindex = 0;
         panels[panelindex].SetActive(true);
         StartCoroutine(TypeOutCharacters());
+        PlayVoiceSound(voicelines[index]);
         dialoguestarted = true;
     }
 
     void NextPage()
     {
+        va.Stop();
         if (index < lines.Length - 1)
         {
             index++;
             textcomponent.text = string.Empty;
             StartCoroutine(TypeOutCharacters());
+            PlayVoiceSound(voicelines[index]);
         }
         else
         {
             endscene = true;
-                      
+            va.Stop();       
         }
     }
 
@@ -199,6 +212,10 @@ public class CutsceneScript : MonoBehaviour
         
 
         
+    }
+
+    void PlayVoiceSound(AudioClip audio) {
+        va.PlayOneShot(audio);
     }
 
 

@@ -100,6 +100,7 @@ public class PlayerScript : MonoBehaviour
 
     [Header("Player Material")]
     public Material playerMat;
+    public Texture2D[] playerTextures;
 
     void Start()
     {
@@ -130,6 +131,10 @@ public class PlayerScript : MonoBehaviour
         if(rupeeMagnetCollected){
             rupeeMagnetZone.SetActive(true);
         }
+
+        //find player textures
+        //string texturePath = "Assets/Materials/Materials/Player Skins";
+        //playerTextures = Resources.LoadAll(texturePath, typeof(Texture2D));
 
     }
 
@@ -445,7 +450,8 @@ public class PlayerScript : MonoBehaviour
         if(other.gameObject.tag == "BlackOutfit"){
             if(rupees>= 0){
                 //this.gameObject.transform.GetChild(3).GetComponent<Renderer>().material = other.gameObject.GetComponent<Renderer>().material;
-                SetMaterials(other.gameObject.GetComponent<Renderer>().material);
+                //SetMaterials(other.gameObject.GetComponent<Renderer>().material);
+                SetMaterials(0);
                 Destroy(other.gameObject);
                 AddRupees(-100);
             }
@@ -453,7 +459,8 @@ public class PlayerScript : MonoBehaviour
         if(other.gameObject.tag == "BlueOutfit"){
             if(rupees>=0){
                 //this.gameObject.transform.GetChild(3).GetComponent<Renderer>().material = other.gameObject.GetComponent<Renderer>().material;
-                SetMaterials(other.gameObject.GetComponent<Renderer>().material);
+                //SetMaterials(other.gameObject.GetComponent<Renderer>().material);
+                SetMaterials(1);
                 Destroy(other.gameObject);
                 AddRupees(-150);
             }
@@ -461,16 +468,19 @@ public class PlayerScript : MonoBehaviour
        
     }
 
-    private void SetMaterials(Material mat){
+    private void SetMaterials(int index){
         /*Animator anim = this.gameObject.transform.GetChild(3).GetComponent<Animator>();
         AnimationClip[] clips = anim.runtimeAnimatorController.animationClips;
         foreach(AnimationClip c in clips){
             //c.
         }*/
+        Debug.Log("old material: " + playerMat.GetTexture("_MainTex"));
+        //playerMat.SetTexture("_MainTex",mat.GetTexture("_MainTex")); 
+        //Shader s = new Shader();
+        //playerMat.shader = playerMat.shader;
+        //Debug.Log("new material: " + mat.GetTexture("_MainTex"));
 
-        playerMat.SetTexture("_MainTex",mat.GetTexture("_MainTex"));
-        Debug.Log("old material: " + playerMat.GetTexture("_MainText"));
-        Debug.Log("new material: " + mat.GetTexture("_MainTex"));
+        //playerMat.SetTexture("_MainTex", (Texture2D)playerTextures[index]); 
 
     }
 

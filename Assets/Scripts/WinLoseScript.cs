@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class WinLoseScript : MonoBehaviour
 {
     public GameObject pauseMenu;
+    public Button resume;
 
     [Header("Win Screen")]
     public GameObject winScreen;
@@ -24,6 +26,7 @@ public class WinLoseScript : MonoBehaviour
     {
         player = playerObject.GetComponent<PlayerScript>();
         AudioListener.pause = false;
+        resume.Select();
 
         //pause menu panel
         pauseMenu.SetActive(false);
@@ -39,6 +42,7 @@ public class WinLoseScript : MonoBehaviour
 
     public void PauseGame(){
         Time.timeScale = 0;
+        resume.Select();
         player.SetPaused(true);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;

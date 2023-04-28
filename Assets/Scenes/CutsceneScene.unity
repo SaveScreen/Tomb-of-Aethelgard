@@ -1710,7 +1710,7 @@ PrefabInstance:
       objectReference: {fileID: 1171976709}
     - target: {fileID: 3727725012424982901, guid: 0a45049219d9ad149866620af1a94bc3, type: 3}
       propertyPath: next.m_SingletonActionBindings.Array.size
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3727725012424982901, guid: 0a45049219d9ad149866620af1a94bc3, type: 3}
       propertyPath: next.m_SingletonActionBindings.Array.data[0].m_Id
@@ -1721,6 +1721,14 @@ PrefabInstance:
       value: de6dae37-e155-4287-a51c-1f6f2e7ce4f4
       objectReference: {fileID: 0}
     - target: {fileID: 3727725012424982901, guid: 0a45049219d9ad149866620af1a94bc3, type: 3}
+      propertyPath: next.m_SingletonActionBindings.Array.data[2].m_Id
+      value: 5f3f76fa-eea7-412d-883a-68c0b708ae02
+      objectReference: {fileID: 0}
+    - target: {fileID: 3727725012424982901, guid: 0a45049219d9ad149866620af1a94bc3, type: 3}
+      propertyPath: next.m_SingletonActionBindings.Array.data[3].m_Id
+      value: 9359ad0b-d837-4895-a6b1-aee53860a9fc
+      objectReference: {fileID: 0}
+    - target: {fileID: 3727725012424982901, guid: 0a45049219d9ad149866620af1a94bc3, type: 3}
       propertyPath: next.m_SingletonActionBindings.Array.data[0].m_Path
       value: <Keyboard>/e
       objectReference: {fileID: 0}
@@ -1729,11 +1737,27 @@ PrefabInstance:
       value: <Gamepad>/buttonSouth
       objectReference: {fileID: 0}
     - target: {fileID: 3727725012424982901, guid: 0a45049219d9ad149866620af1a94bc3, type: 3}
+      propertyPath: next.m_SingletonActionBindings.Array.data[2].m_Path
+      value: <Keyboard>/enter
+      objectReference: {fileID: 0}
+    - target: {fileID: 3727725012424982901, guid: 0a45049219d9ad149866620af1a94bc3, type: 3}
+      propertyPath: next.m_SingletonActionBindings.Array.data[3].m_Path
+      value: <Mouse>/leftButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 3727725012424982901, guid: 0a45049219d9ad149866620af1a94bc3, type: 3}
       propertyPath: next.m_SingletonActionBindings.Array.data[0].m_Action
       value: Next
       objectReference: {fileID: 0}
     - target: {fileID: 3727725012424982901, guid: 0a45049219d9ad149866620af1a94bc3, type: 3}
       propertyPath: next.m_SingletonActionBindings.Array.data[1].m_Action
+      value: Next
+      objectReference: {fileID: 0}
+    - target: {fileID: 3727725012424982901, guid: 0a45049219d9ad149866620af1a94bc3, type: 3}
+      propertyPath: next.m_SingletonActionBindings.Array.data[2].m_Action
+      value: Next
+      objectReference: {fileID: 0}
+    - target: {fileID: 3727725012424982901, guid: 0a45049219d9ad149866620af1a94bc3, type: 3}
+      propertyPath: next.m_SingletonActionBindings.Array.data[3].m_Action
       value: Next
       objectReference: {fileID: 0}
     - target: {fileID: 3727725012424982902, guid: 0a45049219d9ad149866620af1a94bc3, type: 3}

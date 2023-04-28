@@ -823,6 +823,22 @@ MonoBehaviour:
       m_Groups: 
       m_Action: Next
       m_Flags: 0
+    - m_Name: 
+      m_Id: 31b9f1c7-6902-44b7-b6de-160902e0a9b2
+      m_Path: <Keyboard>/enter
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Next
+      m_Flags: 0
+    - m_Name: 
+      m_Id: c03c2187-fe7e-4f7e-927f-1fb937780b6c
+      m_Path: <Mouse>/leftButton
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Next
+      m_Flags: 0
     m_Flags: 0
   textspeed: 0.01
   panels:

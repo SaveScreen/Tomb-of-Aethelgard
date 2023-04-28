@@ -41405,6 +41405,14 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 206236788013918677, guid: 08900d4e479d0754987975768754e376, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9c76ed551f74ccd42ba65af6c54e1d4f, type: 3}
+    - target: {fileID: 779444186089099557, guid: 08900d4e479d0754987975768754e376, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7ae03b9360bcabf4097b433e980ed935, type: 3}
     - target: {fileID: 800120173228574852, guid: 08900d4e479d0754987975768754e376, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

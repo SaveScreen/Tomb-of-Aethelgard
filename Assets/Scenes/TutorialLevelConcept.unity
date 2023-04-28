@@ -37698,7 +37698,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1190112549481549221, guid: 2fa0d8b844cf2b54d8b68e8ba208c709, type: 3}
       propertyPath: m_Volume
-      value: 0.205
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 6268027220725758681, guid: 2fa0d8b844cf2b54d8b68e8ba208c709, type: 3}
       propertyPath: m_Name
@@ -37750,7 +37750,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6847598927192027449, guid: 2fa0d8b844cf2b54d8b68e8ba208c709, type: 3}
       propertyPath: m_Volume
-      value: 0.246
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 9010525839976052094, guid: 2fa0d8b844cf2b54d8b68e8ba208c709, type: 3}
       propertyPath: hasBeenActivatedSoundPlayer
@@ -41206,7 +41206,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1190112549481549221, guid: 2fa0d8b844cf2b54d8b68e8ba208c709, type: 3}
       propertyPath: m_Volume
-      value: 0.239
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 6268027220725758681, guid: 2fa0d8b844cf2b54d8b68e8ba208c709, type: 3}
       propertyPath: m_Name
@@ -41258,7 +41258,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6847598927192027449, guid: 2fa0d8b844cf2b54d8b68e8ba208c709, type: 3}
       propertyPath: m_Volume
-      value: 0.159
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 9010525839976052094, guid: 2fa0d8b844cf2b54d8b68e8ba208c709, type: 3}
       propertyPath: signalCatcherID
@@ -42289,11 +42289,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8173987046217288586, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.036183383
+      value: 0.036183413
       objectReference: {fileID: 0}
     - target: {fileID: 8173987046217288586, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0026986548
+      value: -0.002698661
       objectReference: {fileID: 0}
     - target: {fileID: 8173987046519804472, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
       propertyPath: m_RootOrder

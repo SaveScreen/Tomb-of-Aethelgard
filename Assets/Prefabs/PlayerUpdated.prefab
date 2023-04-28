@@ -407,7 +407,7 @@ MonoBehaviour:
   charactercontroller: {fileID: 3041323656804124328}
   isWallRunningOnLeftWall: 0
   isWallRunningOnRightWall: 0
-  legCrunchTime: 1
+  legCrunchTime: 1.2
   cam: {fileID: 0}
   IsPushingPulling: 0
   playerjump:
@@ -462,13 +462,13 @@ MonoBehaviour:
     m_Flags: 0
   jumpspeed: 20
   jumpgravity: -30
-  DistanceCheck: 2
+  DistanceCheck: 1.5
   RotateMirror:
     serializedVersion: 2
     m_Bits: 1024
   IsrotatingMirror: 0
   CanInteractRotatingMirror: 0
-  speed: 10
+  speed: 11
   velocity: {x: 0, y: 0, z: 0}
   orientation: {fileID: 3041323658253190330}
   usingcontroller: 0
@@ -525,8 +525,8 @@ MonoBehaviour:
   LandAudio: {fileID: 7303399547087692942}
   JumpAudio: {fileID: 6494648908179435645}
   jumpAudio: {fileID: 8300000, guid: 907f89c5fb88e4b4c9442d17b9bc6396, type: 3}
-  landAudio: {fileID: 8300000, guid: 90f426c5b57e9404883ccb76e14585cb, type: 3}
-  runAudio: {fileID: 8300000, guid: 199c2eb177402c546ba6bcdf4c105b52, type: 3}
+  landAudio: {fileID: 8300000, guid: d158f68345908fa4497e29e25cafcc6d, type: 3}
+  runAudio: {fileID: 8300000, guid: 26a98cc75d41407448c46817c53cf5a8, type: 3}
   wallrunAudio: {fileID: 8300000, guid: 5365d04406dca0947ac8d02983a030e3, type: 3}
   randomAudioSource: {fileID: 1013550984316427640}
   randomAudioClipList:

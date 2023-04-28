@@ -17,8 +17,8 @@ public class PlayerSoundsScript : MonoBehaviour
     [Header("Random Audio Sounds")]
     public AudioSource randomAudioSource;
     public AudioClip[] randomAudioClipList;
-    private float audioFrequencyLowBound = 20f;
-    private float audioFrequencyHighBound = 50f;
+    private float audioFrequencyLowBound = 10f;
+    private float audioFrequencyHighBound = 30f;
     private float randomAudioTimer;
     
     public void Start(){
@@ -52,7 +52,6 @@ public class PlayerSoundsScript : MonoBehaviour
         int clipIndex = Random.Range(0, randomAudioClipList.Length);
         randomAudioSource.clip = randomAudioClipList[clipIndex];
         randomAudioSource.Play();
-        Debug.Log("sound player");
     }
 
     private void CheckRandomClip(){

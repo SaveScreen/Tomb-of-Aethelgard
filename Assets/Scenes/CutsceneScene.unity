@@ -1709,6 +1709,42 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1171976709}
     - target: {fileID: 3727725012424982901, guid: 0a45049219d9ad149866620af1a94bc3, type: 3}
+      propertyPath: voicelines.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3727725012424982901, guid: 0a45049219d9ad149866620af1a94bc3, type: 3}
+      propertyPath: voicelines.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 8cb04ed3f1e7a6943906eb589cfcc7ad, type: 3}
+    - target: {fileID: 3727725012424982901, guid: 0a45049219d9ad149866620af1a94bc3, type: 3}
+      propertyPath: voicelines.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: c400beb426706244b9767ccd283942f4, type: 3}
+    - target: {fileID: 3727725012424982901, guid: 0a45049219d9ad149866620af1a94bc3, type: 3}
+      propertyPath: voicelines.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 2ffa75f2495afeb4eabf3f47e95219df, type: 3}
+    - target: {fileID: 3727725012424982901, guid: 0a45049219d9ad149866620af1a94bc3, type: 3}
+      propertyPath: voicelines.Array.data[3]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3727725012424982901, guid: 0a45049219d9ad149866620af1a94bc3, type: 3}
+      propertyPath: voicelines.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: 1d92b77f29f0ce942a194bea6fbe429f, type: 3}
+    - target: {fileID: 3727725012424982901, guid: 0a45049219d9ad149866620af1a94bc3, type: 3}
+      propertyPath: voicelines.Array.data[5]
+      value: 
+      objectReference: {fileID: 8300000, guid: 4a0e84e96628ef040bfd6f528ee993ae, type: 3}
+    - target: {fileID: 3727725012424982901, guid: 0a45049219d9ad149866620af1a94bc3, type: 3}
+      propertyPath: voicelines.Array.data[6]
+      value: 
+      objectReference: {fileID: 8300000, guid: 1ceb445da95768c49a0d8ba0b264c284, type: 3}
+    - target: {fileID: 3727725012424982901, guid: 0a45049219d9ad149866620af1a94bc3, type: 3}
+      propertyPath: voicelines.Array.data[7]
+      value: 
+      objectReference: {fileID: 8300000, guid: ba3d342bd5d3b434c9ece6d1d092c83d, type: 3}
+    - target: {fileID: 3727725012424982901, guid: 0a45049219d9ad149866620af1a94bc3, type: 3}
       propertyPath: next.m_SingletonActionBindings.Array.size
       value: 4
       objectReference: {fileID: 0}

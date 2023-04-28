@@ -123,6 +123,134 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &211670815
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 211670816}
+  - component: {fileID: 211670817}
+  m_Layer: 0
+  m_Name: Voice Lines
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &211670816
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 211670815}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &211670817
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 211670815}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &362068243
 GameObject:
   m_ObjectHideFlags: 0
@@ -223,6 +351,7 @@ GameObject:
   - component: {fileID: 466296511}
   - component: {fileID: 466296510}
   - component: {fileID: 466296509}
+  - component: {fileID: 466296512}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -296,6 +425,39 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &466296512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 466296508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!1 &903654160
 GameObject:
   m_ObjectHideFlags: 0
@@ -658,7 +820,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0, y: 0}
+  m_AnchoredPosition: {x: -0, y: 28}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1725575902
@@ -848,6 +1010,13 @@ MonoBehaviour:
   creditsroll: {fileID: 1725575900}
   finalcreditsposition: {fileID: 1046428671}
   movespeed: 90
+  voiceaudio: {fileID: 211670815}
+  voicelines:
+  - {fileID: 8300000, guid: 86b1e5c74abd73c44b08fd91576b4b04, type: 3}
+  - {fileID: 8300000, guid: 66c1ddb6d039b59408a36f44ca6a2b27, type: 3}
+  - {fileID: 0}
+  - {fileID: 8300000, guid: f7360330e3629d74a94d84332198c7af, type: 3}
+  - {fileID: 8300000, guid: b0a32a6498b030d46bc6c9cb784b1b17, type: 3}
 --- !u!4 &1729163882
 Transform:
   m_ObjectHideFlags: 0
@@ -875,7 +1044,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 1dc9e28a2daa294468b14b73af765df3, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.3
+  m_Volume: 0.15
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1134,17 +1303,18 @@ MonoBehaviour:
       m_Calls: []
   m_text: "CADEN HENDERSON\t\tPROJECT MANAGER\n\t\t\t\tLIGHT REFLECTION PROGRAMMER\n\t\t\t\tRAYCAST
     PROGRAMMER\n\t\t\t\tDOOR PROGRAMMER\n\t\t\t\tSOUNDTRACK COMPOSER\n\t\t\t\tAUDIO
-    PROGRAMMING\n\t\t\t\tMENU PROGRAMMING\n\t\t\t\tQA TESTING\n\n\nGABRIEL NASH\t\tWRITER/NARRATIVE
-    DIRECTOR\n\t\t\t\tCHARACTER PROGRAMMER\n\t\t\t\tCAMERA PROGRAMMER\n\t\t\t\tCONTROLLER
-    COMPATIBILITY QA\n\t\t\t\tCUTSCENE DESIGNER\n\t\t\t\tMAIN MENU CAMERA RIGGING\n\t\t\t\tPROMOTIONAL
-    TRAILER EDITOR\n\n\nALBERT CHEUNG\t\tLEVEL PROGRAMMING\n\t\t\t\tCHARACTER PROGRAMMER\n\t\t\t\tWALL
-    RUN PROGRAMMER\n\t\t\t\tOBJECT PUSH/PULL PROGRAMMER\n\t\t\t\tADDITIONAL PROPS
-    PROGRAMMING\n\t\t\t\tQA TESTING\n\n\nETHAN BRANHAM\t\tLEVEL DESIGNER (LEVEL 1
-    & 3)/ARTIST\n\t\t\t\tMAIN MENU FUNCTIONALITY\n\t\t\t\tCONCEPT DESIGNER\n\t\t\t\tUI
+    PROGRAMMING\n\t\t\t\tMENU PROGRAMMING\n\t\t\t\tVOICEOVER (TREASURE HUNTER)\n\t\t\t\tQA
+    TESTING\n\n\nGABRIEL NASH\t\tWRITER/NARRATIVE DIRECTOR\n\t\t\t\tCHARACTER PROGRAMMER\n\t\t\t\tCAMERA
+    PROGRAMMER\n\t\t\t\tCONTROLLER COMPATIBILITY QA\n\t\t\t\tCUTSCENE DESIGNER\n\t\t\t\tMAIN
+    MENU CAMERA RIGGING\n\t\t\t\tPROMOTIONAL TRAILER EDITOR\n\n\nALBERT CHEUNG\t\tLEVEL
+    PROGRAMMING\n\t\t\t\tCHARACTER PROGRAMMER\n\t\t\t\tWALL RUN PROGRAMMER\n\t\t\t\tOBJECT
+    PUSH/PULL PROGRAMMER\n\t\t\t\tADDITIONAL PROPS PROGRAMMING\n\t\t\t\tVOICEOVER
+    (MYSTERIOUS VOICE)\n\t\t\t\tQA TESTING\n\n\nETHAN BRANHAM\t\tLEVEL DESIGNER (LEVEL
+    1 & 3)/ARTIST\n\t\t\t\tMAIN MENU FUNCTIONALITY\n\t\t\t\tCONCEPT DESIGNER\n\t\t\t\tUI
     FUNCTIONALITY\n\t\t\t\tPARTICLE EFFECTS\n\t\t\t\tMODEL/SPRITE TEXTURING\n\t\t\t\tLEVEL
     QA TESTING\n\t\t\t\tPROMOTIONAL ARTWORK CONCEPTS\n\n\nDEAN HANDLER\t\tLEVEL DESIGNER
     (LEVEL 1, 2, HUB, & TUTORIAL)\n\t\t\t\tLIGHTING & PARTICLE EFFECTS\n\t\t\t\tLEVEL
-    QA TESTING\n\t\t\t\tLIGHTING QA TESTING\n\n\nMICHAEL WHITENECK\t\t3D ARTIST/MODELER\n\t\t\t\tENVIRONMENTAL
+    QA TESTING\n\t\t\t\tLIGHTING QA TESTING\n\n\nMICHAEL WHITENECK\t\tLEAD 3D ARTIST/MODELER\n\t\t\t\tENVIRONMENTAL
     ARTIST\n\t\t\t\tLEVEL ENVIRONMENT MODELING\n\t\t\t\tCONCEPT ARTIST\n\t\t\t\tDEATH
     SCENE RENDERINGS\n\t\t\t\tMAIN MENU ENVIRONMENTAL DESIGNER\n\t\t\t\tADDITIONAL
     SPRITE DESIGNS\n\n\nKELSEY POWELL\t\t3D ARTIST/MODELER\n\t\t\t\tPROP MODELING\n\t\t\t\tCONCEPT

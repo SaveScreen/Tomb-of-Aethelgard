@@ -81,8 +81,8 @@ public class PlayerScript : MonoBehaviour
         walking
     }
     public bool wallrunning;
-    public Animator anim;
-
+    private Animator anim;
+    private static int skinNum = 0;
 
     public GameObject winLoseManager;
     private WinLoseScript winLoseScript;
@@ -101,6 +101,8 @@ public class PlayerScript : MonoBehaviour
     [Header("Player Material")]
     public Material playerMat;
     public Texture2D[] playerTextures;
+    [Header("Player Animations")]
+    public GameObject[] characterAnimations;
 
     void Start()
     {
@@ -123,8 +125,16 @@ public class PlayerScript : MonoBehaviour
         Cursor.visible = false;
         IsPushingPulling = false;
 
-        anim = GameObject.Find("Breathing_Idle_1").GetComponent<Animator>();
-
+        if(skinNum == 0){
+            this.gameObject.transform.GetChild(4).gameObject.SetActive(false);
+            this.gameObject.transform.GetChild(3).gameObject.SetActive(true);
+        }else if(skinNum == 1){
+            this.gameObject.transform.GetChild(3).gameObject.SetActive(false);
+            this.gameObject.transform.GetChild(4).gameObject.SetActive(true);
+        }
+        
+        anim = this.gameObject.transform.GetChild(3 + skinNum).GetComponent<Animator>();
+        
         winLoseScript = winLoseManager.GetComponent<WinLoseScript>();
         rupeeHUD = GameObject.Find("RupeeCounter").GetComponent<RupeeHUDScript>();
 
@@ -135,6 +145,7 @@ public class PlayerScript : MonoBehaviour
         //find player textures
         //string texturePath = "Assets/Materials/Materials/Player Skins";
         //playerTextures = Resources.LoadAll(texturePath, typeof(Texture2D));
+        
 
     }
 
@@ -451,41 +462,69 @@ public class PlayerScript : MonoBehaviour
             }
         }
         if(other.gameObject.tag == "BlackOutfit"){
-            if(rupees>= 0){
+            if(rupees>= 150){
                 //this.gameObject.transform.GetChild(3).GetComponent<Renderer>().material = other.gameObject.GetComponent<Renderer>().material;
                 //SetMaterials(other.gameObject.GetComponent<Renderer>().material);
                 SetMaterials(0);
                 Destroy(other.gameObject);
-                AddRupees(-100);
+                AddRupees(150);
             }
         }
         if(other.gameObject.tag == "BlueOutfit"){
-            if(rupees>=0){
+            if(rupees>=1000000){
                 //this.gameObject.transform.GetChild(3).GetComponent<Renderer>().material = other.gameObject.GetComponent<Renderer>().material;
                 //SetMaterials(other.gameObject.GetComponent<Renderer>().material);
-                SetMaterials(1);
+                //SetMaterials(1);
                 Destroy(other.gameObject);
-                AddRupees(-150);
+                AddRupees(-1000000);
+                Die();
             }
         }
        
     }
 
     private void SetMaterials(int index){
+        /*This function has a lot of old hoarded code*/
+
+
+        
+        
         /*Animator anim = this.gameObject.transform.GetChild(3).GetComponent<Animator>();
         AnimationClip[] clips = anim.runtimeAnimatorController.animationClips;
         foreach(AnimationClip c in clips){
             //c.
         }*/
-        Debug.Log("old material: " + playerMat.GetTexture("_MainTex"));
+        //Debug.Log("old material: " + playerMat.GetTexture("_MainTex"));
         //playerMat.SetTexture("_MainTex",mat.GetTexture("_MainTex")); 
         //Shader s = new Shader();
         //playerMat.shader = playerMat.shader;
         //Debug.Log("new material: " + mat.GetTexture("_MainTex"));
 
         //playerMat.SetTexture("_MainTex", (Texture2D)playerTextures[index]); 
-        playerTextures[2] = playerTextures[index];
+        //playerTextures[2] = playerTextures[index];
+        
+        //Animator anim = this.gameObject.transform.GetChild(3).GetComponent<Animator>();
+        /*AnimationClip[] clips = anim.runtimeAnimatorController.animationClips;
+        foreach(AnimationClip c in clips){
+            //c.GetComponent<Renderer>()
+        }*/
+        //anim.GetComponent<Renderer>().material.SetTexture("_MainTex", playerTextures[index]);
+        //for(int i = 0; i < characterAnimations.Length; i++){
+            //characterAnimations[i].m_ExternalObjects.Array.data[0].second().SetTexture("_MainTex", playerTextures[index]);
+        
+        //}
+        index++;
+        int startIndex = 3;
 
+
+        this.gameObject.transform.GetChild(startIndex).gameObject.SetActive(false);
+        this.gameObject.transform.GetChild(startIndex + index).gameObject.SetActive(true);
+        Animator animo = this.gameObject.transform.GetChild(startIndex).GetComponent<Animator>();
+        animo = this.gameObject.transform.GetChild(startIndex + index).GetComponent<Animator>();
+        anim = this.gameObject.transform.GetChild(startIndex + index).GetComponent<Animator>();
+        
+        
+        skinNum = index;
     }
 
     public void AddRupees(int amt){ 
@@ -521,7 +560,12 @@ public class PlayerScript : MonoBehaviour
         winLoseScript.LoseGameSpike();
     }
     public Animator GetAnimator(){
-        return anim;
+        if(skinNum == 0){
+            return this.gameObject.transform.GetChild(3).gameObject.GetComponent<Animator>();
+        }
+        else{
+            return this.gameObject.transform.GetChild(4).gameObject.GetComponent<Animator>();
+        }
     }
 
     public void SetPaused(bool b){

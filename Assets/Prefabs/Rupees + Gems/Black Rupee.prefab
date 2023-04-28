@@ -34,7 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1046788670689429700
 MeshFilter:
@@ -103,6 +103,7 @@ MonoBehaviour:
   rotationSpeed: 30
   hoverHeight: 0.5
   randomStart: 1
+  magnetSpeed: 0
 --- !u!65 &5437537696756600022
 BoxCollider:
   m_ObjectHideFlags: 0

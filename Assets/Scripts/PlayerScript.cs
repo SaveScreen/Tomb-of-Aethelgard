@@ -442,10 +442,13 @@ public class PlayerScript : MonoBehaviour
             Destroy(other.gameObject);
         }
         if(other.gameObject.tag == "MagnetPowerup"){
-            rupeeMagnetCollected = true;
-            rupeeMagnetZone.SetActive(true);
-            Debug.Log("rupee magnet collected");
-            Destroy(other.gameObject);
+            if(rupees>= 200){
+                rupeeMagnetCollected = true;
+                rupeeMagnetZone.SetActive(true);
+                //Debug.Log("rupee magnet collected");
+                Destroy(other.gameObject);
+                AddRupees(-200);
+            }
         }
         if(other.gameObject.tag == "BlackOutfit"){
             if(rupees>= 0){
@@ -481,6 +484,7 @@ public class PlayerScript : MonoBehaviour
         //Debug.Log("new material: " + mat.GetTexture("_MainTex"));
 
         //playerMat.SetTexture("_MainTex", (Texture2D)playerTextures[index]); 
+        playerTextures[2] = playerTextures[index];
 
     }
 

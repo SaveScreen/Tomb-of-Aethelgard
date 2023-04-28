@@ -10,7 +10,7 @@ public class RupeeScript : MonoBehaviour
     public float rotationSpeed = 30f;
     public float hoverHeight = 0.5f;
     public bool randomStart = true;
-    public float magnetSpeed = 10f;
+    public float magnetSpeed = 20f;
     private float random = 0;
     private float totalOffset = 0;
     private float totalScale = 1;

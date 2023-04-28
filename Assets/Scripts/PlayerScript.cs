@@ -38,6 +38,13 @@ public class PlayerScript : MonoBehaviour
     public bool IsrotatingMirror;
     public bool CanInteractRotatingMirror;
 
+    [Header("Reference for Grab Objects")]
+    public float DistanceCheck2 = 1f;
+    public LayerMask PushPull;
+    private RaycastHit PushableObject;
+    public bool IspushableObject;
+    public bool CanInteractPushableObject;
+
     [Header("Character Movement")]
     public float speed;
     private Vector3 move;
@@ -116,6 +123,7 @@ public class PlayerScript : MonoBehaviour
         jumping = false;
         JumpPlay = false;
         CanInteractRotatingMirror = false;
+        CanInteractPushableObject = false;
         isWallRunningOnLeftWall = false;
         isWallRunningOnRightWall= false;
         smoothrotationtime = 0.1f;
@@ -189,6 +197,7 @@ public class PlayerScript : MonoBehaviour
             
             LookAndMove();
             LineForRotate();
+            LineForGrab();
             if (jumping == true) {
                 jumped = true;
                 //anim.SetBool("isJumping", true);
@@ -312,6 +321,22 @@ public class PlayerScript : MonoBehaviour
         else 
         {
             CanInteractRotatingMirror = false;
+            return false;
+        }
+    }
+
+    public bool LineForGrab()
+    {
+        IspushableObject = Physics.Raycast(transform.position, transform.forward, out PushableObject, DistanceCheck2, PushPull);
+
+        if (IspushableObject)
+        {
+            CanInteractPushableObject = true;
+            return true;
+        }
+        else
+        {
+            CanInteractPushableObject = false;
             return false;
         }
     }

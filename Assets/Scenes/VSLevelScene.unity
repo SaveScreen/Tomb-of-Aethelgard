@@ -41538,9 +41538,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1559678429}
     - target: {fileID: 3041323656804124330, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
+      propertyPath: DistanceCheck2
+      value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041323656804124330, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
       propertyPath: winLoseManager
       value: 
       objectReference: {fileID: 2099684771}
+    - target: {fileID: 3041323656804124330, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
+      propertyPath: PushPull.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
     - target: {fileID: 3041323656804124330, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
       propertyPath: JumpAudioPlay.m_Id
       value: 9a06dd2d-3d16-4c28-9576-f8f7be3c8d4f
@@ -41552,6 +41560,10 @@ PrefabInstance:
     - target: {fileID: 3041323656804124330, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
       propertyPath: JumpAudioPlay.m_Name
       value: Jump Audio Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041323656804124330, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
+      propertyPath: PushPullObject.m_Bits
+      value: 256
       objectReference: {fileID: 0}
     - target: {fileID: 3041323656804124330, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
       propertyPath: JumpAudioPlay.m_SingletonActionBindings.Array.size
@@ -41838,6 +41850,22 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1135321209949319426, guid: 2f2673e5a1d289c45a823cc3133205fe, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 1135321209949319426, guid: 2f2673e5a1d289c45a823cc3133205fe, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 1080
+      objectReference: {fileID: 0}
+    - target: {fileID: 1135321209949319426, guid: 2f2673e5a1d289c45a823cc3133205fe, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1135321209949319426, guid: 2f2673e5a1d289c45a823cc3133205fe, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -92
+      objectReference: {fileID: 0}
     - target: {fileID: 5871026205661751703, guid: 2f2673e5a1d289c45a823cc3133205fe, type: 3}
       propertyPath: m_Sprite
       value: 

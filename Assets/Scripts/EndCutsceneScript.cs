@@ -112,6 +112,15 @@ public class EndCutsceneScript : MonoBehaviour
             {
                 PanelTransition();
             }
+
+            if (va.isPlaying) {
+                if (index == 2) {
+                    va.volume = 0.17f;
+                }
+                else {
+                    va.volume = 1;
+                }
+            }
             
         }
 

@@ -31,6 +31,9 @@ public class CutsceneScript : MonoBehaviour
     public AudioSource music;
     public GameObject flameplay;
     private AudioSource flameplayer;
+    public GameObject voiceplayer;
+    public AudioClip[] voicelines;
+    private AudioSource va;
 
     // Start is called before the first frame update
     private void Start()
@@ -43,6 +46,7 @@ public class CutsceneScript : MonoBehaviour
         currentscene = SceneManager.GetActiveScene();
         music = gameObject.GetComponent<AudioSource>();
         flameplayer = flameplay.GetComponent<AudioSource>();
+        va = voiceplayer.GetComponent<AudioSource>();
         music.Stop();
         flameplayer.Stop();
         transitioning = false;

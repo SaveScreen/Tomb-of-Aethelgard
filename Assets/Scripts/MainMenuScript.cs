@@ -20,8 +20,14 @@ public class MainMenuScript : MonoBehaviour
     public GameObject creditsbutton;
     public GameObject SubmenuBackground;
 
-    //public Slider slider;
-    //public TextMeshProUGUI slidertext;
+    public Button backsettings;
+    public Button backcredits;
+    public Button backcontrols;
+    public Button settings;
+    public Button credits;
+    public Button controls;
+
+
     
 
     void Awake()
@@ -32,12 +38,15 @@ public class MainMenuScript : MonoBehaviour
         settingsmenu.SetActive(false);
         creditsMenu.SetActive(false);
         SubmenuBackground.SetActive(false);
+        
     }
 
     //controls button
     public void ShowControls()
     {
+        backcontrols.Select();
         controlsmenu.SetActive(true);
+
         playbutton.SetActive(false);
         controlsbutton.SetActive(false);
         settingsbutton.SetActive(false);
@@ -48,18 +57,22 @@ public class MainMenuScript : MonoBehaviour
 
     public void HideControls()
     {
-        controlsmenu.SetActive(false);
+        
         playbutton.SetActive(true);
         controlsbutton.SetActive(true);
         settingsbutton.SetActive(true);
         quitbutton.SetActive(true);
         creditsbutton.SetActive(true);
+        controls.Select();
+
         SubmenuBackground.SetActive(false);
+        controlsmenu.SetActive(false);
     }
 
     //credits button
     public void ShowSettings()
     {
+        backsettings.Select();
         settingsmenu.SetActive(true);
 
         playbutton.SetActive(false);
@@ -72,20 +85,22 @@ public class MainMenuScript : MonoBehaviour
 
     public void HideSettings()
     {
-        settingsmenu.SetActive(false);
-
         playbutton.SetActive(true);
         controlsbutton.SetActive(true);
         settingsbutton.SetActive(true);
         quitbutton.SetActive(true);
         creditsbutton.SetActive(true);
+        settings.Select();
+
+
         SubmenuBackground.SetActive(false);
+        settingsmenu.SetActive(false);
     }
 
     //credits button
     public void ShowCredits()
     {
-        creditsMenu.SetActive(true);
+        backcredits.Select();
         creditsMenu.SetActive(true);
 
         playbutton.SetActive(false);
@@ -97,33 +112,18 @@ public class MainMenuScript : MonoBehaviour
     }
     public void HideCredits()
     {
-        creditsMenu.SetActive(false);
+        
 
         playbutton.SetActive(true);
         controlsbutton.SetActive(true);
         settingsbutton.SetActive(true);
         quitbutton.SetActive(true);
         creditsbutton.SetActive(true);
+        credits.Select();
+
         SubmenuBackground.SetActive(false);
+        creditsMenu.SetActive(false);
     }
-
-    /***
-    public void ChangeSensitivity(float sensitivity) {
-        slidertext.text = sensitivity.ToString("0.0");
-    }
-
-    public void SaveSensitivity() {
-        float sensitivityval = slider.value;
-        PlayerPrefs.SetFloat("Sensitivity",sensitivityval);
-        LoadSensitivity();
-    }
-
-    public void LoadSensitivity() {
-        float sensitivityval = PlayerPrefs.GetFloat("Sensitivity");
-        slider.value = sensitivityval;
-        cam.m_YAxis.m_MaxSpeed = sensitivityval;
-    }
-    ***/
 
     //play button
     public void PlayGame()

@@ -444,7 +444,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4693185347439751980, guid: c7f05b8a6c695f745a7bf202fa5c9219, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1352112813}
-    - targetCorrespondingSourceObject: {fileID: 4693185347439751980, guid: c7f05b8a6c695f745a7bf202fa5c9219, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 4693185347651986347, guid: c7f05b8a6c695f745a7bf202fa5c9219, type: 3}
       insertIndex: -1
       addedObject: {fileID: 796227907}
   m_SourcePrefab: {fileID: 100100000, guid: c7f05b8a6c695f745a7bf202fa5c9219, type: 3}
@@ -773,17 +773,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 796227906}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1485682780}
+  m_Father: {fileID: 1882577093}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 462, y: -468}
+  m_AnchoredPosition: {x: 462, y: -131}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &796227908
@@ -806,7 +806,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: fd03fbb154da48440b875da11045dc85, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7b22afb3c29a4d94faa140e00fd0cc71, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1553,6 +1553,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1769629969}
   m_CullTransparentMesh: 1
+--- !u!224 &1882577093 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 4693185347651986347, guid: c7f05b8a6c695f745a7bf202fa5c9219, type: 3}
+  m_PrefabInstance: {fileID: 453672101}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1922434530
 GameObject:
   m_ObjectHideFlags: 0

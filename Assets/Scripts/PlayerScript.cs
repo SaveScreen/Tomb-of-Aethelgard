@@ -93,6 +93,8 @@ public class PlayerScript : MonoBehaviour
 
     public GameObject winLoseManager;
     private WinLoseScript winLoseScript;
+    public InputAction restart;
+    private bool restarting;
 
     private RupeeHUDScript rupeeHUD;
 
@@ -126,6 +128,7 @@ public class PlayerScript : MonoBehaviour
         CanInteractPushableObject = false;
         isWallRunningOnLeftWall = false;
         isWallRunningOnRightWall= false;
+        restarting = false;
         smoothrotationtime = 0.1f;
         gravity = -3f;
         
@@ -163,7 +166,7 @@ public class PlayerScript : MonoBehaviour
         playerjump.Enable();
         JumpAudioPlay.Enable();
         pausing.Enable();
-        
+        restart.Enable();
     }
 
     private void OnDisable()
@@ -172,7 +175,7 @@ public class PlayerScript : MonoBehaviour
         playerjump.Disable();
         JumpAudioPlay.Disable();
         pausing.Disable();
-        
+        restart.Disable();
     }
     // Update is called once per frame
     void Update()
@@ -237,7 +240,8 @@ public class PlayerScript : MonoBehaviour
         
         
         if (lose) {
-            if (Input.GetKeyDown(KeyCode.R)) {
+            restarting = restart.WasPressedThisFrame();
+            if (restarting) {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); //gets the current active scene
                 
                 Time.timeScale = 1.0f;

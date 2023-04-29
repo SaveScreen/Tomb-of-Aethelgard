@@ -113,7 +113,7 @@ Transform:
   - {fileID: 4690238514014140761}
   - {fileID: 1674255806766513098}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!33 &3041323656804124340
 MeshFilter:
@@ -377,12 +377,12 @@ MonoBehaviour:
     m_Name: Jump Audio Play
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: 836476d6-6a83-4ad1-a73c-deaad5b4662a
+    m_Id: 9a06dd2d-3d16-4c28-9576-f8f7be3c8d4f
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: 492898d8-2917-41e4-8902-0dd8e5e9d8da
+      m_Id: c51d6861-ca29-41f3-9bab-9bf49c460f7d
       m_Path: <Gamepad>/buttonSouth
       m_Interactions: 
       m_Processors: 
@@ -390,7 +390,7 @@ MonoBehaviour:
       m_Action: Jump Audio Play
       m_Flags: 0
     - m_Name: 
-      m_Id: 058f494c-7031-4bd4-a574-eab8a8396ce5
+      m_Id: 86c56490-2679-45d1-ab26-f14f3d79acd3
       m_Path: <Keyboard>/space
       m_Interactions: 
       m_Processors: 
@@ -406,10 +406,10 @@ MonoBehaviour:
     m_Bits: 1024
   IsrotatingMirror: 0
   CanInteractRotatingMirror: 0
-  DistanceCheck2: 1
+  DistanceCheck2: 1.6
   PushPull:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   IspushableObject: 0
   CanInteractPushableObject: 0
   speed: 11
@@ -447,6 +447,31 @@ MonoBehaviour:
   state: 1
   wallrunning: 1
   winLoseManager: {fileID: 0}
+  restart:
+    m_Name: Restart
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 42a2c5b1-f972-46b3-a432-2f3823b6b6f0
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 2e5dbd18-fc36-4b10-94d4-7cd7f6cf4c3a
+      m_Path: <Keyboard>/r
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Restart
+      m_Flags: 0
+    - m_Name: 
+      m_Id: f603c149-b73f-486f-ae11-950a7c230f54
+      m_Path: <Gamepad>/start
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Restart
+      m_Flags: 0
+    m_Flags: 0
   rupeeMagnetZone: {fileID: 2729359599447309553}
   playerMat: {fileID: 2100000, guid: 7e9d3c3ab6a5b3a47923e14a76fe6a2b, type: 2}
   playerTextures:

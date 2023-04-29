@@ -42060,17 +42060,21 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 33068970546312722, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3041323656804124330, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
       propertyPath: cam
       value: 
       objectReference: {fileID: 1559678429}
     - target: {fileID: 3041323656804124330, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
+      propertyPath: restart.m_Id
+      value: 42a2c5b1-f972-46b3-a432-2f3823b6b6f0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041323656804124330, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
       propertyPath: DistanceCheck2
       value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041323656804124330, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
+      propertyPath: restart.m_Name
+      value: Restart
       objectReference: {fileID: 0}
     - target: {fileID: 3041323656804124330, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
       propertyPath: winLoseManager
@@ -42085,20 +42089,32 @@ PrefabInstance:
       value: 9a06dd2d-3d16-4c28-9576-f8f7be3c8d4f
       objectReference: {fileID: 0}
     - target: {fileID: 3041323656804124330, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
-      propertyPath: RotateMirror.m_Bits
-      value: 1024
-      objectReference: {fileID: 0}
-    - target: {fileID: 3041323656804124330, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
-      propertyPath: JumpAudioPlay.m_Name
-      value: Jump Audio Play
-      objectReference: {fileID: 0}
-    - target: {fileID: 3041323656804124330, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
-      propertyPath: PushPullObject.m_Bits
-      value: 256
-      objectReference: {fileID: 0}
-    - target: {fileID: 3041323656804124330, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
-      propertyPath: JumpAudioPlay.m_SingletonActionBindings.Array.size
+      propertyPath: restart.m_SingletonActionBindings.Array.size
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041323656804124330, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
+      propertyPath: restart.m_SingletonActionBindings.Array.data[0].m_Id
+      value: 2e5dbd18-fc36-4b10-94d4-7cd7f6cf4c3a
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041323656804124330, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
+      propertyPath: restart.m_SingletonActionBindings.Array.data[1].m_Id
+      value: f603c149-b73f-486f-ae11-950a7c230f54
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041323656804124330, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
+      propertyPath: restart.m_SingletonActionBindings.Array.data[0].m_Path
+      value: <Keyboard>/r
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041323656804124330, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
+      propertyPath: restart.m_SingletonActionBindings.Array.data[1].m_Path
+      value: <Gamepad>/start
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041323656804124330, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
+      propertyPath: restart.m_SingletonActionBindings.Array.data[0].m_Action
+      value: Restart
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041323656804124330, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
+      propertyPath: restart.m_SingletonActionBindings.Array.data[1].m_Action
+      value: Restart
       objectReference: {fileID: 0}
     - target: {fileID: 3041323656804124330, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
       propertyPath: JumpAudioPlay.m_SingletonActionBindings.Array.data[0].m_Id
@@ -42107,34 +42123,6 @@ PrefabInstance:
     - target: {fileID: 3041323656804124330, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
       propertyPath: JumpAudioPlay.m_SingletonActionBindings.Array.data[1].m_Id
       value: 86c56490-2679-45d1-ab26-f14f3d79acd3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3041323656804124330, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
-      propertyPath: JumpAudioPlay.m_SingletonActionBindings.Array.data[2].m_Id
-      value: 86c56490-2679-45d1-ab26-f14f3d79acd3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3041323656804124330, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
-      propertyPath: JumpAudioPlay.m_SingletonActionBindings.Array.data[0].m_Path
-      value: <Gamepad>/buttonSouth
-      objectReference: {fileID: 0}
-    - target: {fileID: 3041323656804124330, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
-      propertyPath: JumpAudioPlay.m_SingletonActionBindings.Array.data[1].m_Path
-      value: <Keyboard>/space
-      objectReference: {fileID: 0}
-    - target: {fileID: 3041323656804124330, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
-      propertyPath: JumpAudioPlay.m_SingletonActionBindings.Array.data[2].m_Path
-      value: <Keyboard>/space
-      objectReference: {fileID: 0}
-    - target: {fileID: 3041323656804124330, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
-      propertyPath: JumpAudioPlay.m_SingletonActionBindings.Array.data[0].m_Action
-      value: Jump Audio Play
-      objectReference: {fileID: 0}
-    - target: {fileID: 3041323656804124330, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
-      propertyPath: JumpAudioPlay.m_SingletonActionBindings.Array.data[1].m_Action
-      value: Jump Audio Play
-      objectReference: {fileID: 0}
-    - target: {fileID: 3041323656804124330, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
-      propertyPath: JumpAudioPlay.m_SingletonActionBindings.Array.data[2].m_Action
-      value: Jump Audio Play
       objectReference: {fileID: 0}
     - target: {fileID: 3041323656804124331, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
       propertyPath: m_RootOrder
@@ -42184,41 +42172,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 6096756132656607730, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
-      propertyPath: runAudio
-      value: 
-      objectReference: {fileID: 8300000, guid: 26a98cc75d41407448c46817c53cf5a8, type: 3}
-    - target: {fileID: 6096756132656607730, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
-      propertyPath: jumpAudio
-      value: 
-      objectReference: {fileID: 8300000, guid: 907f89c5fb88e4b4c9442d17b9bc6396, type: 3}
-    - target: {fileID: 6096756132656607730, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
-      propertyPath: landAudio
-      value: 
-      objectReference: {fileID: 8300000, guid: d158f68345908fa4497e29e25cafcc6d, type: 3}
-    - target: {fileID: 6096756132656607730, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
-      propertyPath: playerAudio
-      value: 
-      objectReference: {fileID: 227851872803129439}
-    - target: {fileID: 6096756132656607730, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
-      propertyPath: wallrunAudio
-      value: 
-      objectReference: {fileID: 8300000, guid: 5365d04406dca0947ac8d02983a030e3, type: 3}
-    - target: {fileID: 6096756132656607730, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
-      propertyPath: spinMirrorAudio
-      value: 
-      objectReference: {fileID: 8300000, guid: 96a03a7aa830c7b4b984c6b4d1ecd2fd, type: 3}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
 --- !u!1 &227851872803129436 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3041323656804124343, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
-  m_PrefabInstance: {fileID: 227851872803129435}
-  m_PrefabAsset: {fileID: 0}
---- !u!82 &227851872803129439 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 7185953941056270833, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
   m_PrefabInstance: {fileID: 227851872803129435}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5231760412091635284

@@ -505,6 +505,13 @@ public class PlayerScript : MonoBehaviour
                 Die();
             }
         }
+
+        if(other.gameObject.tag == "ReleaseBoulderZone"){
+            GameObject[] boulderDoor = GameObject.FindGameObjectsWithTag("BoulderDoor");
+            foreach(GameObject BoulderDoor in boulderDoor)
+            GameObject.Destroy(BoulderDoor);
+            
+        }
        
     }
 

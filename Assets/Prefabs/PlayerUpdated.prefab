@@ -261,6 +261,14 @@ MonoBehaviour:
       m_Groups: 
       m_Action: Playermove
       m_Flags: 8
+    - m_Name: left
+      m_Id: 730a71e1-3d08-4361-9530-0d3a652e8109
+      m_Path: <Gamepad>/leftStick/left
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Playermove
+      m_Flags: 8
     - m_Name: right
       m_Id: cd5513f1-256a-4dd1-ae04-d50063733950
       m_Path: <Keyboard>/d
@@ -269,9 +277,25 @@ MonoBehaviour:
       m_Groups: 
       m_Action: Playermove
       m_Flags: 8
+    - m_Name: right
+      m_Id: f7bf8f4f-9afb-4cbe-b4b4-2cb84b37bbcd
+      m_Path: <Gamepad>/leftStick/right
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Playermove
+      m_Flags: 8
+    - m_Name: forward
+      m_Id: b1527d59-90fe-4c17-be9a-64d35f8f6fdc
+      m_Path: <Keyboard>/w
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Playermove
+      m_Flags: 8
     - m_Name: forward
       m_Id: 0897b257-2b29-4174-b74a-d10441144537
-      m_Path: <Keyboard>/w
+      m_Path: <Gamepad>/leftStick/up
       m_Interactions: 
       m_Processors: 
       m_Groups: 
@@ -285,56 +309,8 @@ MonoBehaviour:
       m_Groups: 
       m_Action: Playermove
       m_Flags: 8
-    - m_Name: Control Stick
-      m_Id: 0095ec3d-a759-465a-8403-d17abf5bcbf8
-      m_Path: 3DVector
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Playermove
-      m_Flags: 4
-    - m_Name: up
-      m_Id: d4c698c3-e252-409d-929a-5fedb19d1b9a
-      m_Path: 
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Playermove
-      m_Flags: 8
-    - m_Name: down
-      m_Id: 09e97ee4-5c71-4160-bc09-2bcefe29da82
-      m_Path: 
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Playermove
-      m_Flags: 8
-    - m_Name: left
-      m_Id: e69a09b8-8946-4235-8ee0-749ae8ba3be9
-      m_Path: <Gamepad>/leftStick/left
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Playermove
-      m_Flags: 8
-    - m_Name: right
-      m_Id: 220e7304-aa8f-42f9-8d44-d7083fbb1a1c
-      m_Path: <Gamepad>/leftStick/right
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Playermove
-      m_Flags: 8
-    - m_Name: forward
-      m_Id: 75203677-feb8-4388-89b9-9a3d1e859d2d
-      m_Path: <Gamepad>/leftStick/up
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Playermove
-      m_Flags: 8
     - m_Name: backward
-      m_Id: e29035ed-a237-4cba-848f-f3ce597afbbb
+      m_Id: 35e7e7c3-4adb-4241-b3cb-0b0e279e2659
       m_Path: <Gamepad>/leftStick/down
       m_Interactions: 
       m_Processors: 

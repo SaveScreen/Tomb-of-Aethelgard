@@ -130,7 +130,7 @@ public class CutsceneScript : MonoBehaviour
                     va.volume = 1f;
                 }
                 else {
-                    va.volume = 0.7f;
+                    va.volume = 0.5f;
                 }
             }
             

@@ -8,6 +8,7 @@ using UnityEngine.Playables;
 public class MainMenuCutsceneScript : MonoBehaviour
 {
     public CanvasGroup canvasalpha;
+    public CanvasGroup panel1alpha;
     public GameObject menucanvas;
     public GameObject creditscanvas;
     public GameObject menudirector;
@@ -36,6 +37,7 @@ public class MainMenuCutsceneScript : MonoBehaviour
         cameraanim = camera1.GetComponent<Animator>();
         textbox.text = string.Empty;
         canvasalpha.alpha = 0;
+        panel1alpha.alpha = 0;
         index = 0;
         aspeed = 0.5f;
     }
@@ -56,6 +58,9 @@ public class MainMenuCutsceneScript : MonoBehaviour
             menustarter = menuinput.IsPressed();
 
             if (index < lines.Length) {
+                if (index == 0) {
+                    ShowLogo();
+                }
                 WriteText();   
             } 
             else {
@@ -90,6 +95,26 @@ public class MainMenuCutsceneScript : MonoBehaviour
                 else {
                     if (canvasalpha.alpha > 0) {
                         canvasalpha.alpha -= aspeed * Time.deltaTime;
+                    }
+                    else {
+                        fadeout = false;
+                        index ++;
+                    }
+                }
+    }
+
+    void ShowLogo() {
+                if (fadeout == false) {
+                    if (panel1alpha.alpha < 1.0f) {
+                        panel1alpha.alpha += aspeed * Time.deltaTime;
+                    }
+                    else {
+                        StartCoroutine(WaitForFade());
+                    }
+                } 
+                else {
+                    if (panel1alpha.alpha > 0) {
+                        panel1alpha.alpha -= aspeed * Time.deltaTime;
                     }
                     else {
                         fadeout = false;

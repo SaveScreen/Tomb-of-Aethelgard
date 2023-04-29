@@ -30828,7 +30828,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8173987046217288586, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.07432723
+      value: 0.07432722
       objectReference: {fileID: 0}
     - target: {fileID: 8173987046217288586, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
       propertyPath: m_LocalRotation.y
@@ -30836,7 +30836,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8173987046217288586, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0026986713
+      value: -0.0026986862
       objectReference: {fileID: 0}
     - target: {fileID: 8173987046519804472, guid: 8ccbfcf183434064ba4d6694e1381345, type: 3}
       propertyPath: m_RootOrder
@@ -42065,64 +42065,100 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1559678429}
     - target: {fileID: 3041323656804124330, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
-      propertyPath: restart.m_Id
-      value: 42a2c5b1-f972-46b3-a432-2f3823b6b6f0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3041323656804124330, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
-      propertyPath: DistanceCheck2
-      value: 1.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3041323656804124330, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
-      propertyPath: restart.m_Name
-      value: Restart
-      objectReference: {fileID: 0}
-    - target: {fileID: 3041323656804124330, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
       propertyPath: winLoseManager
       value: 
       objectReference: {fileID: 2099684771}
     - target: {fileID: 3041323656804124330, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
-      propertyPath: PushPull.m_Bits
-      value: 256
+      propertyPath: playermove.m_SingletonActionBindings.Array.size
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 3041323656804124330, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
-      propertyPath: JumpAudioPlay.m_Id
-      value: 9a06dd2d-3d16-4c28-9576-f8f7be3c8d4f
+      propertyPath: playermove.m_SingletonActionBindings.Array.data[4].m_Id
+      value: 730a71e1-3d08-4361-9530-0d3a652e8109
       objectReference: {fileID: 0}
     - target: {fileID: 3041323656804124330, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
-      propertyPath: restart.m_SingletonActionBindings.Array.size
-      value: 2
+      propertyPath: playermove.m_SingletonActionBindings.Array.data[5].m_Id
+      value: cd5513f1-256a-4dd1-ae04-d50063733950
       objectReference: {fileID: 0}
     - target: {fileID: 3041323656804124330, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
-      propertyPath: restart.m_SingletonActionBindings.Array.data[0].m_Id
-      value: 2e5dbd18-fc36-4b10-94d4-7cd7f6cf4c3a
+      propertyPath: playermove.m_SingletonActionBindings.Array.data[6].m_Id
+      value: f7bf8f4f-9afb-4cbe-b4b4-2cb84b37bbcd
       objectReference: {fileID: 0}
     - target: {fileID: 3041323656804124330, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
-      propertyPath: restart.m_SingletonActionBindings.Array.data[1].m_Id
-      value: f603c149-b73f-486f-ae11-950a7c230f54
+      propertyPath: playermove.m_SingletonActionBindings.Array.data[7].m_Id
+      value: b1527d59-90fe-4c17-be9a-64d35f8f6fdc
       objectReference: {fileID: 0}
     - target: {fileID: 3041323656804124330, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
-      propertyPath: restart.m_SingletonActionBindings.Array.data[0].m_Path
-      value: <Keyboard>/r
+      propertyPath: playermove.m_SingletonActionBindings.Array.data[8].m_Id
+      value: 0897b257-2b29-4174-b74a-d10441144537
       objectReference: {fileID: 0}
     - target: {fileID: 3041323656804124330, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
-      propertyPath: restart.m_SingletonActionBindings.Array.data[1].m_Path
-      value: <Gamepad>/start
+      propertyPath: playermove.m_SingletonActionBindings.Array.data[9].m_Id
+      value: 6903a9fd-54f5-403a-80d3-15023530682a
       objectReference: {fileID: 0}
     - target: {fileID: 3041323656804124330, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
-      propertyPath: restart.m_SingletonActionBindings.Array.data[0].m_Action
-      value: Restart
+      propertyPath: playermove.m_SingletonActionBindings.Array.data[10].m_Id
+      value: 35e7e7c3-4adb-4241-b3cb-0b0e279e2659
       objectReference: {fileID: 0}
     - target: {fileID: 3041323656804124330, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
-      propertyPath: restart.m_SingletonActionBindings.Array.data[1].m_Action
-      value: Restart
+      propertyPath: playermove.m_SingletonActionBindings.Array.data[4].m_Name
+      value: left
       objectReference: {fileID: 0}
     - target: {fileID: 3041323656804124330, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
-      propertyPath: JumpAudioPlay.m_SingletonActionBindings.Array.data[0].m_Id
-      value: c51d6861-ca29-41f3-9bab-9bf49c460f7d
+      propertyPath: playermove.m_SingletonActionBindings.Array.data[4].m_Path
+      value: <Gamepad>/leftStick/left
       objectReference: {fileID: 0}
     - target: {fileID: 3041323656804124330, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
-      propertyPath: JumpAudioPlay.m_SingletonActionBindings.Array.data[1].m_Id
-      value: 86c56490-2679-45d1-ab26-f14f3d79acd3
+      propertyPath: playermove.m_SingletonActionBindings.Array.data[5].m_Name
+      value: right
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041323656804124330, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
+      propertyPath: playermove.m_SingletonActionBindings.Array.data[5].m_Path
+      value: <Keyboard>/d
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041323656804124330, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
+      propertyPath: playermove.m_SingletonActionBindings.Array.data[6].m_Name
+      value: right
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041323656804124330, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
+      propertyPath: playermove.m_SingletonActionBindings.Array.data[6].m_Path
+      value: <Gamepad>/leftStick/right
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041323656804124330, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
+      propertyPath: playermove.m_SingletonActionBindings.Array.data[7].m_Name
+      value: forward
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041323656804124330, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
+      propertyPath: playermove.m_SingletonActionBindings.Array.data[7].m_Path
+      value: <Keyboard>/w
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041323656804124330, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
+      propertyPath: playermove.m_SingletonActionBindings.Array.data[8].m_Name
+      value: forward
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041323656804124330, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
+      propertyPath: playermove.m_SingletonActionBindings.Array.data[8].m_Path
+      value: <Gamepad>/leftStick/up
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041323656804124330, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
+      propertyPath: playermove.m_SingletonActionBindings.Array.data[9].m_Name
+      value: backward
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041323656804124330, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
+      propertyPath: playermove.m_SingletonActionBindings.Array.data[9].m_Path
+      value: <Keyboard>/s
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041323656804124330, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
+      propertyPath: playermove.m_SingletonActionBindings.Array.data[10].m_Name
+      value: backward
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041323656804124330, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
+      propertyPath: playermove.m_SingletonActionBindings.Array.data[10].m_Path
+      value: <Gamepad>/leftStick/down
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041323656804124330, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
+      propertyPath: playermove.m_SingletonActionBindings.Array.data[7].m_Flags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3041323656804124331, guid: 3d910c77aa2e0354984aeaaf03c461b2, type: 3}
       propertyPath: m_RootOrder

@@ -21,7 +21,7 @@ public class VolumeSettingsScript : MonoBehaviour
 
     public void ChangeVolume(){
         AudioListener.volume = volumeSlider.value;
-        Debug.Log("Volume " + volumeSlider.value);
+        //Debug.Log("Volume " + volumeSlider.value);
         Save();
     }
 

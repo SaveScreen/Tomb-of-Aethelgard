@@ -13,6 +13,15 @@ TagManager:
   - LoseScreenSpike
   - LoseScreenAxe
   - prism
+  - RupeeMagnetZone
+  - LegCrunchBox
+  - ReleaseBoulderZone
+  - BlackOutfit
+  - MagnetPowerup
+  - BoulderDoor
+  - FreeLook
+  - BlueOutfit
+  - LoseScreen
   layers:
   - Default
   - TransparentFX
@@ -26,8 +35,8 @@ TagManager:
   - Player
   - RotateMirror
   - PostProcessing
-  - 
-  - 
+  - RupeeMagnetZone
+  - Rupee
   - 
   - 
   - 

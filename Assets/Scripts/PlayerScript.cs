@@ -260,7 +260,7 @@ public class PlayerScript : MonoBehaviour
             }
         }
 
-        if (CompletionManagerScript.tutorialcomplete && CompletionManagerScript.level1complete && CompletionManagerScript.level2complete && CompletionManagerScript.level3complete) {
+        if (CompletionManagerScript.level1complete && CompletionManagerScript.level2complete && CompletionManagerScript.level3complete) {
             CompletionManagerScript.allclear = true;
         }
 
@@ -461,6 +461,7 @@ public class PlayerScript : MonoBehaviour
 
     void OnTriggerEnter(Collider other) {
         if (other.gameObject.tag == "WinScreen") {
+            ResetProgress();
             WinGame();
         }
        if (other.gameObject.tag == "LoseScreen") {
@@ -567,6 +568,16 @@ public class PlayerScript : MonoBehaviour
         rupeeHUD.UpdateHUD(rupees, amt);
         rupees += amt;
         //Debug.Log(rupees + " rupees");
+    }
+
+    private void ResetProgress(){
+        AddRupees(-1*rupees);
+        skinNum = 0;
+        CompletionManagerScript.level1complete = false;
+        CompletionManagerScript.level2complete = false;
+        CompletionManagerScript.level3complete = false;
+        CompletionManagerScript.allclear = false;
+
     }
 
     public void Die(){

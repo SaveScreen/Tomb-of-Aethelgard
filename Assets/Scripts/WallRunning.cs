@@ -75,11 +75,11 @@ public class WallRunning : MonoBehaviour
 
     private void CheckForWall() 
     {
-        WallIsRight = Physics.Raycast(transform.position, orientation.right - transform.forward, out RightWall, WallCheckDistance, IsThisWall) || Physics.Raycast(transform.position, orientation.right + transform.forward, out RightWall, WallCheckDistance, IsThisWall);
+        WallIsRight = Physics.Raycast(transform.position, orientation.right - transform.forward, out RightWall, WallCheckDistance, IsThisWall) || Physics.Raycast(transform.position, orientation.right + transform.forward, out RightWall, WallCheckDistance, IsThisWall) || Physics.Raycast(transform.position, orientation.right, out RightWall, WallCheckDistance, IsThisWall);
         //WallIsRight = Physics.Raycast(transform.position, orientation.right + transform.forward, out RightWall, WallCheckDistance, IsThisWall);
         
 
-        WallIsLeft = Physics.Raycast(transform.position, -orientation.right - transform.forward, out LeftWall, WallCheckDistance, IsThisWall) || Physics.Raycast(transform.position, -orientation.right + transform.forward, out LeftWall, WallCheckDistance, IsThisWall);
+        WallIsLeft = Physics.Raycast(transform.position, -orientation.right - transform.forward, out LeftWall, WallCheckDistance, IsThisWall) || Physics.Raycast(transform.position, -orientation.right + transform.forward, out LeftWall, WallCheckDistance, IsThisWall) || Physics.Raycast(transform.position, -orientation.right, out LeftWall, WallCheckDistance, IsThisWall);
         //WallIsLeft = Physics.Raycast(transform.position, -orientation.right + transform.forward, out LeftWall, WallCheckDistance, IsThisWall);
        
     }

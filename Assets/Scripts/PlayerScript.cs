@@ -492,7 +492,7 @@ public class PlayerScript : MonoBehaviour
                 //SetMaterials(other.gameObject.GetComponent<Renderer>().material);
                 SetMaterials(0);
                 Destroy(other.gameObject);
-                AddRupees(150);
+                AddRupees(-150);
             }
         }
         if(other.gameObject.tag == "BlueOutfit"){

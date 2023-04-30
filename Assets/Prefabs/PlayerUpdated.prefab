@@ -113,7 +113,7 @@ Transform:
   - {fileID: 4690238514014140761}
   - {fileID: 1674255806766513098}
   m_Father: {fileID: 0}
-  m_RootOrder: 29
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!33 &3041323656804124340
 MeshFilter:
@@ -412,6 +412,14 @@ MonoBehaviour:
     - m_Name: 
       m_Id: fd3c80fa-3f4d-4d76-af8e-e2a7926657bf
       m_Path: <Keyboard>/p
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Pausing
+      m_Flags: 0
+    - m_Name: 
+      m_Id: e40cc22a-0db7-4fc2-8f31-7bae3ba574cf
+      m_Path: <Keyboard>/escape
       m_Interactions: 
       m_Processors: 
       m_Groups: 
